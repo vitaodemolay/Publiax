@@ -1,0 +1,11 @@
+{
+    "extends": "./node_modules/tsrex/tsconfig.json",
+    "compilerOptions": {
+      "outDir": "dist",
+      "moduleResolution": "node",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true
+    },
+    "include": ["**/src/**/*"],
+    "exclude": ["node_modules"]
+}
