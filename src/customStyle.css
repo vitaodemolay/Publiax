@@ -77,6 +77,26 @@ a {
 }
 
 
+/* ------- Quem Somos ---------------- */ 
+.QuemSomosHeader{
+  background-color: #3f2358;
+  padding-top: 81px;
+  padding-bottom: 81px;
+  text-align: center;
+}
+
+.QuemSomosHeader h1 {
+  font-size:40px;
+  text-transform: uppercase;
+  /* color:#59be42;     */
+  color: #fff;
+  margin-bottom: -20px;
+
+}
+
+.winnDescription{
+  text-align: justify;
+}
 
 
 /* ------- Navigation ------------ */

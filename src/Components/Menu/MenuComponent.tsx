@@ -15,7 +15,7 @@ class Menu extends React.Component {
                             <NavLink href="#/vagas">Vagas</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#/quemSomos">Quem Somos</NavLink>
+                            <NavLink href="#/quemsomos">Quem Somos</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="#/contato">Contato</NavLink>
