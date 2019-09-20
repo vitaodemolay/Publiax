@@ -76,6 +76,37 @@ a {
   color:#fff;
 }
 
+/* ------- Contato ---------------- */ 
+.ContatoHeader{
+  background-color: #3f2358;
+  padding-top: 81px;
+  padding-bottom: 81px;
+  text-align: center;
+}
+
+.ContatoHeader h1 {
+  font-size:40px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: -20px;
+}
+
+.contatoDescription{
+  padding-top: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+  font-size:20px;
+}
+
+.box_endereco{
+    padding-top: 160px;
+
+}
+
+.box_endereco p{
+  text-align: center;
+  font-size:18px;
+}
 
 /* ------- Quem Somos ---------------- */ 
 .QuemSomosHeader{
@@ -88,7 +119,6 @@ a {
 .QuemSomosHeader h1 {
   font-size:40px;
   text-transform: uppercase;
-  /* color:#59be42;     */
   color: #fff;
   margin-bottom: -20px;
 

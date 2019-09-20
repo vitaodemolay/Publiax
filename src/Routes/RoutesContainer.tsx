@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom';
 import Home from '../Components/Home/HomeComponent';
 import VagasContainer from '../Containers/VagasContainer';
 import QuemSomosContainer from '../Containers/QuemSomosContainer';
+import ContatoContainer from '../Containers/ContatoContainer';
 
 class Props {
     location?: any;
@@ -22,6 +23,7 @@ export class Routes extends React.Component<Props>{
         return (
             <HashRouter>
                 <Switch>
+                    <Route exact={true} path="/contato" component={ContatoContainer} /> 
                     <Route exact={true} path="/quemsomos" component={QuemSomosContainer} />
                     <Route exact={true} path="/vagas" component={VagasContainer} />
                     <Route exact={true} path="/home" component={Home} />
