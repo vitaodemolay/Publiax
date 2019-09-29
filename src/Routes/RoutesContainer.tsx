@@ -6,6 +6,8 @@ import VagasContainer from '../Containers/VagasContainer';
 import QuemSomosContainer from '../Containers/QuemSomosContainer';
 import ContatoContainer from '../Containers/ContatoContainer';
 import LoginRedirectContainer from '../Containers/LoginRedirect';
+import RedirectContainer from '../Containers/RedirectContainer';
+import RouterHandle from './RouterHandle';
 
 class Props {
     location?: any;
@@ -23,8 +25,9 @@ export class Routes extends React.Component<Props>{
     render() {
         return (
             <HashRouter>
+                <RouterHandle />
                 <Switch>
-                    <Route exact={true} path="/token/:token" component={Home} />
+                    <Route exact={true} path="/token/:token" component={RedirectContainer} />
                     <Route exact={true} path="/login" component={LoginRedirectContainer} />
                     <Route exact={true} path="/contato" component={ContatoContainer} />
                     <Route exact={true} path="/quemsomos" component={QuemSomosContainer} />

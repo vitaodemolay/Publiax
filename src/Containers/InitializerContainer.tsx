@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Inject, Connection } from 'exredux';
 import { appModels } from '../AppModels';
 import { AuthModel } from '../Models/AuthModel';
@@ -19,8 +19,6 @@ export default class InitializerContainer extends React.Component<Props>{
     }
     
     render(){
-        return(
-            <div></div>
-        );
+        return <React.Fragment />;
     }
 }
