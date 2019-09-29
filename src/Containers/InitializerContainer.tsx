@@ -15,7 +15,12 @@ class Props {
 export default class InitializerContainer extends React.Component<Props>{
     componentWillMount() {
         const { auth } = this.props;
+        const token : string = auth.getSavedToken();
         auth.init(window.location.origin.toString());
+
+        if(!auth.isAuthenticated &&  token != ''){
+            auth.purgeSavedToken();
+        }
     }
     
     render(){

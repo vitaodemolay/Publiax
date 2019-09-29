@@ -5,9 +5,10 @@ const servicetokenroute = 'account/AuthGetToken?returnUrl=';
 
 @Model
 export class AuthModel {
-    ENDPOINT_INTERNAL_CALLBACK: string = '';
-    ENDPOINT_GET_TOKEN_SERVICE: string = '';
-    TOKEN_STORE_KEY_NAME: string = '';
+    private ENDPOINT_INTERNAL_CALLBACK: string = '';
+    private ENDPOINT_GET_TOKEN_SERVICE: string = '';
+    private TOKEN_STORE_KEY_NAME: string = '';
+    private authenticated: boolean = false;
 
     @Action
     public init(internalBaseUrl: string) {
@@ -19,14 +20,18 @@ export class AuthModel {
     @Action
     public saveToken(token: string){
         localStorage.setItem(this.TOKEN_STORE_KEY_NAME, token);
+        this.authenticated = true;
     }
 
     @Action
     public purgeSavedToken(){
         localStorage.removeItem(this.TOKEN_STORE_KEY_NAME);
+        this.authenticated = false;
     }
 
     public getEndpointToGetToken = ()=> this.ENDPOINT_GET_TOKEN_SERVICE;
         
     public getSavedToken = ()=> localStorage.getItem(this.TOKEN_STORE_KEY_NAME);
+
+    public isAuthenticated = ()=> this.authenticated;
 } 
