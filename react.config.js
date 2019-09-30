@@ -5,7 +5,7 @@ module.exports = {
   port: 8081,
   host: 'localhost',
   nodeEnv: {
-    BASE_API_URL: 'http://192.168.0.13:45455/'
+    BASE_API_URL: 'http://localhost:60047/'
   },
   htmlEnv: {
   },
