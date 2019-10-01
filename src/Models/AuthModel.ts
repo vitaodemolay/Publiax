@@ -1,6 +1,6 @@
 import { Model, Action } from 'exredux';
 import { AuthRepository } from '../Service/Repository/AuthRepository';
-import { instanceOf } from 'prop-types';
+
 
 const baseUrl = process.env.BASE_API_URL;
 const servicetokenroute = 'account/AuthGetToken?returnUrl=';

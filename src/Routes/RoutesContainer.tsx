@@ -9,25 +9,45 @@ import LoginRedirectContainer from '../Containers/LoginRedirectContainer';
 import RedirectContainer from '../Containers/RedirectContainer';
 import RouterHandle from './RouterHandle';
 import LogoutContainer from '../Containers/LogoutContainer';
+import { AuthModel } from '../Models/AuthModel';
+import { Inject, Connection } from 'exredux';
+import { appModels } from '../AppModels';
+import PrivateAccessContainer from '../Containers/PrivateAccessContainer';
 
 class Props {
-    location?: any;
+    @Inject auth: AuthModel;
 }
 
+
+
+const PrivateRoute = ({ auth: Auth, component: Component, ...rest }) => (
+    <Route {...rest} render={(props) => (
+        Auth.isAuthenticated() === true
+            ? <Component {...props} />
+            : <PrivateAccessContainer />
+    )} />
+)
+
+@Connection({
+    modelStore: appModels,
+    props: Props
+})
+
 export class Routes extends React.Component<Props>{
-    componentDidMount = () => {
 
+    private isAuthenticated = () => {
+        const { auth } = this.props;
+        return auth.isAuthenticated();
     }
 
-    componentDidUpdate = () => {
-
-    }
-
+    
     render() {
+        const { auth } = this.props;
         return (
             <HashRouter>
                 <RouterHandle />
                 <Switch>
+                    <PrivateRoute auth={auth} path="/curriculum" component={Home} />
                     <Route exact={true} path="/token/:token" component={RedirectContainer} />
                     <Route exact={true} path="/login" component={LoginRedirectContainer} />
                     <Route exact={true} path="/logout" component={LogoutContainer} />
