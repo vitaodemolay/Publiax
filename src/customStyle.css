@@ -61,6 +61,26 @@ a {
 	text-decoration:none;
 }
 
+/* ------- Private Access ------- */ 
+.PrivateAccessHeader{
+  background-color: #3f2358;
+  padding-top: 81px;
+  padding-bottom: 81px;
+  text-align: center;
+}
+
+.PrivateAccessHeader h1 {
+  font-size:40px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: -20px;
+}
+
+.CenterPage{
+  text-align: center;
+}
+
+
 /* ------- Vagas ---------------- */ 
 .searchBarArea{
   background: blue;
