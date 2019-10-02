@@ -66,7 +66,6 @@ export class VagasRepository {
     }
 
     static getVagasRecentes() {
-        // return MockResults.requestVagasRecentesFake;
         return http.get<IVagasResult>(`${baseUrl}${routeVagasRecentes}`);
     }
 }
