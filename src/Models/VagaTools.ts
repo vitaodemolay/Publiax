@@ -5,13 +5,14 @@ import { Model, Action } from 'exredux';
 export class VagaTools {
    
     @Action
-    public static getPublicacaoToString(publicacao : Date){
-        let calc = (new Date().getDay()) - publicacao.getDay();
+    public static getPublicacaoToString(publicacao){
+        const _publicacao = new Date(publicacao);
+        let calc = (new Date().getDay()) - _publicacao.getDay();
         if(calc > 0){
             return `Publicado há ${calc} dias`;
         }
 
-        calc = (new Date().getHours()) - publicacao.getHours();
+        calc = (new Date().getHours()) - _publicacao.getHours();
         return  `Publicado há ${calc} horas`;
     }
 }

@@ -1,4 +1,5 @@
 import { IVagasResult } from '../Interfaces/IVagasResult';
+import { http } from 'exredux';
 
 
 class MockResults{
@@ -53,15 +54,20 @@ class MockResults{
     }
 }
 
-
+const baseUrl = process.env.BASE_API_URL;
+const routeBuscarVagas = 'api/JobOpportunity/findJobs/';
+const routeVagasRecentes= 'api/JobOpportunity/findRecentJobs';
 
 export class VagasRepository {
+    
+
     static getBuscarVagas(filtro: string): import('axios').AxiosPromise<IVagasResult> {
         return MockResults.requestBuscaVagasFake(filtro);
     }
 
     static getVagasRecentes() {
-        return MockResults.requestVagasRecentesFake;
+        // return MockResults.requestVagasRecentesFake;
+        return http.get<IVagasResult>(`${baseUrl}${routeVagasRecentes}`);
     }
 }
 
