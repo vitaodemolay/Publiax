@@ -5,7 +5,7 @@ module.exports = {
   port: 8081,
   host: 'localhost',
   nodeEnv: {
-    BASE_API_URL: 'http://localhost:60047/'
+    BASE_API_URL: 'http://www.portalwinn.com.br:8083/'
   },
   htmlEnv: {
   },
