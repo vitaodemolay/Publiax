@@ -1,5 +1,6 @@
 import { Model, Action, Inject, Trigger } from 'exredux';
 import { AuthModel } from './AuthModel';
+import { VagaDetalheModel } from './VagaDetalheModel';
 
 
 @Model
@@ -7,6 +8,7 @@ export class RouterModel {
   pathname = '';
 
   @Inject auth?: AuthModel;
+  @Inject vagaDetalhe?: VagaDetalheModel;
 
   @Action
   routeChange(pathname: string) {
@@ -18,11 +20,30 @@ export class RouterModel {
       const token = path[2];
       this.auth.saveToken(token);
     }
+
+    if(page === 'vagadetalhe'){
+      const id = path[2];
+      this.vagaDetalhe.setJobId(id);
+    }
   }
 
-  @Trigger(AuthModel, 'completed')
+  @Trigger(AuthModel, 'saveToken')
   protected authCompleted() {
     // tslint:disable-next-line: no-console
     console.log('Is Authenticated!');
+  }
+
+  @Trigger(VagaDetalheModel, 'setJobId')
+  protected setJobIdCompleted(){
+    // tslint:disable-next-line:no-console
+    console.log('Job Id is Seted!');
+
+    this.vagaDetalhe.get(); 
+  }
+
+  @Trigger(VagaDetalheModel, 'setJobId')
+  protected getVagaDetalheCompleted(){
+    // tslint:disable-next-line:no-console
+    console.log('Job get details is loaded!');
   }
 }

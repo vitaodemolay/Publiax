@@ -1,5 +1,6 @@
 
 import { Model, Action } from 'exredux';
+import moment from 'moment';
 
 @Model
 export class VagaTools {
@@ -7,12 +8,13 @@ export class VagaTools {
     @Action
     public static getPublicacaoToString(publicacao){
         const _publicacao = new Date(publicacao);
-        let calc = (new Date().getDay()) - _publicacao.getDay();
-        if(calc > 0){
-            return `Publicado há ${calc} dias`;
+
+        let calc = moment().diff(_publicacao, 'hours');
+        if(calc <= 24){
+            return  `Publicado há ${calc} horas`; 
         }
 
-        calc = (new Date().getHours()) - _publicacao.getHours();
-        return  `Publicado há ${calc} horas`;
+        calc = moment().diff(_publicacao, 'days');
+        return `Publicado há ${calc} dias`;
     }
 }

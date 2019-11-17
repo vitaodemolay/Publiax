@@ -1,10 +1,10 @@
 import { Model, BaseHttpModel, Action } from 'exredux';
-import { IVagasResult } from '../Service/Interfaces/IVagasResult';
 import { VagasRepository } from '../Service/Repository/VagasRepository';
+import { IVaga } from '../Service/Interfaces/IVaga';
 
 
 @Model
-export class VagasRecentesModel extends BaseHttpModel<IVagasResult>{
+export class VagasRecentesModel extends BaseHttpModel<IVaga[]>{
 
     @Action
     public get(){

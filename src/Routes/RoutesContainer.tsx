@@ -13,6 +13,7 @@ import { AuthModel } from '../Models/AuthModel';
 import { Inject, Connection } from 'exredux';
 import { appModels } from '../AppModels';
 import PrivateAccessContainer from '../Containers/PrivateAccessContainer';
+import VagaDetalheContainer from '../Containers/VagaDetalheContainer';
 
 class Props {
     @Inject auth: AuthModel;
@@ -54,6 +55,7 @@ export class Routes extends React.Component<Props>{
                     <Route exact={true} path="/contato" component={ContatoContainer} />
                     <Route exact={true} path="/quemsomos" component={QuemSomosContainer} />
                     <Route exact={true} path="/vagas" component={VagasContainer} />
+                    <Route exact={true} path="/vagadetalhe/:id" component={VagaDetalheContainer} />
                     <Route exact={true} path="/home" component={Home} />
                     <Route exact={true} path="/" component={Home} />
                     <Redirect to="/" />

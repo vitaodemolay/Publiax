@@ -1,5 +1,6 @@
 import { IVagasResult } from '../Interfaces/IVagasResult';
 import { http } from 'exredux';
+import { IVaga } from '../Interfaces/IVaga';
 
 
 class MockResults{
@@ -56,17 +57,22 @@ class MockResults{
 
 const baseUrl = process.env.BASE_API_URL;
 const routeBuscarVagas = 'api/JobOpportunity/findJobs/';
-const routeVagasRecentes= 'api/JobOpportunity/findRecentJobs';
+const routeVagasRecentes= 'api/JobOpportunity/recentJobs/';
+const routeVagaDetalhes= 'api/JobOpportunity/jobDetail/';
 
 export class VagasRepository {
     
 
-    static getBuscarVagas(filtro: string): import('axios').AxiosPromise<IVagasResult> {
+    static getBuscarVagas(filtro: string): import('axios').AxiosPromise<IVaga[]> {
         return MockResults.requestBuscaVagasFake(filtro);
     }
 
     static getVagasRecentes() {
-        return http.get<IVagasResult>(`${baseUrl}${routeVagasRecentes}`);
+        return http.get<IVaga[]>(`${baseUrl}${routeVagasRecentes}`);
+    }
+
+    static getVagaDetalhe(VagaId: string){
+        return http.get<IVaga>(`${baseUrl}${routeVagaDetalhes}/${VagaId}`);
     }
 }
 
