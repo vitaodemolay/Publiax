@@ -3,6 +3,7 @@ import { Inject, Connection } from 'exredux';
 import { appModels } from '../AppModels';
 import { VagaDetalheModel } from '../Models/VagaDetalheModel';
 import HeaderComponent from '../Components/VagaDetalhe/Header';
+import VagaDetalheBody from '../Components/VagaDetalhe/Body';
 
 
 class Props{
@@ -17,7 +18,6 @@ export default class VagaDetalheContainer extends React.Component<Props> {
 
     componentDidMount(){
         const { vagaDetalhe } = this.props;
-        // vagaDetalhe.get();
     }
 
     render() {
@@ -27,10 +27,10 @@ export default class VagaDetalheContainer extends React.Component<Props> {
             <div>
                 <HeaderComponent>DETALHES DA VAGA</HeaderComponent>
 
-                {/* Area Resultado Busca Vagas */}
-                {/* {vagasBuscaModel.isResultVisible() && vagasBuscaModel.isLoading && <div>Carregando...</div>}
-                {vagasBuscaModel.isResultVisible() && vagasBuscaModel.isFailed && <div>Falhou!</div>}
-                {vagasBuscaModel.isResultVisible() && vagasBuscaModel.isCompleted && <SearchResult vagas={vagasBuscaModel.response.data}/>}      */}
+                {vagaDetalhe.isLoading && <div>Carregando...</div>}
+                {vagaDetalhe.isFailed && <div>Falhou!</div>}
+                {vagaDetalhe.isCompleted && <VagaDetalheBody vaga={vagaDetalhe.response.data}/>}
+
             </div>
         );
     }
