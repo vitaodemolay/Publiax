@@ -4,6 +4,7 @@ import { appModels } from '../AppModels';
 import { VagaDetalheModel } from '../Models/VagaDetalheModel';
 import HeaderComponent from '../Components/VagaDetalhe/Header';
 import VagaDetalheBody from '../Components/VagaDetalhe/Body';
+import FooterComponent from '../Components/VagaDetalhe/Footer';
 
 
 class Props{
@@ -29,7 +30,12 @@ export default class VagaDetalheContainer extends React.Component<Props> {
 
                 {vagaDetalhe.isLoading && <div>Carregando...</div>}
                 {vagaDetalhe.isFailed && <div>Falhou!</div>}
-                {vagaDetalhe.isCompleted && <VagaDetalheBody vaga={vagaDetalhe.response.data}/>}
+                {vagaDetalhe.isCompleted && 
+                    <div> 
+                        <VagaDetalheBody vaga={vagaDetalhe.response.data}/>
+                        <FooterComponent vaga={vagaDetalhe.response.data}/>
+                    </div>
+                }
 
             </div>
         );

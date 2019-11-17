@@ -14,6 +14,7 @@ import { Inject, Connection } from 'exredux';
 import { appModels } from '../AppModels';
 import PrivateAccessContainer from '../Containers/PrivateAccessContainer';
 import VagaDetalheContainer from '../Containers/VagaDetalheContainer';
+import CandidatarVagaContainer from '../Containers/CandidatarVagaContainer';
 
 class Props {
     @Inject auth: AuthModel;
@@ -49,6 +50,7 @@ export class Routes extends React.Component<Props>{
                 <RouterHandle />
                 <Switch>
                     <PrivateRoute auth={auth} path="/curriculum" component={Home} />
+                    <PrivateRoute auth={auth} path="/candidatarvaga/:id" component={CandidatarVagaContainer} />
                     <Route exact={true} path="/token/:token" component={RedirectContainer} />
                     <Route exact={true} path="/login" component={LoginRedirectContainer} />
                     <Route exact={true} path="/logout" component={LogoutContainer} />

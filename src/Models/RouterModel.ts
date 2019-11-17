@@ -21,7 +21,12 @@ export class RouterModel {
       this.auth.saveToken(token);
     }
 
-    if(page === 'vagadetalhe'){
+    if (page === 'vagadetalhe') {
+      const id = path[2];
+      this.vagaDetalhe.setJobId(id);
+    }
+
+    if (page === 'candidatarvaga' && this.auth.isAuthenticated()) {
       const id = path[2];
       this.vagaDetalhe.setJobId(id);
     }
@@ -34,15 +39,15 @@ export class RouterModel {
   }
 
   @Trigger(VagaDetalheModel, 'setJobId')
-  protected setJobIdCompleted(){
+  protected setJobIdCompleted() {
     // tslint:disable-next-line:no-console
     console.log('Job Id is Seted!');
 
-    this.vagaDetalhe.get(); 
+    this.vagaDetalhe.get();
   }
 
-  @Trigger(VagaDetalheModel, 'setJobId')
-  protected getVagaDetalheCompleted(){
+  @Trigger(VagaDetalheModel, 'get')
+  protected getVagaDetalheCompleted() {
     // tslint:disable-next-line:no-console
     console.log('Job get details is loaded!');
   }

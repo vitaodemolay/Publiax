@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IVaga } from '../../Service/Interfaces/IVaga';
-import { Modal, Button, Container, Row, Col, Card, CardBody, CardHeader, CardFooter } from 'reactstrap';
+import { Container, Row, Col, Card, CardBody, CardHeader, CardFooter } from 'reactstrap';
 import Dynamic from '../Dynamic/DynamicComponent';
 import { VagaTools } from '../../Models/VagaTools';
 
@@ -27,9 +27,6 @@ export default class VagaDetalheBody extends React.Component<Props>{
                             <p>
                                 <strong>Publicado Em: </strong>
                                 <span>{VagaTools.getPublicacaoFormat(vaga.publicacao)}</span>
-                            </p>
-                            <p>
-                                <a href="#/vagas">Voltar</a>
                             </p>
                         </CardFooter>
                     </Card>
