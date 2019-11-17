@@ -11,7 +11,11 @@ export class VagasRepository {
     
 
     static getBuscarVagas(filtro: string) {
-        return http.get<IVaga[]>(`${baseUrl}${routeBuscarVagas}/${filtro}`);
+        if(filtro !== undefined && filtro !== ''){
+            return http.get<IVaga[]>(`${baseUrl}${routeBuscarVagas}/${filtro}`);
+        }
+        
+        return undefined;
     }
 
     static getVagasRecentes() {
