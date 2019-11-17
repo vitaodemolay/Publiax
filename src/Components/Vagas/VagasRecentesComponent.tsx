@@ -1,14 +1,18 @@
 import React from 'react';
-import { Card, CardHeader, CardBody, Container } from 'reactstrap';
-import { IVagasResult } from '../../Service/Interfaces/IVagasResult';
+import { Card, CardHeader, CardBody, Container, Button } from 'reactstrap';
 import { VagaTools } from '../../Models/VagaTools';
+import { IVaga } from '../../Service/Interfaces/IVaga';
 
 
 interface Props {
-    vagas: IVagasResult;
+    vagas: IVaga[];
 }
 
 export default class VagasRecentes extends React.Component<Props> {
+
+    defineUrlAddress(id: string){
+        return `#/vagadetalhe/${id}`;
+    }
 
     render() {
         const { vagas } = this.props;
@@ -21,10 +25,11 @@ export default class VagasRecentes extends React.Component<Props> {
                     <CardBody>
                         <table className="table">
                             <tbody>
-                                {vagas.data.map((item, index) => (
+                                {vagas.map((item, index) => (
                                     <tr key={index}>
-                                        <td><a href={item.url} >{item.descricao}</a></td>
+                                        <td>{item.titulo}</td>
                                         <td>{VagaTools.getPublicacaoToString(item.publicacao)}</td>
+                                        <td><a className="btn_default" href={this.defineUrlAddress(item.id)}>Detalhe</a></td>
                                     </tr>
                                 ))}
                             </tbody>

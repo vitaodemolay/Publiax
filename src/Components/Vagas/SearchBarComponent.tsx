@@ -46,13 +46,20 @@ export default class SearchVagasBar extends React.Component<Props> {
 
     handlerOnBuscarClick = () => {
         const { vagasBuscaModel } = this.props;
-        vagasBuscaModel.getBuscarVagas(this.state.intputValue);
+        if(this.state.intputValue !== undefined && this.state.intputValue !== ''){
+            vagasBuscaModel.getBuscarVagas(this.state.intputValue);
+        }
         vagasBuscaModel.setResultIsVisible(true);
     }
 
     handleInputChange = (event) =>{
+        const { vagasBuscaModel } = this.props;
         this.setState({
             intputValue: event.target.value
         });
+
+        const valueState = event.target.value;
+
+        vagasBuscaModel.setFilterIsNotEmpty(valueState !== undefined && valueState !== '');
     }
 }

@@ -36,7 +36,7 @@ export default class VagasContainer extends React.Component<Props> {
 
                 {/* Area Resultado Busca Vagas */}
                 {vagasBuscaModel.isResultVisible() && vagasBuscaModel.isLoading && <div>Carregando...</div>}
-                {vagasBuscaModel.isResultVisible() && vagasBuscaModel.isFailed && <div>Falhou!</div>}
+                {vagasBuscaModel.isResultVisible() && vagasBuscaModel.isFailed && <SearchResult vagas={undefined}/>}
                 {vagasBuscaModel.isResultVisible() && vagasBuscaModel.isCompleted && <SearchResult vagas={vagasBuscaModel.response.data}/>}     
 
                 {/* Area Vagas Recentes */}

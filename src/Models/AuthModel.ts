@@ -3,7 +3,7 @@ import { AuthRepository } from '../Service/Repository/AuthRepository';
 
 
 const baseUrl = process.env.BASE_API_URL;
-const servicetokenroute = 'account/AuthGetToken?returnUrl=';
+const servicetokenroute = 'profile/AuthGetToken?returnUrl=';
 const logoutRoute = 'api/auth/logoff';
 const cookieLoginName = '.ASPXAUTH';
 
