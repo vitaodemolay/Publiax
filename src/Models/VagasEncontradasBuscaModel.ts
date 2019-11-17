@@ -1,20 +1,24 @@
 import { Model, Action, BaseHttpModel } from 'exredux';
-import { IVagasResult } from '../Service/Interfaces/IVagasResult';
 import { VagasRepository } from '../Service/Repository/VagasRepository';
 
 
 @Model
-export class VagasEncontradasBuscaModel extends BaseHttpModel<IVagasResult>{
+export class VagasEncontradasBuscaModel extends BaseHttpModel<any>{
     _isResultVisible : boolean = false;
-    _vagasEncontradas : IVagasResult;
+    _filterIsNotEmpty : boolean = false;
     
     public isResultVisible = () : boolean => {
         return this._isResultVisible;
     }
+
+    @Action
+    public setFilterIsNotEmpty(value: boolean){
+        this._filterIsNotEmpty = value;
+    }
     
     @Action
     public setResultIsVisible(value : boolean){
-        this._isResultVisible = value;
+        this._isResultVisible = value && this._filterIsNotEmpty;
     }
 
     @Action
