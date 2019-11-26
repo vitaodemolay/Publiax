@@ -2,7 +2,7 @@
 module.exports = {
   source: 'src',
   outputPath: 'dist',
-  port: 8081,
+  port: 3000,
   host: 'localhost',
   nodeEnv: {
     BASE_API_URL: 'http://www.portalwinn.com.br:8083/'

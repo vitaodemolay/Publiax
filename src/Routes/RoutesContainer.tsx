@@ -3,6 +3,7 @@ import React from 'react';
 import { HashRouter } from 'react-router-dom';
 import Home from '../Components/Home/HomeComponent';
 import VagasContainer from '../Containers/VagasContainer';
+import CadastroCurriculoContainer from '../Containers/CurriculumContainer';
 import QuemSomosContainer from '../Containers/QuemSomosContainer';
 import ContatoContainer from '../Containers/ContatoContainer';
 import LoginRedirectContainer from '../Containers/LoginRedirectContainer';
@@ -49,12 +50,13 @@ export class Routes extends React.Component<Props>{
             <HashRouter>
                 <RouterHandle />
                 <Switch>
-                    <PrivateRoute auth={auth} path="/curriculum" component={Home} />
+                  {/*  <PrivateRoute auth={auth} path="/curriculum" component={Home} /> */}
                     <PrivateRoute auth={auth} path="/candidatarvaga/:id" component={CandidatarVagaContainer} />
                     <Route exact={true} path="/token/:token" component={RedirectContainer} />
                     <Route exact={true} path="/login" component={LoginRedirectContainer} />
                     <Route exact={true} path="/logout" component={LogoutContainer} />
                     <Route exact={true} path="/contato" component={ContatoContainer} />
+                    <Route exact={true} path="/curriculum" component={CadastroCurriculoContainer} />
                     <Route exact={true} path="/quemsomos" component={QuemSomosContainer} />
                     <Route exact={true} path="/vagas" component={VagasContainer} />
                     <Route exact={true} path="/vagadetalhe/:id" component={VagaDetalheContainer} />

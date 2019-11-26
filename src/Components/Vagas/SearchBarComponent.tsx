@@ -23,22 +23,25 @@ export default class SearchVagasBar extends React.Component<Props> {
         return (
             <div className="searchBarArea">
                 <Container fluid={true}>
-                    <Form>
-                        <Row>
-                            <Col className="text-center">
-                                <h2 className="TitleVagasSearch">Vagas</h2>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <FormGroup>
-                                    <small>Pesquise vagas aqui</small>
-                                    <Input onChange={this.handleInputChange} value={this.state.intputValue} />
-                                    <Button onClick={this.handlerOnBuscarClick} className="btn-buscar">Buscar</Button>
-                                </FormGroup>
-                            </Col>
-                        </Row>
-                    </Form>
+                    <div className="container-search">
+                        <Form>
+                            <Row>
+                                <Col className="text-center">
+                                    <h2 className="TitleVagasSearch">Vagas</h2>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <FormGroup className="form-content">
+                                        <small>Pesquise vagas aqui</small>
+                                        <Input className="input-search" onChange={this.handleInputChange} value={this.state.intputValue} />
+                                        <Button onClick={this.handlerOnBuscarClick} className="btn-buscar">Buscar</Button>
+                                    </FormGroup>
+                                </Col>
+                            </Row>
+                        </Form>
+                    </div>
+
                 </Container>
             </div>
         );

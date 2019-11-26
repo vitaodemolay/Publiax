@@ -83,18 +83,39 @@ a {
 
 /* ------- Vagas ---------------- */ 
 .searchBarArea{
-  background: blue;
+  background: #003c80;
+  margin-bottom: 40px;
 }
 
 .TitleVagasSearch{
   color: white;
 }
 
-.btn-buscar {
+.container-search {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.container-search .form-content {
+  display: table;
+  width: 100%;
+}
+.container-search small {
+  color:#fff;
+
+}
+.container-search .input-search {
+  float: left;
+  width: 87%;
+}
+.container-search .btn-buscar {
   outline: 0;
   background-color:#59be42;    
   color:#fff;
+  float:right;
 }
+
 
 /* ------- Contato ---------------- */ 
 .ContatoHeader{
@@ -129,7 +150,7 @@ a {
 }
 
 /* ------- Quem Somos ---------------- */ 
-.QuemSomosHeader, .VagaDetalhesHeader{
+.QuemSomosHeader, .VagaDetalhesHeader, .CurriculumHeader{
   background-color: #3f2358;
   padding-top: 81px;
   padding-bottom: 81px;
