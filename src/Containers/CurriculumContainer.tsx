@@ -1,5 +1,5 @@
 import React from 'react';
-import { Inject, Connection } from 'exredux';
+import { Connection } from 'exredux';
 import { appModels } from '../AppModels';
 import HeaderComponent from '../Components/Curriculum/Header';
 import VitrineComponent from '../Components/Curriculum/Vitrine';
@@ -23,5 +23,4 @@ export default class CurriculumContainer extends React.Component<Props> {
             </div>
         ); 
     }
-
 }
