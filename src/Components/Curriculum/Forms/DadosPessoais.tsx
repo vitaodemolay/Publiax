@@ -4,7 +4,7 @@ import { Container, Form, FormGroup, Label, Input } from 'reactstrap';
 export default class DadosPessoaisComponent extends React.Component {
     render() {
         return (
-            <Form>
+            <Form id="register-details" className=""> 
                 <h2>Dados Pessoais</h2>
                 <hr />
                 <Container className="signup-content">
