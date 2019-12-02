@@ -1,6 +1,10 @@
 /* REGISTER PAGE */
 
 .container-curriculum {
+    
+    border-bottom: 2px solid #bbbbbb;
+    padding-bottom: 60px;
+
     .box-form {
       padding: 0 50px;
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
@@ -14,6 +18,8 @@
       margin-top: 20px;
       float: left;
     }
+
+    
   }
   
   #navigation {

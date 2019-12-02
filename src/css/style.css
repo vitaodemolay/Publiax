@@ -7,6 +7,7 @@
 /* ==== Google font ==== */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
+@import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
 .footer-area {
   background-color: #fff;
 }
@@ -149,18 +150,24 @@
 }
 
 .sidebar .container-sidebar .list-group {
+  margin: 20px 0;
   padding: 0 20px;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .sidebar .container-sidebar .list-group .list-group-item {
+  color: #898c8f;
+  font-size: 18px;
   border-top: none;
   border-left: none;
   border-right: none;
   border-bottom: 1px solid #ddd;
   margin: 0;
-  font-size: 22px;
+}
+
+.sidebar .container-sidebar .list-group .list-group-item span {
+  margin-right: 10px;
 }
 
 .sidebar .container-sidebar .list-group .list-group-item:last-child {
@@ -168,7 +175,11 @@
   padding-bottom: 20px;
 }
 
-.sidebar .container-sidebar .list-group .my-4 {
+.sidebar .container-sidebar .list-group .list-group-item:hover {
+  text-transform: none;
+}
+
+.sidebar .container-sidebar .list-group h1 {
   font-size: 34px;
   color: #602086;
   padding: 0;
@@ -177,6 +188,11 @@
 }
 
 /* REGISTER PAGE */
+.container-curriculum {
+  border-bottom: 2px solid #bbbbbb;
+  padding-bottom: 60px;
+}
+
 .container-curriculum .box-form {
   padding: 0 50px;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
