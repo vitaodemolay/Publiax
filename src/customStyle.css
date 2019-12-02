@@ -549,21 +549,6 @@ textarea#message{
   border-radius:0;
 }
 
-.btn-primary {
-	margin-top:20px;
-	background-color:#fff;
-	color:#000;
-	border-radius:0;
-	border-color:#eee;
-}
-.btn-primary:hover{
-	 -webkit-transition: background .3s ease-in-out;
-    -moz-transition: background .3s ease-in-out;
-    transition: background .3s ease-in-out;
-	background-color:#D09A43;
-	border-color:#fff;
-}
-
 .validation {
     color: red;
     display:none;
