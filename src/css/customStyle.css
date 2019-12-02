@@ -144,9 +144,10 @@ a {
   padding-top: 81px;
   padding-bottom: 81px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
-.QuemSomosHeader h1, .VagaDetalhesHeader h1, CurriculumHeader h1 {
+.QuemSomosHeader h1, .VagaDetalhesHeader h1, .CurriculumHeader h1 {
   font-size:40px;
   text-transform: uppercase;
   color: #fff;
@@ -374,11 +375,6 @@ a {
 
 
 
-
-
-
-
-
 /* --- progress --- */
 .progress {
   height: 40px;
@@ -512,111 +508,3 @@ textarea#message{
 }
 
 
-/* REGISTER PAGE */
-#register-details .box-content{ 
-  margin-top:20px;
-
-}
-#register-details .box-form{ 
-  padding: 0 50px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
-}
-#register-details .box-form h2 { 
-  color: #602086;
-
-}
-.sidebar .container-sidebar .list-group .my-4 {
-  font-size: 34px;
-  color: #602086;
-  padding: 0;
-  margin: 0;
-  padding: 20px 10px 10px 10px;
-}
-
-#register-details .site-logo {
-  margin-top: 20px;
-  float: left;
-}
-#navigation {
-width: 100%;
-display: block;
-background-color: #602086;
-height: 200px;
-}
-
-.sidebar .container-sidebar .list-group {
-padding: 0 20px;
-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
-}
-.sidebar .container-sidebar .list-group .list-group-item {
-border-top: none;
-border-left: none;
-border-right: none; 
-border-bottom: 1px solid #ddd;
-margin: 0;
-}
-.sidebar .container-sidebar .list-group .list-group-item {
-font-size: 22px;
-}
-
-.sidebar .container-sidebar .list-group .list-group-item:last-child {
-border:none;
-padding-bottom: 20px;
-}
-
-#register-details .box-content{ 
-margin-top:20px;
-
-}
-#register-details .box-form{ 
-padding: 0 50px;
-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
-}
-#register-details .box-form h2 { 
-color: #602086;
-
-}
-.sidebar .container-sidebar .list-group .my-4 {
-font-size: 34px;
-color: #602086;
-padding: 0;
-margin: 0;
-padding: 20px 10px 10px 10px;
-}
-
-/* TOPO LOGADO */
-
-#top-logado .site-logo a.brand {
-background-image: url(/src/img/logo-winn.png);
-background-size: contain;
-background-position: center center;
-background-repeat: no-repeat;
-display: inline-block;
-width: 260px;
-height: 120px;
-transition: height 0.9s ease-out;
--webkit-transition: height 0.9s ease-out;
--moz-transition: height 0.9s ease-out;
--ms-transition: height 0.9s ease-out;
--o-transition: height 0.9s ease-out;
-}
-
-.box-flex {
-display: flex;
-justify-content: space-between;
-}
-.content-top {
-align-self: center;
-display: flex;
-justify-content: space-between;
-width: 65%;
-
-}
-.content-top .box-search {
-background-color: red;
-
-}
-.content-top .box-search input {
-min-width: 300px;
-height:50px;
-}

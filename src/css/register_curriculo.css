@@ -1,0 +1,40 @@
+/* REGISTER PAGE */
+#register-details .box-content {
+  margin-top: 20px;
+}
+
+#register-details .box-form {
+  padding: 0 50px;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+#register-details .box-form h2 {
+  color: #602086;
+}
+
+#register-details .site-logo {
+  margin-top: 20px;
+  float: left;
+}
+
+#navigation {
+  width: 100%;
+  display: block;
+  background-color: #602086;
+  height: 200px;
+}
+
+#register-details .box-content {
+  margin-top: 20px;
+}
+
+#register-details .box-form {
+  padding: 0 50px;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+#register-details .box-form h2 {
+  color: #602086;
+}

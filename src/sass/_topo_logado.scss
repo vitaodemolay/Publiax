@@ -1,0 +1,35 @@
+#top-logado .site-logo a.brand {
+    background-image: url(/src/img/logo-winn.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 260px;
+    height: 120px;
+    transition: height 0.9s ease-out;
+    -webkit-transition: height 0.9s ease-out;
+    -moz-transition: height 0.9s ease-out;
+    -ms-transition: height 0.9s ease-out;
+    -o-transition: height 0.9s ease-out;
+  }
+  
+  .box-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .content-top {
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+  
+    .box-search {
+      background-color: red;
+  
+      input {
+        min-width: 300px;
+        height: 50px;
+      }
+    }
+  }
