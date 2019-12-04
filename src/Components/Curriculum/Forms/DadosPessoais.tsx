@@ -113,6 +113,6 @@ export default class DadosPessoaisComponent extends React.Component {
                     <Button className="btn btn-primary">SALVAR</Button>
                 </Container>
             </Form>
-        )
+        );
     }
 }

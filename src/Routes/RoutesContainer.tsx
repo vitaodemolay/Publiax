@@ -24,12 +24,13 @@ class Props {
 
 
 const PrivateRoute = ({ auth: Auth, component: Component, ...rest }) => (
+    // tslint:disable-next-line:jsx-no-lambda
     <Route {...rest} render={(props) => (
         Auth.isAuthenticated() === true
             ? <Component {...props} />
             : <PrivateAccessContainer />
     )} />
-)
+);
 
 @Connection({
     modelStore: appModels,
@@ -43,25 +44,25 @@ export class Routes extends React.Component<Props>{
         return auth.isAuthenticated();
     }
 
-    
+
     render() {
         const { auth } = this.props;
         return (
             <HashRouter>
                 <RouterHandle />
                 <Switch>
-                  {/*  <PrivateRoute auth={auth} path="/curriculum" component={Home} /> */}
+                    {/*  <PrivateRoute auth={auth} path="/curriculum" component={Home} /> */}
                     <PrivateRoute auth={auth} path="/candidatarvaga/:id" component={CandidatarVagaContainer} />
-                    <Route exact={true} path="/token/:token" component={RedirectContainer} />
-                    <Route exact={true} path="/login" component={LoginRedirectContainer} />
-                    <Route exact={true} path="/logout" component={LogoutContainer} />
-                    <Route exact={true} path="/contato" component={ContatoContainer} />
-                    <Route exact={true} path="/curriculum" component={CadastroCurriculoContainer} />
-                    <Route exact={true} path="/quemsomos" component={QuemSomosContainer} />
-                    <Route exact={true} path="/vagas" component={VagasContainer} />
-                    <Route exact={true} path="/vagadetalhe/:id" component={VagaDetalheContainer} />
-                    <Route exact={true} path="/home" component={Home} />
-                    <Route exact={true} path="/" component={Home} />
+                    <Route path="/token/:token" component={RedirectContainer} />
+                    <Route path="/login" component={LoginRedirectContainer} />
+                    <Route path="/logout" component={LogoutContainer} />
+                    <Route path="/contato" component={ContatoContainer} />
+                    <Route path="/curriculum" component={CadastroCurriculoContainer} />
+                    <Route path="/quemsomos" component={QuemSomosContainer} />
+                    <Route path="/vagas" component={VagasContainer} />
+                    <Route path="/vagadetalhe/:id" component={VagaDetalheContainer} />
+                    <Route path="/home" component={Home} />
+                    <Route path="/" component={Home} />
                     <Redirect to="/" />
                 </Switch>
             </HashRouter>

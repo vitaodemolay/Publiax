@@ -62,6 +62,6 @@ export default class DadosEnderecoComponent extends React.Component {
                     <Button className="btn btn-primary">SALVAR</Button>
                 </Container>
             </Form>
-        )
+        );
     }
 }
