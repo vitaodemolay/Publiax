@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 export default class DadosPessoaisComponent extends React.Component {
     render() {
@@ -14,7 +14,7 @@ export default class DadosPessoaisComponent extends React.Component {
                         <Input type="text" className="form-control" placeholder="Nome Completo" />
                     </FormGroup>
                     
-                    <div className="form-group">
+                    {/* <div className="form-group">
                         <label>Nome Social</label>
                         <input type="text" className="form-control" placeholder="Nome Social" />
                     </div>
@@ -108,9 +108,9 @@ export default class DadosPessoaisComponent extends React.Component {
                             </select>
                         </div>
 
-                    </div>
+                    </div> */}
 
-                    <button className="btn btn-primary">SALVAR</button>
+                    <Button className="btn btn-primary">SALVAR</Button>
                 </Container>
             </Form>
         )
