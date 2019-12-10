@@ -5,7 +5,7 @@ export default class LinguaEstrangeiraComponent extends React.Component {
     render() {
         return (
             <Form id="register-details" className=""> 
-                <h2>Informática</h2>
+                <h2>Linguas Estrangeiras</h2>
                 <hr />
                 <Container className="signup-content">
 

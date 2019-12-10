@@ -5,7 +5,7 @@ export default class AvisosComponent extends React.Component {
     render() {
         return (
             <Form id="register-details" className=""> 
-                <h2>Configuracoes</h2>
+                <h2>Avisos</h2>
                 <hr />
                 <Container className="signup-content">
 

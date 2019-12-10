@@ -5,7 +5,7 @@ export default class DadosProfissionaisComponent extends React.Component {
     render() {
         return (
             <Form id="register-details" className=""> 
-                <h2>Endereços</h2>
+                <h2>Dados Profissionais</h2>
                 <hr />
                 <Container className="signup-content">
 

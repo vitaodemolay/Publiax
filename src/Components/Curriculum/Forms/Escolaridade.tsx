@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
-export default class DadosEscolaridadeComponent extends React.Component {
+export default class EscolaridadeComponent extends React.Component {
     render() {
         return (
             <Form id="register-details" className=""> 
-                <h2>Endereços</h2>
+                <h2>Escolaridade</h2>
                 <hr />
                 <Container className="signup-content">
 

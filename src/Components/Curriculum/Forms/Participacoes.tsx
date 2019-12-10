@@ -5,7 +5,7 @@ export default class ParticipacoesComponent extends React.Component {
     render() {
         return (
             <Form id="register-details" className=""> 
-                <h2>Configuracoes</h2>
+                <h2>Participções</h2>
                 <hr />
                 <Container className="signup-content">
 

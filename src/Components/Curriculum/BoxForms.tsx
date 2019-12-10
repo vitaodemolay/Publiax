@@ -25,8 +25,9 @@ export default class BoxFormsComponent extends React.Component {
         return (
             <Container className="box-form">
                 <Switch>
-                    <Route path="/curriculum/Dadospessoais" component={DadosPessoaisComponent}/>
-                    <Route path="/curriculum/Dadosendereco" component={DadosEnderecoComponent}/>
+
+                    <Route path="/curriculum/DadosPessoais" component={DadosPessoaisComponent}/>
+                    <Route path="/curriculum/DadosEndereco" component={DadosEnderecoComponent}/>
                     <Route path="/curriculum/DadosProfissionais" component={DadosProfissionaisComponent}/>
                     <Route path="/curriculum/Escolaridade" component={EscolaridadeComponent}/>
                     <Route path="/curriculum/Informatica" component={InformaticaComponent}/>
@@ -37,12 +38,13 @@ export default class BoxFormsComponent extends React.Component {
                     <Route path="/curriculum/Visualizar" component={VisualizarComponent}/>
                     <Route path="/curriculum/Imprimir" component={ImprimirComponent}/>
 
-                    <Route path="/curriculum/CartaApresentacao" component={CartaApresentacaoComponent}/>
+                    <Route path="/curriculum/Curriculo" component={CurriculoComponent}/>
                     <Route path="/curriculum/Avisos" component={AvisosComponent}/>
                     <Route path="/curriculum/Participacoes" component={ParticipacoesComponent}/>
                     <Route path="/curriculum/Configuracoes" component={ConfiguracoesComponent}/>
 
-                    <Redirect to="/curriculum/Dadospessoais" />
+                    <Redirect to="/curriculum/DadosPessoais" />
+
                 </Switch>
             </Container>
         );
