@@ -18,7 +18,7 @@ export default class CurriculumContainer extends React.Component<Props> {
     render() {
         return (
             <div>
-                <HeaderComponent>Cadastre Seu curriculo</HeaderComponent>
+                <HeaderComponent>Cadastre Seu currículo</HeaderComponent>
                 <VitrineComponent/>
             </div>
         );

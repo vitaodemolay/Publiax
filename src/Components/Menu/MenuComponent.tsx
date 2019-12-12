@@ -34,7 +34,7 @@ class Menu extends React.Component<Props> {
                             <NavLink href="#/contato">Contato</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#/curriculum" className="btn-cadastro">Cadastrar Curriculum</NavLink>
+                            <NavLink href="#/curriculum" className="btn-cadastro">Cadastrar Currículo</NavLink>
                         </NavItem>
                         <NavItem>
                             {auth.isAuthenticated()
