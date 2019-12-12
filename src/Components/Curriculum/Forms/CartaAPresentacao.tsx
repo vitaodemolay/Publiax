@@ -11,7 +11,7 @@ export default class CartaApresentacaoComponent extends React.Component {
 
                     <FormGroup>
                         <Label>Nome Completo</Label>
-                        <Input type="text" className="form-control" placeholder="Nome Completo" />
+                        <textarea className="form-control" placeholder="Nome Completo" />
                     </FormGroup>
                     
                     {/* 

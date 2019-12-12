@@ -9,14 +9,6 @@ export default class DadosEnderecoComponent extends React.Component {
                 <hr />
                 <Container className="signup-content">
 
-                    <FormGroup>
-                        <Label>Nome Completo</Label>
-                        <Input type="text" className="form-control" placeholder="Nome Completo" />
-                    </FormGroup>
-                    
-                    {/* 
-                    <h2>Endereços</h2>
-                    <hr />
                     <div className="form-group">
                         <label>Endereço</label>
                         <input type="email" className="form-control" placeholder="Endereço" />
@@ -56,8 +48,7 @@ export default class DadosEnderecoComponent extends React.Component {
                                 <option>...</option>
                             </select>
                         </div>
-
-                    </div> */}
+                    </div> 
 
                     <Button className="btn btn-primary">SALVAR</Button>
                 </Container>

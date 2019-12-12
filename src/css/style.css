@@ -194,13 +194,35 @@
 }
 
 .container-curriculum .box-form {
-  padding: 0 50px;
+  padding: 20px 50px;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 20px;
 }
 
 .container-curriculum .box-form h2 {
   color: #602086;
+}
+
+.container-curriculum .box-form .form-control {
+  border-color: #8a8a8a;
+  border-radius: 40px;
+}
+
+.container-curriculum .box-form button {
+  background-color: #59be42;
+  outline: none;
+  border: none;
+  display: block;
+  margin-top: 40px;
+}
+
+.container-curriculum .box-form button:hover {
+  background-color: #1e5f0f;
+}
+
+.container-curriculum .box-form button:hover, .container-curriculum .box-form button:focus {
+  outline: none;
 }
 
 .container-curriculum .site-logo {

@@ -13,10 +13,9 @@ export default class DadosPessoaisComponent extends React.Component {
                         <Label>Nome Completo</Label>
                         <Input type="text" className="form-control" placeholder="Nome Completo" />
                     </FormGroup>
-                    
-                    {/* <div className="form-group">
-                        <label>Nome Social</label>
-                        <input type="text" className="form-control" placeholder="Nome Social" />
+                   <div className="form-group">
+                        <label>E-mail</label>
+                        <input type="text" className="form-control" placeholder="E-mail" />
                     </div>
                     <div className="form-group">
                         <label>CPF</label>
@@ -66,52 +65,11 @@ export default class DadosPessoaisComponent extends React.Component {
                             <option>5</option>
                         </select>
                     </div>
-                    <h2>Endereços</h2>
-                    <hr />
-                    <div className="form-group">
-                        <label>Endereço</label>
-                        <input type="email" className="form-control" placeholder="Endereço" />
-                    </div>
-                    <div className="form-group">
-                        <label>CEP</label>
-                        <input type="email" className="form-control" placeholder="CEP" />
-                    </div>
-                    <div className="row">
-                        <div className="form-group col-md-4">
-                            <label>Numero</label>
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div className="form-group col-md-8">
-                            <label>Complemento</label>
-                            <input type="text" className="form-control" />
+                  
 
-                        </div>
-
-                    </div>
-                    <div className="form-group">
-                        <label>Bairro</label>
-                        <input type="email" className="form-control" />
-                    </div>
-                    <div className="row">
-                        <div className="form-group col-md-4">
-                            <label>Cidade</label>
-                            <select id="inputState" className="form-control">
-                                <option>Escolha...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                        <div className="form-group col-md-8">
-                            <label>Estado</label>
-                            <select id="inputState" className="form-control">
-                                <option>Escolha...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-
-                    </div> */}
-
-                    <Button className="btn btn-primary">SALVAR</Button>
                 </Container>
+                <Button className="btn btn-primary">SALVAR</Button>
+
             </Form>
         );
     }
