@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap';
 
 export default class DadosPessoaisComponent extends React.Component {
     render() {
@@ -13,49 +13,57 @@ export default class DadosPessoaisComponent extends React.Component {
                         <Label>Nome Completo</Label>
                         <Input type="text" className="form-control" placeholder="Nome Completo" />
                     </FormGroup>
-                   <div className="form-group">
+                    <FormGroup>
                         <label>E-mail</label>
                         <input type="text" className="form-control" placeholder="E-mail" />
-                    </div>
-                    <div className="form-group">
+                    </FormGroup>
+                    <FormGroup>
                         <label>CPF</label>
                         <input type="text" className="form-control" placeholder="CPF" />
-                    </div>
-                    <div className="form-group">
+                    </FormGroup>
+                    <FormGroup>
                         <label>RG</label>
                         <input type="password" className="form-control" placeholder="RG" />
-                    </div>
-                    <div className="row">
-                        <div className="form-group col-md-4">
+                    </FormGroup>
+
+
+                    <Row form>
+                        <Col md={4}>
+                            <FormGroup>
                             <label>Estado Emissor RG</label>
-                            <select id="inputState" className="form-control">
+                            <Input type="select" name="select" id="exampleSelect">
                                 <option>Escolha...</option>
                                 <option>...</option>
-                            </select >
-                        </div>
-                        <div className="form-group col-md-4">
+                            </Input >
+                            </FormGroup>
+                        </Col>
+                        <Col md={4}>
+                            <FormGroup>
                             <label>Orgão Emissor</label>
-                            <select id="inputState" className="form-control" >
+                            <Input type="select" name="select" id="exampleSelect">
                                 <option>Escolha...</option>
                                 <option>...</option>
-                            </select>
-                        </div>
-                        <div className="form-group col-md-4">
+                            </Input>
+                            </FormGroup>
+                        </Col>
+                        <Col md={4}>
+                            <FormGroup>
                             <label>Data Nascimento</label>
-                            <select id="inputState" className="form-control" >
+                            <Input type="select" name="select" id="exampleSelect">
                                 <option>Escolha...</option>
                                 <option>...</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className="form-group">
+                            </Input>
+                            </FormGroup>  
+                        </Col>
+                    </Row>
+                    <FormGroup>
                         <label>Selecione seu Sexo</label>
-                        <select className="form-control" id="exampleFormControlSelect1">
+                        <Input type="select" name="select" id="exampleSelect2">
                             <option>Masculino</option>
                             <option>Feminino</option>
-                        </select>
-                    </div>
-                    <div className="form-group">
+                        </Input>
+                    </FormGroup>
+                    <FormGroup>
                         <label>Estado Civil</label>
                         <select className="form-control" id="exampleFormControlSelect1">
                             <option>1</option>
@@ -64,8 +72,7 @@ export default class DadosPessoaisComponent extends React.Component {
                             <option>4</option>
                             <option>5</option>
                         </select>
-                    </div>
-                  
+                    </FormGroup>
 
                 </Container>
                 <Button className="btn btn-primary">SALVAR</Button>
