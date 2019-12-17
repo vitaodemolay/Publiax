@@ -18,7 +18,6 @@ export default class DadosEnderecoComponent extends React.Component {
                         <input type="email" className="form-control" placeholder="CEP" />
                     </FormGroup>
 
-
                     <Row form>
                         <Col md={4}>
                             <FormGroup>

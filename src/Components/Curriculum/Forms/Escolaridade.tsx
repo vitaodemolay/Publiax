@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Col, Row } from 'reactstrap';
 
 export default class EscolaridadeComponent extends React.Component {
     render() {
@@ -10,35 +10,40 @@ export default class EscolaridadeComponent extends React.Component {
                 <Container className="signup-content">
 
 
-                    <div className="form-group">
+                    <FormGroup>
                         <label>Título</label>
                         <input type="text" className="form-control" placeholder="Título" />
-                    </div>
-                    <div className="form-group">
+                    </FormGroup>
+                    <FormGroup>
                         <label>Instituição</label>
                         <input type="text" className="form-control" placeholder="Instituição" />
-                    </div>
-                    <div className="form-group">
+                    </FormGroup>
+                    <FormGroup>
                         <label>Graduação</label>
                         <input type="text" className="form-control" />
-                    </div>
-                    <div className="row">
-                        <div className="form-group col-md-4">
-                            <label>Ano</label>
-                            <select id="inputState" className="form-control">
-                                <option>Escolha...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                        <div className="form-group col-md-8">
-                            <label>Estado</label>
-                            <select id="inputState" className="form-control">
-                                <option>Escolha...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
+                    </FormGroup>
 
-                    </div>
+
+                    <Row form>
+                        <Col md={4} xs={12}>
+                            <FormGroup>
+                                <label>Ano</label>
+                                <select id="inputState" className="form-control">
+                                    <option>Escolha...</option>
+                                    <option>...</option>
+                                </select>
+                            </FormGroup>
+                        </Col>
+                        <Col md={8} xs={12}>
+                            <FormGroup>
+                                <label>Ano</label>
+                                <select id="inputState" className="form-control">
+                                    <option>Escolha...</option>
+                                    <option>...</option>
+                                </select>
+                            </FormGroup>
+                        </Col>
+                    </Row>
 
                     <Button className="btn btn-primary">SALVAR</Button>
                 </Container>

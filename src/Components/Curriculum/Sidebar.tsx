@@ -5,7 +5,7 @@ export default class SidebarComponent extends React.Component {
     render() {
         return (
 
-            <Container className="container-sidebar">
+            <div className="container-sidebar">
                 <ListGroup>
                     <h1 className="">Cúrriculo</h1>
                     <ListGroupItem tag="a" href="#/curriculum/DadosPessoais"><span className="lnr lnr-user"></span>Dados Pessoais</ListGroupItem>
@@ -30,7 +30,7 @@ export default class SidebarComponent extends React.Component {
                     <ListGroupItem tag="a" href="#/curriculum/Participacoes" ><span className="lnr lnr-exit-up"></span>Participações</ListGroupItem>
                     <ListGroupItem tag="a" href="#/curriculum/Configuracoes" ><span className="lnr lnr-cog"></span>Configurações</ListGroupItem>
                 </ListGroup>
-            </Container>
+            </div>
 
         )
     }

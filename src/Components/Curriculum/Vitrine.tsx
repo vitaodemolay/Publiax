@@ -9,10 +9,10 @@ export default class VitrineComponent extends React.Component {
             <Container className="container-curriculum">
                  <Container className="container box-content">
                     <Row>
-                        <Col lg="4" className="sidebar">
+                        <Col lg="4" xs="12" className="sidebar">
                             <SidebarComponent/>
                         </Col>
-                        <Col sm="8">
+                        <Col sm="8" xs="12">
                             <BoxFormsComponent/>
                         </Col>
                     </Row>
