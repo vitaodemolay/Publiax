@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap';
 
 export default class DadosEnderecoComponent extends React.Component {
     render() {
@@ -9,46 +9,56 @@ export default class DadosEnderecoComponent extends React.Component {
                 <hr />
                 <Container className="signup-content">
 
-                    <div className="form-group">
+                    <FormGroup>
                         <label>Endereço</label>
                         <input type="email" className="form-control" placeholder="Endereço" />
-                    </div>
-                    <div className="form-group">
+                    </FormGroup>
+                    <FormGroup>
                         <label>CEP</label>
                         <input type="email" className="form-control" placeholder="CEP" />
-                    </div>
-                    <div className="row">
-                        <div className="form-group col-md-4">
-                            <label>Numero</label>
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div className="form-group col-md-8">
-                            <label>Complemento</label>
-                            <input type="text" className="form-control" />
+                    </FormGroup>
 
-                        </div>
 
-                    </div>
-                    <div className="form-group">
+                    <Row form>
+                        <Col md={4}>
+                            <FormGroup>
+                                <label>Numero</label>
+                                <input type="text" className="form-control" />
+                            </FormGroup>
+                        </Col>
+                        <Col md={8}>
+                            <FormGroup>
+                                <label>Complemento</label>
+                                <input type="text" className="form-control" />
+                            </FormGroup>
+                        </Col>
+                    </Row>
+
+                    <FormGroup>
                         <label>Bairro</label>
                         <input type="email" className="form-control" />
-                    </div>
-                    <div className="row">
-                        <div className="form-group col-md-4">
-                            <label>Cidade</label>
-                            <select id="inputState" className="form-control">
-                                <option>Escolha...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                        <div className="form-group col-md-8">
+                    </FormGroup>
+
+                    <Row form>
+                        <Col md={4}>
+                            <FormGroup>
+                                <label>Cidade</label>
+                                <Input type="select" name="select" id="exampleSelect">
+                                    <option>Escolha...</option>
+                                    <option>...</option>
+                                </Input>
+                            </FormGroup>
+                        </Col>
+                        <Col md={8}>
+                            <FormGroup>
                             <label>Estado</label>
-                            <select id="inputState" className="form-control">
+                            <Input type="select" name="select" id="exampleSelect">
                                 <option>Escolha...</option>
                                 <option>...</option>
-                            </select>
-                        </div>
-                    </div> 
+                            </Input>
+                            </FormGroup>
+                        </Col>
+                    </Row>
 
                     <Button className="btn btn-primary">SALVAR</Button>
                 </Container>
