@@ -4,4 +4,28 @@
 @import "menu_mobile";
 @import "sidebar";
 @import "register_curriculo";
-@import "detalhes_vagas"
+@import "detalhes_vagas";
+
+.box-logar {
+    background-color: rgb(218, 218, 218);
+    text-align: center;
+    min-height: 300px;
+    padding: 40px;
+    margin:20px auto;
+    p {
+
+    }
+    .btn-logar {
+        color:#fff;
+        background-color: #59be42;
+        padding:10px 20px;
+        margin: 0 auto;
+        text-transform: uppercase;
+        margin-top: 30px;
+        &:hover {
+            color: #fff;
+            text-decoration: none;
+            background-color: #1f6110;
+        }
+    }
+}
