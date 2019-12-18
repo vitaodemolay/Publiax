@@ -243,3 +243,8 @@
   background-color: #602086;
   height: 200px;
 }
+
+.content-vagas {
+  display: block;
+  margin: 20px auto;
+}
