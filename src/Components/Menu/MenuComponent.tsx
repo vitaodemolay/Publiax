@@ -3,6 +3,7 @@ import { Nav, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap';
 import { appModels } from '../../AppModels';
 import { AuthModel } from '../../Models/AuthModel';
 import { Inject, Connection } from 'exredux';
+import myFunction from '../../js/script';
 
 class Props {
     @Inject auth: AuthModel;
@@ -18,9 +19,11 @@ class Menu extends React.Component<Props> {
         const { auth } = this.props;
         return (
             <div className="navigation">
-                <Navbar className="navbar navbar-fixed-top">
+                <Navbar className="navbar navbar-fixed-top topnav">
                     <NavbarBrand href="/" className="site-logo" />
-                    <Nav>
+                    {/*<a href="javascript:void(0);" className="icon" onClick={myFunction}></a>*/}
+
+                    <Nav id="myLinks">
                         <NavItem>
                             <NavLink href="#/home">Home</NavLink>
                         </NavItem>
@@ -41,11 +44,14 @@ class Menu extends React.Component<Props> {
                                 ? <NavLink className="btn-entrar" href="#/logout">Sair</NavLink>
                                 : <NavLink className="btn-entrar" href="#/login">Entrar</NavLink>
                             }
-
                         </NavItem>
                     </Nav>
+
                 </Navbar>
-            </div>
+
+
+        </div>
+
         );
     }
 }

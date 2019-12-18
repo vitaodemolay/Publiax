@@ -33,3 +33,14 @@
       }
     }
   }
+
+  .navigation {
+
+    .navbar {
+    }
+    ul.nav {
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+  }

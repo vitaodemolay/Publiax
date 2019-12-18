@@ -9,7 +9,10 @@ export default class CartaApresentacaoComponent extends React.Component {
                 <hr />
                 <Container className="signup-content">
 
-                 
+                    <FormGroup>
+                        <Label for="exampleText">Digite sua carta de apresentação</Label>
+                        <Input type="textarea" name="text" id="exampleText" />
+                    </FormGroup>
                 </Container>
             </Form>
         );

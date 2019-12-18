@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Col, Row } from 'reactstrap';
 
 export default class LinguaEstrangeiraComponent extends React.Component {
     render() {
@@ -10,55 +10,22 @@ export default class LinguaEstrangeiraComponent extends React.Component {
                 <Container className="signup-content">
 
                     <FormGroup>
-                        <Label>Nome Completo</Label>
-                        <Input type="text" className="form-control" placeholder="Nome Completo" />
+                        <Label for="exampleText">LÍngua</Label>
+                        <Input type="textarea" name="text" id="exampleText" />
                     </FormGroup>
-                    
-                    {/* 
-                    <h2>Endereços</h2>
-                    <hr />
-                    <div className="form-group">
-                        <label>Endereço</label>
-                        <input type="email" className="form-control" placeholder="Endereço" />
-                    </div>
-                    <div className="form-group">
-                        <label>CEP</label>
-                        <input type="email" className="form-control" placeholder="CEP" />
-                    </div>
-                    <div className="row">
-                        <div className="form-group col-md-4">
-                            <label>Numero</label>
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div className="form-group col-md-8">
-                            <label>Complemento</label>
-                            <input type="text" className="form-control" />
+                    <Row form>
+                        <Col md={4}>
+                            <FormGroup>
+                                <label>Nivel</label>
+                                <Input type="select" name="select" id="exampleSelect2">
+                                    <option>Basico</option>
+                                    <option>Intermediario</option>
+                                    <option>Avançado</option>
 
-                        </div>
-
-                    </div>
-                    <div className="form-group">
-                        <label>Bairro</label>
-                        <input type="email" className="form-control" />
-                    </div>
-                    <div className="row">
-                        <div className="form-group col-md-4">
-                            <label>Cidade</label>
-                            <select id="inputState" className="form-control">
-                                <option>Escolha...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                        <div className="form-group col-md-8">
-                            <label>Estado</label>
-                            <select id="inputState" className="form-control">
-                                <option>Escolha...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-
-                    </div> */}
-
+                                </Input>
+                            </FormGroup>
+                        </Col>
+                    </Row>
                     <Button className="btn btn-primary">SALVAR</Button>
                 </Container>
             </Form>
