@@ -106,7 +106,7 @@
 }
 
 #top-logado .site-logo a.brand {
-  background-image: url(/src/img/logo-winn.png);
+  background-image: url(../img/logo-winn.png);
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;

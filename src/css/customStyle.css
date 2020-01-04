@@ -34,7 +34,7 @@ a {
 /* --- logo --- */
 .site-logo {	
 	margin-top:5px;
-  background-image: url(/src/img/logo-winn.png);
+  background-image: url(../img/logo-winn.png);
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -268,7 +268,7 @@ a {
 #works {
 
     min-height:930px;
-    background-image: url(/src/img/4.jpg);
+    background-image: url(../img/4.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
