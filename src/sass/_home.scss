@@ -1,6 +1,7 @@
 #home {
-    min-height: 320px;
    
+    max-height: 835px;
+
     .slider {
         img {
             @media (max-width: 767px) {
@@ -9,7 +10,9 @@
         }
     }
     @media (max-width: 767px) {
+        min-height: 320px;
         background-color: #733f89;
+
     }
 
     .content-home {
@@ -34,7 +37,7 @@
       
         }
         h2{
-          font-size:20px;
+          font-size:40px;
           color:#fff;  
           @media (max-width: 767px) {
             font-size:22px;
@@ -76,7 +79,9 @@
 #works {
 
     .section-heading {
-        margin-top: 60px;
+        @media (max-width: 767px) {
+            margin-top: 60px;
+        }  
     }
     .box-content {
         @media (max-width: 767px) {

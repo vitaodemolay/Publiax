@@ -250,7 +250,7 @@
 }
 
 #home {
-  min-height: 320px;
+  max-height: 835px;
 }
 
 @media (max-width: 767px) {
@@ -261,6 +261,7 @@
 
 @media (max-width: 767px) {
   #home {
+    min-height: 320px;
     background-color: #733f89;
   }
 }
@@ -293,7 +294,7 @@
 }
 
 #home .content-home h2 {
-  font-size: 20px;
+  font-size: 40px;
   color: #fff;
 }
 
@@ -334,8 +335,10 @@
   text-align: center;
 }
 
-#works .section-heading {
-  margin-top: 60px;
+@media (max-width: 767px) {
+  #works .section-heading {
+    margin-top: 60px;
+  }
 }
 
 @media (max-width: 767px) {
