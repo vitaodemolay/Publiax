@@ -249,6 +249,108 @@
   margin: 20px auto;
 }
 
+#home {
+  min-height: 320px;
+}
+
+@media (max-width: 767px) {
+  #home .slider img {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  #home {
+    background-color: #733f89;
+  }
+}
+
+#home .content-home {
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: 5%;
+}
+
+@media (max-width: 767px) {
+  #home .content-home {
+    top: 25%;
+  }
+}
+
+#home .content-home h1 {
+  font-size: 80px;
+  text-transform: uppercase;
+  color: #59be42;
+  margin-bottom: -20px;
+}
+
+@media (max-width: 767px) {
+  #home .content-home h1 {
+    margin-bottom: 10px;
+    font-size: 42px;
+  }
+}
+
+#home .content-home h2 {
+  font-size: 20px;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  #home .content-home h2 {
+    font-size: 22px;
+  }
+}
+
+#home .content-home .btn-vervagas {
+  max-width: 250px;
+  text-align: center;
+  color: #fff;
+  padding: 20px 40px;
+  font-size: 30px;
+  background-color: #59be42;
+  text-decoration: none;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  #home .content-home .btn-vervagas {
+    font-size: 20px;
+    max-width: 215px;
+    padding: 10px 20px;
+    margin-top: 30px;
+  }
+}
+
+#home .content-home .btn-vervagas:hover {
+  color: #59be42;
+  text-decoration: none;
+  background-color: #fff;
+}
+
+#about {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#works .section-heading {
+  margin-top: 60px;
+}
+
+@media (max-width: 767px) {
+  #works .box-content {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  #works {
+    background-color: #541a77;
+    background-image: none !important;
+  }
+}
+
 .box-logar {
   background-color: #dadada;
   text-align: center;
@@ -702,41 +804,4 @@ textarea#message {
 
 #sendmessage.show, #errormessage.show, .show {
   display: block;
-}
-
-/* home */
-.content-home {
-  display: block;
-  position: absolute;
-  top: 35%;
-  left: 5%;
-}
-
-.content-home h1 {
-  font-size: 80px;
-  text-transform: uppercase;
-  color: #59be42;
-  margin-bottom: -20px;
-}
-
-.content-home h2 {
-  font-size: 50px;
-  color: #fff;
-}
-
-.btn-vervagas {
-  max-width: 250px;
-  text-align: center;
-  color: #fff;
-  padding: 20px 40px;
-  font-size: 30px;
-  background-color: #59be42;
-  text-decoration: none;
-  display: block;
-}
-
-.btn-vervagas:hover {
-  color: #59be42;
-  text-decoration: none;
-  background-color: #fff;
 }

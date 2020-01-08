@@ -5,6 +5,7 @@
 @import "sidebar";
 @import "register_curriculo";
 @import "detalhes_vagas";
+@import "home";
 
 .box-logar {
     background-color: rgb(218, 218, 218);
@@ -480,42 +481,4 @@ textarea#message{
 #sendmessage.show, #errormessage.show, .show {
 	display:block;
 }
-
-/* home */
-
-.content-home {
-    display: block;
-    position: absolute;
-    top: 35%;
-    left: 5%;
-}
-.content-home h1 {
-    font-size:80px;
-    text-transform: uppercase;
-    color:#59be42;    
-    margin-bottom: -20px;
-
-}
-.content-home h2{
-    font-size:50px;
-    color:#fff;    
-}
-.btn-vervagas {
-    max-width: 250px;
-    text-align: center;
-    color:#fff;
-    padding: 20px 40px;
-    font-size:30px;
-    background-color:#59be42;  
-    text-decoration:none;
-    display: block;  
-}
-.btn-vervagas:hover {
-
-    color:#59be42; 
-    text-decoration:none;
-    background-color:#fff;  
-
-}
-
 
