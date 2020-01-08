@@ -4,7 +4,6 @@ import App from './App';
 import { reactHot } from 'tsrex/utils';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/style.css';
-import './css/customStyle.css';
 
 
 function renderToDOM() {
