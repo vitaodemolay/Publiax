@@ -48,7 +48,26 @@ class Menu extends React.Component<Props> {
                     </Nav>
 
                 </Navbar>
+                <input className="menu-btn" type="checkbox" id="menu-btn" />
+                <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
+                <ul className="menu">
+                    <li><a href="#/home">Home</a></li>
+                    <li><a href="#/vagas">Vagas</a></li>
+                    <li><a href="#/quemsomos">Quem Somos</a></li>
+                    <li><a href="#/contato">Contato</a></li>
+                    <li><a href="#/curriculum" className="btn-cadastro">Cadastrar Currículo</a></li>
 
+                    <li>
+                        {auth.isAuthenticated()
+                            ? <NavLink className="btn-entrar" href="#/logout">Sair</NavLink>
+                            : <NavLink className="btn-entrar" href="#/login">Entrar</NavLink>
+
+                        }
+                    </li>
+                    <li>
+                    </li>
+
+                </ul>
 
         </div>
 

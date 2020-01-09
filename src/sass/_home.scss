@@ -21,7 +21,9 @@
         top: 35%;
         left: 5%;
         @media (max-width: 767px) {
-          top: 25%;
+          padding-top: 10%;
+          position: relative;
+
         }
       
         h1 {
