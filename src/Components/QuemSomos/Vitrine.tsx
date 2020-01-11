@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, CardBody, CardHeader } from 'reactstrap';
 
+const imgWinn = require('../../img/winn.jpg');
 
 export default class VitrineComponent extends React.Component {
     render() {
@@ -18,7 +19,7 @@ export default class VitrineComponent extends React.Component {
                         </Card>
                     </Col>
                     <Col lg="6">
-                        <img src="src/img/winn.jpg" className="img-responsive" />
+                        <img src={imgWinn} className="img-responsive" />
                     </Col>
                 </Row>
             </Container>
