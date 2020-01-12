@@ -51,13 +51,12 @@ export class Routes extends React.Component<Props>{
             <HashRouter>
                 <RouterHandle />
                 <Switch>
-                    {/*  <PrivateRoute auth={auth} path="/curriculum" component={Home} /> */}
+                    <PrivateRoute auth={auth} path="/curriculum" component={CadastroCurriculoContainer} />
                     <PrivateRoute auth={auth} path="/candidatarvaga/:id" component={CandidatarVagaContainer} />
                     <Route path="/token/:token" component={RedirectContainer} />
                     <Route path="/login" component={LoginRedirectContainer} />
                     <Route path="/logout" component={LogoutContainer} />
                     <Route path="/contato" component={ContatoContainer} />
-                    <Route path="/curriculum" component={CadastroCurriculoContainer} />
                     <Route path="/quemsomos" component={QuemSomosContainer} />
                     <Route path="/vagas" component={VagasContainer} />
                     <Route path="/vagadetalhe/:id" component={VagaDetalheContainer} />

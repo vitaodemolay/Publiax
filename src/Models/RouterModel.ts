@@ -1,6 +1,7 @@
 import { Model, Action, Inject, Trigger } from 'exredux';
 import { AuthModel } from './AuthModel';
 import { VagaDetalheModel } from './VagaDetalheModel';
+import { DadosPessoaisModel } from './DadosPessoaisModel';
 
 
 @Model
@@ -9,6 +10,7 @@ export class RouterModel {
 
   @Inject auth?: AuthModel;
   @Inject vagaDetalhe?: VagaDetalheModel;
+  @Inject dadosPessoais?: DadosPessoaisModel;
 
   @Action
   routeChange(pathname: string) {
@@ -50,5 +52,11 @@ export class RouterModel {
   protected getVagaDetalheCompleted() {
     // tslint:disable-next-line:no-console
     console.log('Job get details is loaded!');
+  }
+
+  @Trigger(DadosPessoaisModel, 'getUserDataOnSource')
+  protected getDadosPessoaisCompleted() {
+    // tslint:disable-next-line:no-console
+    console.log('User Data get is loaded!');
   }
 }
