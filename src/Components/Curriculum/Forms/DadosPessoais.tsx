@@ -34,6 +34,10 @@ export default class DadosPessoaisComponent extends React.Component<Props> {
         this.props.dadosPessoais.doFieldUpdate(fieldName, evt.target.value);
     }
 
+    setDate(value){
+        return new Date(value);
+    }
+
     render() {
         const { dadosPessoais } = this.props;
         return (
@@ -77,7 +81,7 @@ export default class DadosPessoaisComponent extends React.Component<Props> {
                                     <Col md={6}>
                                         <FormGroup>
                                             <Label>Data Nascimento</Label>
-                                            <Input type="date" onChange={this.handleFieldUpdate('birthday')} value={dadosPessoais.input['birthday']} className="form-control" />
+                                            <Input type="date" onChange={this.handleFieldUpdate('birthday')} value={this.setDate(dadosPessoais.input['birthday'])} className="form-control" />
                                         </FormGroup>
                                     </Col>
                                 </Row>
