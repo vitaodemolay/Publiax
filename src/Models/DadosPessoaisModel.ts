@@ -1,4 +1,4 @@
-import { Model, Action, Inject, BaseHttpModel, Trigger } from 'exredux';
+import { Model, Action, Inject, BaseHttpModel } from 'exredux';
 import { AuthModel } from './AuthModel';
 import { PersonalDataRepository } from '../Service/Repository/PersonalDataRepository';
 import { IUserData } from '../Service/Interfaces/IUserData';
