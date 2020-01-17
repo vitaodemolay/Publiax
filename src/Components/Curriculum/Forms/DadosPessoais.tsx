@@ -4,6 +4,7 @@ import { Container, Form, FormGroup, Label, Input, Button, Row, Col } from 'reac
 import { DadosPessoaisModel } from '../../../Models/DadosPessoaisModel';
 import { appModels } from '../../../AppModels';
 import { IUserData } from '../../../Service/Interfaces/IUserData';
+import moment from 'moment';
 
 class Props {
     @Inject dadosPessoais: DadosPessoaisModel;
@@ -24,18 +25,13 @@ export default class DadosPessoaisComponent extends React.Component<Props> {
         dadosPessoais.getUserDataOnSource();
     }
 
-    renderForm(userData: IUserData) {
-        const { dadosPessoais } = this.props;
-        dadosPessoais.setUserDataOnModel(userData);
-        return "";
-    }
-
     handleFieldUpdate = (fieldName: string) => evt => {
         this.props.dadosPessoais.doFieldUpdate(fieldName, evt.target.value);
     }
 
     setDate(value){
-        return new Date(value);
+        let _date = new Date(value);
+        return moment(_date).format("YYYY-MM-DD");
     }
 
     render() {

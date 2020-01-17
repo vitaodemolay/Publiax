@@ -31,24 +31,10 @@ export class DadosPessoaisModel extends BaseHttpModel<IUserData> {
 
     @Action
     getUserDataOnSource() {
-        // this.request(new Promise((resolve, reject) => {
-        //     let response = null;
             PersonalDataRepository.getUserData(this.auth.getSavedToken()).then(f => {
                 this.input = f.data;
                 this.completed(f);
-                console.log("Dados obtidos")
             });
-        //     this.completed(response);
-        // }));
-    }
-
-    setUserDataOnModel(dados: IUserData){
-        this.input = dados;
-    }
-
-    @Action
-    loadField(fieldName: string) {
-        return this.input[fieldName];
     }
 
     @Action
