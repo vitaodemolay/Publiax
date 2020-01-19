@@ -1,6 +1,6 @@
 import React from 'react';
 import { Inject, Connection } from 'exredux';
-import { Container, Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Row, Col, Spinner, Alert } from 'reactstrap';
 import { DadosEnderecoModel } from '../../../Models/DadosEnderecoModel';
 import { appModels } from '../../../AppModels';
 
@@ -38,30 +38,36 @@ export default class DadosEnderecoComponent extends React.Component<Props> {
                         <h2>Endereço</h2>
                         <hr />
                         <Container className="signup-content">
-
+                            <div>
+                                {dadosEndereco.isError() &&
+                                    <Alert color="danger">
+                                        <span>{dadosEndereco.getErrorMessage()}</span>
+                                    </Alert>
+                                }
+                            </div>
                             <FormGroup>
                                 <Label>Endereço</Label>
                                 <Input type="text" className="form-control" placeholder="Endereço" onChange={this.handleFieldUpdate('street')} value={dadosEndereco.input['street']} />
                             </FormGroup>
-                           
+
                             <Row form>
                                 <Col md={4}>
                                     <FormGroup>
                                         <Label>Numero</Label>
-                                        <Input type="text" className="form-control" placeholder="Numero" onChange={this.handleFieldUpdate('number')} value={dadosEndereco.input['number']}/>
+                                        <Input type="text" className="form-control" placeholder="Numero" onChange={this.handleFieldUpdate('number')} value={dadosEndereco.input['number']} />
                                     </FormGroup>
                                 </Col>
                                 <Col md={8}>
                                     <FormGroup>
                                         <Label>Complemento</Label>
-                                        <Input type="text" className="form-control" placeholder="Complemento" onChange={this.handleFieldUpdate('complement')} value={dadosEndereco.input['complement']}/>
+                                        <Input type="text" className="form-control" placeholder="Complemento" onChange={this.handleFieldUpdate('complement')} value={dadosEndereco.input['complement']} />
                                     </FormGroup>
                                 </Col>
                             </Row>
 
                             <FormGroup>
                                 <Label>Bairro</Label>
-                                <Input type="text" className="form-control" placeholder="Bairro" onChange={this.handleFieldUpdate('neighborhood')} value={dadosEndereco.input['neighborhood']}/>
+                                <Input type="text" className="form-control" placeholder="Bairro" onChange={this.handleFieldUpdate('neighborhood')} value={dadosEndereco.input['neighborhood']} />
                             </FormGroup>
 
                             <Row form>
@@ -83,8 +89,14 @@ export default class DadosEnderecoComponent extends React.Component<Props> {
                                 <Label>CEP</Label>
                                 <Input type="text" className="form-control" placeholder="CEP" onChange={this.handleFieldUpdate('zipCode')} value={dadosEndereco.input['zipCode']} />
                             </FormGroup>
-
-                            <Button className="btn btn-primary">SALVAR</Button>
+                            <div>
+                                {dadosEndereco.isSaving() &&
+                                    <Spinner animation="border" variant="secondary" />
+                                }
+                                {!(dadosEndereco.isSaving()) &&
+                                    <Button className="btn btn-primary" onClick={dadosEndereco.updateDataSource}>SALVAR</Button>
+                                }
+                            </div>
                         </Container>
                     </Form>
                 }

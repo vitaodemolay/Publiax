@@ -21,6 +21,35 @@ export class DadosPessoaisModel extends BaseHttpModel<IUserData> {
             disabilityAdditionalDescription: ""
         };
 
+
+    private _saving: boolean = false;
+    private _error: boolean = false;
+    private _errorMessage: string = "";
+
+    public isSaving = (): boolean => {
+        return this._saving;
+    }
+
+    public isError = (): boolean => {
+        return this._error;
+    }
+
+    private setSaving(value: boolean) {
+        this._saving = value;
+    }
+
+    public getErrorMessage = (): string => {
+        return this._errorMessage;
+    }
+
+    private setError(error: boolean, message?: string) {
+        this._error = error;
+        this._errorMessage = "";
+        if (error) {
+            this._errorMessage = message;
+        }
+    }
+
     @Inject auth?: AuthModel;
 
 
@@ -31,14 +60,25 @@ export class DadosPessoaisModel extends BaseHttpModel<IUserData> {
 
     @Action
     getUserDataOnSource() {
-            PersonalDataRepository.getUserData(this.auth.getSavedToken()).then(f => {
-                this.input = f.data;
-                this.completed(f);
-            });
+        PersonalDataRepository.getUserData(this.auth.getSavedToken()).then(f => {
+            this.input = f.data;
+        }).catch(e => {
+            
+        }).finally(() => {
+            this.completed(null);
+        });
     }
 
     @Action
     updateDataSource() {
-        PersonalDataRepository.updateUserData(this.auth.getSavedToken(), this.input);
+        this.setSaving(true);
+        this.setError(false);
+        PersonalDataRepository.updateUserData(this.auth.getSavedToken(), this.input)
+        .catch(e => {
+            this.setError(true, e.message)
+        }).finally(() =>{
+            this.setSaving(false);
+            this.completed(null);
+        });
     }
 }

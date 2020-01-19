@@ -1,6 +1,6 @@
 import React from 'react';
 import { Inject, Connection } from 'exredux';
-import { Container, Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Row, Col, Alert, Spinner } from 'reactstrap';
 import { DadosPessoaisModel } from '../../../Models/DadosPessoaisModel';
 import { appModels } from '../../../AppModels';
 import { IUserData } from '../../../Service/Interfaces/IUserData';
@@ -29,7 +29,7 @@ export default class DadosPessoaisComponent extends React.Component<Props> {
         this.props.dadosPessoais.doFieldUpdate(fieldName, evt.target.value);
     }
 
-    setDate(value){
+    setDate(value) {
         let _date = new Date(value);
         return moment(_date).format("YYYY-MM-DD");
     }
@@ -46,6 +46,13 @@ export default class DadosPessoaisComponent extends React.Component<Props> {
                             <h2>Dados Pessoais</h2>
                             <hr />
                             <Container className="signup-content">
+                                <div>
+                                    {dadosPessoais.isError() &&
+                                        <Alert color="danger">
+                                            <span>{dadosPessoais.getErrorMessage()}</span>
+                                        </Alert>
+                                    }
+                                </div>
                                 <FormGroup>
                                     <Label>Nome Completo</Label>
                                     <Input type="text" onChange={this.handleFieldUpdate('name')} value={dadosPessoais.input['name']} className="form-control" placeholder="Nome Completo" />
@@ -131,7 +138,14 @@ export default class DadosPessoaisComponent extends React.Component<Props> {
                                     </Col>
                                 </Row>
                             </Container>
-                            <Button className="btn btn-primary" onClick={dadosPessoais.updateDataSource} >SALVAR</Button>
+                            <div>
+                                {dadosPessoais.isSaving() &&
+                                    <Spinner animation="border" variant="secondary" />
+                                }
+                                {!(dadosPessoais.isSaving()) &&
+                                    <Button className="btn btn-primary" onClick={dadosPessoais.updateDataSource}>SALVAR</Button>
+                                }
+                            </div>
                         </Form>
                     </div>
                 }

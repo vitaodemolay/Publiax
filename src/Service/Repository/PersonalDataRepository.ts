@@ -18,6 +18,6 @@ export class PersonalDataRepository {
             headers: {'Authorization': "bearer " + token}
         };
 
-        http.put(`${baseUrl}${routeUpdatePersonalData}`, data, config);
+        return http.put(`${baseUrl}${routeUpdatePersonalData}`, data, config);
     }
 }

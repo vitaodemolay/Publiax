@@ -4,7 +4,7 @@
     "description": "Portal Winn",
     "main": "index.js",
     "scripts": {
-        "start": "tsrex start ./react.config.js",
+        "start": "tsrex start ./react.config.dsv.js",
         "build": "tsrex build ./react.config.js",
         "test": "tsrex test ./react.config.js",
         "lib": "tsrex library ./react.config.lib.js"
