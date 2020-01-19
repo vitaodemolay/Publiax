@@ -10,7 +10,7 @@ export default class SidebarComponent extends React.Component {
                     <h1 className="">Cúrriculo</h1>
                     <ListGroupItem tag="a" href="#/curriculum/DadosPessoais"><span className="lnr lnr-user"></span>Dados Pessoais</ListGroupItem>
                     <ListGroupItem tag="a" href="#/curriculum/DadosEndereco"><span className="lnr lnr-user"></span>Dados de Endereço</ListGroupItem>
-                    <ListGroupItem tag="a" href="#/curriculum/DadoProfissionais" ><span className="lnr lnr-briefcase"></span>Dados Profissionais</ListGroupItem>
+                    <ListGroupItem tag="a" href="#/curriculum/DadosProfissionais" ><span className="lnr lnr-briefcase"></span>Dados Profissionais</ListGroupItem>
                     <ListGroupItem tag="a" href="#/curriculum/Escolaridade" ><span className="lnr lnr-graduation-hat"></span>Escolaridade</ListGroupItem>
                     <ListGroupItem tag="a" href="#/curriculum/Informatica" ><span className="lnr lnr-screen"></span>Informática</ListGroupItem>
                     <ListGroupItem tag="a" href="#/curriculum/Linguas" ><span className="lnr lnr-bubble"></span>Línguas Estrangeiras</ListGroupItem>

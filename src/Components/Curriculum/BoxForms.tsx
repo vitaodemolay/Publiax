@@ -44,7 +44,6 @@ export default class BoxFormsComponent extends React.Component {
                     <Route path="/curriculum/Configuracoes" component={ConfiguracoesComponent}/>
 
                     <Redirect to="/curriculum/DadosPessoais" />
-
                 </Switch>
             </Container>
         );
