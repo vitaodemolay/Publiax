@@ -35,7 +35,11 @@ export default class SearchVagasBar extends React.Component<Props> {
                                     <FormGroup className="form-content">
                                         <small>Pesquise vagas aqui</small>
                                         <Input className="input-search" onChange={this.handleInputChange} value={this.state.intputValue} />
-                                        <Button onClick={this.handlerOnBuscarClick} className="btn-buscar">Buscar</Button>
+
+                                        <div className="input-group-append">
+                                            <Button onClick={this.handlerOnBuscarClick} className="btn-buscar">Buscar</Button>
+
+                                        </div>
                                     </FormGroup>
                                 </Col>
                             </Row>
