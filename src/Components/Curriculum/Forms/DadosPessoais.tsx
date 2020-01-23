@@ -3,7 +3,6 @@ import { Inject, Connection } from 'exredux';
 import { Container, Form, FormGroup, Label, Input, Button, Row, Col, Alert, Spinner } from 'reactstrap';
 import { DadosPessoaisModel } from '../../../Models/DadosPessoaisModel';
 import { appModels } from '../../../AppModels';
-import { IUserData } from '../../../Service/Interfaces/IUserData';
 import moment from 'moment';
 
 class Props {

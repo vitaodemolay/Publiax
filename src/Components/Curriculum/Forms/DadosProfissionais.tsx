@@ -1,12 +1,36 @@
 import React from 'react';
 import { Inject, Connection } from 'exredux';
-import { Container, Form, FormGroup, Label, Input, Button, Row, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Row, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Alert } from 'reactstrap';
 import { DadosProfissionaisModel } from '../../../Models/DadosProfissionaisModel';
 import { appModels } from '../../../AppModels';
 import { IPositionHeld } from '../../../Service/Interfaces/IPositionHeld';
+import moment from 'moment';
 
 class Props {
     @Inject dadosProfissionais: DadosProfissionaisModel;
+}
+
+class ProfessionalDataTools {
+   dadosProfissionais: any = null;
+    /**
+     *
+     */
+    constructor(professionalData: any) {
+        this.dadosProfissionais = professionalData;
+    }
+
+    public  handleFieldUpdate = (fieldName: string) => evt => {
+        this.dadosProfissionais.doFieldUpdate(fieldName, evt.target.value);
+    }
+
+    public  handleFieldIsActualUpdate = () => evt => {
+        this.dadosProfissionais.doFieldUpdate("actual", (evt.target.value == 1));
+    }
+
+    public  setDate(value) {
+        let _date = new Date(value);
+        return moment(_date).format("YYYY-MM-DD");
+    }
 }
 
 @Connection({
@@ -14,7 +38,7 @@ class Props {
     props: Props
 })
 
-export default class DadosProfissionaisComponent extends React.Component<Props> {
+export default class DadosProfissionaisComponent extends React.Component<Props> {    
     loadFields() {
         const { dadosProfissionais } = this.props;
         dadosProfissionais.getPositionsDataOnSource();
@@ -24,12 +48,9 @@ export default class DadosProfissionaisComponent extends React.Component<Props> 
         this.loadFields();
     }
 
-    handleFieldUpdate = (fieldName: string) => evt => {
-        this.props.dadosProfissionais.doFieldUpdate(fieldName, evt.target.value);
-    }
-
     render() {
         const { dadosProfissionais } = this.props;
+        const toolBox = new ProfessionalDataTools(dadosProfissionais);
         return (
             <div>
                 {dadosProfissionais.isLoading && <div>Carregando...</div>}
@@ -39,14 +60,14 @@ export default class DadosProfissionaisComponent extends React.Component<Props> 
                         <HeaderForm />
 
                         {dadosProfissionais.isEditing() ? (
-                            <FormProfissionalData dadosProfissionais={dadosProfissionais} />
+                            <FormProfissionalData dadosProfissionais={dadosProfissionais} toolBox={toolBox} />
                         ) :
                             (
                                 <div>
-                                    {/* <HistoryPosition dadosProfissionais={dadosProfissionais} /> */}
+                                    <HistoryPosition dadosProfissionais={dadosProfissionais} />
 
                                     <Row>
-                                        <Button className="btn primary">Novo Historico</Button>
+                                        <Button onClick={dadosProfissionais.preperNewPosition} className="btn primary">Novo Historico</Button>
                                     </Row>
                                 </div>
                             )}
@@ -120,25 +141,32 @@ function HistoryPosition(props) {
 }
 
 function FormProfissionalData(props) {
-    const { dadosProfissionais } = props;
+    const { dadosProfissionais, toolBox } = props;
     return (
         <Form id="register-details" className="">
             <Container className="signup-content">
+                <div>
+                    {dadosProfissionais.isError() &&
+                        <Alert color="danger">
+                            <span>{dadosProfissionais.getErrorMessage()}</span>
+                        </Alert>
+                    }
+                </div>
                 <FormGroup>
                     <Label>Empresa</Label>
-                    <Input type="text" className="form-control" placeholder="Empresa" />
+                    <Input type="text" className="form-control" placeholder="Empresa" onChange={toolBox.handleFieldUpdate('title')} value={dadosProfissionais.input['title']} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="exampleText">Resumo</Label>
-                    <Input type="textarea" name="text" id="exampleText" />
+                    <Input type="textarea" className="form-control" placeholder="Resumo" onChange={toolBox.handleFieldUpdate('summary')} value={dadosProfissionais.input['summary']} />
                 </FormGroup>
                 <Row form>
                     <Col md={4}>
                         <FormGroup>
                             <label>É posição atual</label>
-                            <Input type="select" name="select" id="exampleSelect2">
-                                <option>Sim</option>
-                                <option>Não</option>
+                            <Input type="select" className="form-control" onChange={toolBox.handleFieldIsActualUpdate()} value={dadosProfissionais.input['actual'] ? 1 : 0}>
+                                <option value={1}>Sim</option>
+                                <option value={0}>Não</option>
                             </Input>
                         </FormGroup>
                     </Col>
@@ -147,19 +175,27 @@ function FormProfissionalData(props) {
                     <Col md={6}>
                         <FormGroup>
                             <label>Inicio</label>
-                            <Input type="text" name="city" id="exampleCity" />
+                            <Input type="date" className="form-control" onChange={toolBox.handleFieldUpdate('startIn')} value={toolBox.setDate(dadosProfissionais.input['startIn'])} />
                         </FormGroup>
                     </Col>
-                    <Col md={6}>
-                        <FormGroup>
-                            <label>Saída</label>
-                            <Input type="text" name="city" id="exampleCity" />
-                        </FormGroup>
-                    </Col>
-
+                    {dadosProfissionais.input['actual'] &&
+                        <Col md={6}>
+                            <FormGroup>
+                                <label>Saída</label>
+                                <Input type="date" className="form-control" onChange={toolBox.handleFieldUpdate('endIn')} value={toolBox.setDate(dadosProfissionais.input['endIn'])} />
+                            </FormGroup>
+                        </Col>
+                    }
                 </Row>
 
-                <Button className="btn btn-primary">SALVAR</Button>
+                <Row>
+                    <Col md={2}>
+                        <Button className="btn btn-primary">SALVAR</Button>
+                    </Col>
+                    <Col md={2}>
+                        <Button className="danger" onClick={dadosProfissionais.cancelEdition}>CANCELAR</Button>
+                    </Col>
+                </Row>
             </Container>
         </Form>
     );

@@ -9,7 +9,7 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
         title: "",
         summary: "",
         actual: false,
-        startIn: new Date(),
+        startIn: null,
         endIn: null,
     }
 
@@ -24,7 +24,7 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
     public getHistoryPosition = () : IPositionHeld[] => {
         return this.positions;
     }
-    
+
     public isSaving = () : boolean => {
         return this._saving;
     }
@@ -63,7 +63,7 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
             title: "",
             summary: "",
             actual: false,
-            startIn: new Date(),
+            startIn: null,
             endIn: null,
         };
     }
@@ -75,7 +75,7 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
     @Inject auth?: AuthModel;
 
     @Action
-    doFieldUpdate(fieldName: string, value: string) {
+    doFieldUpdate(fieldName: string, value: any) {
         this.input[fieldName] = value;
     }
 
