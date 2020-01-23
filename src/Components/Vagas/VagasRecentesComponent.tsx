@@ -23,7 +23,7 @@ export default class VagasRecentes extends React.Component<Props> {
                         <h2>Vagas Recentes</h2>
                     </CardHeader>
                     <CardBody>
-                        <table className="table">
+                        <table className="table container-vagas">
                             <tbody>
                                 {vagas.map((item, index) => (
                                     <tr key={index}>

@@ -590,6 +590,12 @@ a {
   padding: 40px 0;
 }
 
+@media (max-width: 991px) {
+  .container-search {
+    width: 80%;
+  }
+}
+
 .container-search .form-content {
   display: table;
   width: 100%;
@@ -597,6 +603,8 @@ a {
 
 .container-search small {
   color: #fff;
+  width: 100%;
+  display: block;
 }
 
 .container-search .input-search {
@@ -604,11 +612,38 @@ a {
   width: 87%;
 }
 
+@media (max-width: 767px) {
+  .container-search .input-search {
+    width: 55%;
+  }
+}
+
 .container-search .btn-buscar {
   outline: 0;
   background-color: #59be42;
   color: #fff;
   float: right;
+  border: none;
+  outline: none;
+  border-radius: initial;
+}
+
+.container-search .btn-buscar:hover {
+  background-color: #929292;
+}
+
+.container-vagas .btn_default {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  padding: 4px 30px;
+  background-color: #59be42;
+  color: #fff;
+  text-decoration: none;
+}
+
+.container-vagas .btn_default:hover {
+  background-color: #929292;
 }
 
 /* ------- Contato ---------------- */
@@ -836,20 +871,6 @@ a {
 
 .service-icon:hover {
   color: #D09A43;
-}
-
-.btn_default {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  color: #ffffff;
-  padding: 4px 30px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#007bff), to(#047fd1));
-  background: linear-gradient(top, #007bff 0%, #047fd1);
-  border-radius: 10px;
-  border: 1px solid #0090f0;
-  -webkit-box-shadow: 0px 1px 3px rgba(15, 130, 217, 0.5), inset 0px 0px 3px #087ad1;
-          box-shadow: 0px 1px 3px rgba(15, 130, 217, 0.5), inset 0px 0px 3px #087ad1;
-  text-shadow: 0px -1px 0px rgba(255, 255, 255, 0.2), 0px 1px 2px #16171a;
 }
 
 /* ===========================
