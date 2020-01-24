@@ -1,6 +1,7 @@
 import { Model, Action, Inject, BaseHttpModel } from 'exredux';
 import { AuthModel } from './AuthModel';
 import { IPositionHeld } from '../Service/Interfaces/IPositionHeld';
+import { PositionHeldRepository } from '../Service/Repository/PositionHeldRepository';
 
 @Model
 export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
@@ -81,13 +82,39 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
 
     @Action
     getPositionsDataOnSource() {
-        this.completed(null);
+        PositionHeldRepository.getPositionsData(this.auth.getSavedToken())
+        .then(f => {
+            this.positions = f.data;
+        }).catch(e => {
+            
+        }).finally(() => {
+            this.completed(null);
+        });
     }
 
     @Action
     updateDataSource() { 
         this.setSaving(!this.isSaving());
         this.setError(false);
+
+        let _promise = null;
+
+        if(this.input.positionHeldId !== ""){
+           _promise = PositionHeldRepository.updatePositionData(this.auth.getSavedToken(), this.input) 
+        }
+        else{
+            _promise = PositionHeldRepository.addNewPositionData(this.auth.getSavedToken(), this.input)
+        }
+
+        _promise.then(f => {
+            this.getPositionsDataOnSource();
+            this.cancelEdition()
+        }).catch(e => {
+            this.setError(true, e.message)
+            this.completed(null);
+        }).finally(() =>{
+            this.setSaving(false);
+        });
     }
 
     @Action

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Inject, Connection } from 'exredux';
-import { Container, Form, FormGroup, Label, Input, Button, Row, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Alert } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Row, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Alert, Spinner } from 'reactstrap';
 import { DadosProfissionaisModel } from '../../../Models/DadosProfissionaisModel';
 import { appModels } from '../../../AppModels';
 import { IPositionHeld } from '../../../Service/Interfaces/IPositionHeld';
@@ -11,7 +11,7 @@ class Props {
 }
 
 class ProfessionalDataTools {
-   dadosProfissionais: any = null;
+    dadosProfissionais: any = null;
     /**
      *
      */
@@ -19,15 +19,15 @@ class ProfessionalDataTools {
         this.dadosProfissionais = professionalData;
     }
 
-    public  handleFieldUpdate = (fieldName: string) => evt => {
+    public handleFieldUpdate = (fieldName: string) => evt => {
         this.dadosProfissionais.doFieldUpdate(fieldName, evt.target.value);
     }
 
-    public  handleFieldIsActualUpdate = () => evt => {
+    public handleFieldIsActualUpdate = () => evt => {
         this.dadosProfissionais.doFieldUpdate("actual", (evt.target.value == 1));
     }
 
-    public  setDate(value) {
+    public setDate(value) {
         let _date = new Date(value);
         return moment(_date).format("YYYY-MM-DD");
     }
@@ -38,7 +38,7 @@ class ProfessionalDataTools {
     props: Props
 })
 
-export default class DadosProfissionaisComponent extends React.Component<Props> {    
+export default class DadosProfissionaisComponent extends React.Component<Props> {
     loadFields() {
         const { dadosProfissionais } = this.props;
         dadosProfissionais.getPositionsDataOnSource();
@@ -102,30 +102,34 @@ function HistoryPosition(props) {
                 {positions.map((position) => (
                     <ListGroupItem>
                         <ListGroupItemHeading>
-                            <FormGroup>
-                                <Label>Empresa</Label>
-                                <span>{position.title}</span>
-                            </FormGroup>
+                            <Row>
+                                <Col md={2}>
+                                    <Label>Empresa:</Label>
+                                </Col>
+                                <Col md={10}>
+                                    <strong>{position.title}</strong>
+                                </Col>
+                            </Row>
                         </ListGroupItemHeading>
                         <ListGroupItemText>
                             <FormGroup>
-                                <Label>Descrição</Label>
+                                <Label>Descrição:  </Label>
                                 <span>{position.summary}</span>
                             </FormGroup>
                             <FormGroup>
                                 <Row>
                                     <Col md={4}>
-                                        <Label>Posição Atual</Label>
+                                        <Label>Posição Atual: </Label>
                                         <span>{position.actual ? "Sim" : "Não"}</span>
                                     </Col>
 
                                     <Col md={4}>
-                                        <Label>Inicio</Label>
+                                        <Label>Inicio: </Label>
                                         <span>{position.startIn}</span>
                                     </Col>
 
                                     <Col md={4}>
-                                        <Label>Saída</Label>
+                                        <Label>Saída: </Label>
                                         <span>{position.endIn}</span>
                                     </Col>
                                 </Row>
@@ -178,7 +182,7 @@ function FormProfissionalData(props) {
                             <Input type="date" className="form-control" onChange={toolBox.handleFieldUpdate('startIn')} value={toolBox.setDate(dadosProfissionais.input['startIn'])} />
                         </FormGroup>
                     </Col>
-                    {dadosProfissionais.input['actual'] &&
+                    {!dadosProfissionais.input['actual'] &&
                         <Col md={6}>
                             <FormGroup>
                                 <label>Saída</label>
@@ -187,15 +191,20 @@ function FormProfissionalData(props) {
                         </Col>
                     }
                 </Row>
+                {dadosProfissionais.isSaving() &&
+                    <Spinner animation="border" variant="secondary" />
+                }
 
-                <Row>
-                    <Col md={2}>
-                        <Button className="btn btn-primary">SALVAR</Button>
-                    </Col>
-                    <Col md={2}>
-                        <Button className="danger" onClick={dadosProfissionais.cancelEdition}>CANCELAR</Button>
-                    </Col>
-                </Row>
+                {!(dadosProfissionais.isSaving()) &&
+                    <Row>
+                        <Col md={2}>
+                            <Button className="btn btn-primary" onClick={dadosProfissionais.updateDataSource}>SALVAR</Button>
+                        </Col>
+                        <Col md={2}>
+                            <Button className="danger" onClick={dadosProfissionais.cancelEdition}>CANCELAR</Button>
+                        </Col>
+                    </Row>
+                }
             </Container>
         </Form>
     );
