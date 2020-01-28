@@ -31,6 +31,12 @@ class ProfessionalDataTools {
         let _date = new Date(value);
         return moment(_date).format("YYYY-MM-DD");
     }
+
+    public editPosition(positionId: string){
+        if(positionId != ""){
+            this.dadosProfissionais.editExistsPosition(positionId);
+        }
+    }
 }
 
 @Connection({
@@ -64,7 +70,7 @@ export default class DadosProfissionaisComponent extends React.Component<Props> 
                         ) :
                             (
                                 <div>
-                                    <HistoryPosition dadosProfissionais={dadosProfissionais} />
+                                    <HistoryPosition dadosProfissionais={dadosProfissionais} toolBox={toolBox} />
 
                                     <Row>
                                         <Button onClick={dadosProfissionais.preperNewPosition} className="btn primary">Novo Historico</Button>
@@ -88,7 +94,7 @@ function HeaderForm() {
 }
 
 function HistoryPosition(props) {
-    const { dadosProfissionais } = props;
+    const { dadosProfissionais, toolBox } = props;
     let result = (
         <div>
             Você ainda não Registrou nenhum historico profissional.
@@ -131,6 +137,14 @@ function HistoryPosition(props) {
                                     <Col md={4}>
                                         <Label>Saída: </Label>
                                         <span>{position.endIn}</span>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col md={2}>
+                                        <Button onClick={null} className="btn primary">Editar</Button>
+                                    </Col>
+                                    <Col md={4}>
+                                        <Button onClick={null} className="btn danger">Remover</Button>
                                     </Col>
                                 </Row>
                             </FormGroup>
