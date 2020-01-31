@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/style.css';
 
 
+
 function renderToDOM() {
   const root = document.getElementById('app');
   const HotReloadComponent = reactHot(module, App);
