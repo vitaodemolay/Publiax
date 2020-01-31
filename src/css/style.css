@@ -163,15 +163,26 @@
   }
 }
 
-.navigation .menu-btn {
+#navigation {
+  width: 100%;
+  display: block;
+  background-color: #602086;
+  transition: height 0.9s ease-out;
+  -webkit-transition: height 0.9s ease-out;
+  -moz-transition: height 0.9s ease-out;
+  -ms-transition: height 0.9s ease-out;
+  -o-transition: height 0.9s ease-out;
+}
+
+#navigation .menu-btn {
   display: none;
 }
 
-.navigation .menu-btn:hover {
+#navigation .menu-btn:hover {
   background-color: #f4f4f4;
 }
 
-.navigation .menu-icon {
+#navigation .menu-icon {
   cursor: pointer;
   display: inline-block;
   float: right;
@@ -185,13 +196,13 @@
 }
 
 @media (max-width: 991PX) {
-  .navigation .menu-icon {
+  #navigation .menu-icon {
     display: block;
   }
 }
 
-.navigation .menu-icon .navicon {
-  background: #333;
+#navigation .menu-icon .navicon {
+  background: #fff;
   display: block;
   height: 2px;
   position: relative;
@@ -200,16 +211,16 @@
   width: 18px;
 }
 
-.navigation .menu-icon .navicon:before {
+#navigation .menu-icon .navicon:before {
   top: 5px;
 }
 
-.navigation .menu-icon .navicon:after {
+#navigation .menu-icon .navicon:after {
   top: -5px;
 }
 
-.navigation .menu-icon .navicon:before, .navigation .menu-icon .navicon:after {
-  background: #333;
+#navigation .menu-icon .navicon:before, #navigation .menu-icon .navicon:after {
+  background: #fff;
   content: '';
   display: block;
   height: 100%;
@@ -219,7 +230,7 @@
   width: 100%;
 }
 
-.navigation .menu {
+#navigation .menu {
   clear: both;
   max-height: 0;
   -webkit-transition: max-height .2s ease-out;
@@ -230,33 +241,110 @@
 }
 
 @media (max-width: 991PX) {
-  .navigation .menu {
+  #navigation .menu {
     display: block;
   }
 }
 
-.navigation .menu li {
+#navigation .menu li {
   border-bottom: solid 1px #fff;
 }
 
-.navigation .menu li a {
+#navigation .menu li a {
   color: #fff;
   display: block;
   padding: 20px 20px;
   text-decoration: none;
 }
 
-.navigation .menu li:hover {
+#navigation .menu li:hover {
   background-color: #c18ff0;
 }
 
-.navigation .menu .btn-cadastro {
+#navigation .menu .btn-cadastro {
   text-transform: uppercase;
 }
 
-.navigation .menu .btn-entrar {
+#navigation .menu .btn-entrar {
   text-transform: uppercase;
   border: none;
+}
+
+#navigation #myLinks {
+  margin-top: 30px;
+}
+
+@media (max-width: 991PX) {
+  #navigation #myLinks {
+    display: none;
+  }
+}
+
+#navigation .navbar {
+  margin-bottom: 0;
+}
+
+#navigation .navbar-brand {
+  font-weight: 700;
+}
+
+#navigation .navbar-brand:focus {
+  outline: 0;
+}
+
+#navigation .nav.navbar-nav {
+  margin-top: 20px;
+  padding: 30px;
+}
+
+#navigation .navbar-fixed-top ul.nav li a {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#navigation .navbar-fixed-top.top-nav-collapse ul.nav li a {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  color: #fff;
+}
+
+#navigation .navbar-fixed-top ul.nav ul.dropdown-menu {
+  border-radius: 0;
+  margin-top: 21px;
+  border-top: none;
+}
+
+#navigation .navbar-fixed-top ul.nav li a:hover ul.dropdown-menu {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+#navigation .navbar-fixed-top ul.nav ul.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+#navigation .navbar-fixed-top ul.nav ul.dropdown-menu li a {
+  padding: 10px 20px;
+}
+
+#navigation .navbar-fixed-top.top-nav-collapse ul.nav ul.dropdown-menu li a {
+  color: #666;
+}
+
+#navigation .navbar-fixed-top .nav li a {
+  -webkit-transition: background .3s ease-in-out;
+  transition: background .3s ease-in-out;
+}
+
+#navigation .navbar-fixed-top .nav li a:hover,
+#navigation .navbar-fixed-top .nav li a:focus,
+#navigation .navbar-fixed-top .nav li.active {
+  outline: 0;
+  background-color: #59be42;
+  color: #fff;
 }
 
 .navigation .menu-btn:checked ~ .menu {
@@ -363,13 +451,6 @@
   float: left;
 }
 
-#navigation {
-  width: 100%;
-  display: block;
-  background-color: #602086;
-  height: 200px;
-}
-
 .content-vagas {
   display: block;
   margin: 20px auto;
@@ -459,7 +540,21 @@
 
 #about {
   margin-top: 20px;
-  text-align: center;
+}
+
+#about .box-content-01 {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 8px #ababab;
+          box-shadow: 0px 2px 8px #ababab;
+}
+
+#about .box-text {
+  padding: 10px 40px;
+}
+
+#about .box-text h2 {
+  font-size: 18px;
+  color: #000;
 }
 
 @media (max-width: 767px) {
@@ -576,6 +671,11 @@ a {
   display: inline-block;
   width: 260px;
   height: 120px;
+  transition: height 0.9s ease-out;
+  -webkit-transition: height 0.9s ease-out;
+  -moz-transition: height 0.9s ease-out;
+  -ms-transition: height 0.9s ease-out;
+  -o-transition: height 0.9s ease-out;
 }
 
 .site-logo:hover {
@@ -674,6 +774,19 @@ a {
   background-color: #929292;
 }
 
+/* scroll topo */
+.small {
+  position: fixed;
+  -webkit-box-shadow: 0px 1px 10px #000;
+          box-shadow: 0px 1px 10px #000;
+  z-index: 9999;
+  height: 134px;
+}
+
+.small .site-logo {
+  height: 100px;
+}
+
 /* ------- Contato ---------------- */
 .ContatoHeader {
   background-color: #3f2358;
@@ -723,78 +836,6 @@ a {
 
 .winnDescription {
   text-align: justify;
-}
-
-/* ------- Navigation ------------ */
-.navigation {
-  background: #c18ff0;
-}
-
-.navbar {
-  margin-bottom: 0;
-}
-
-.navbar-brand {
-  font-weight: 700;
-}
-
-.navbar-brand:focus {
-  outline: 0;
-}
-
-.nav.navbar-nav {
-  margin-top: 20px;
-  padding: 30px;
-}
-
-.navbar-fixed-top ul.nav li a {
-  font-size: 14px;
-  letter-spacing: 3px;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.navbar-fixed-top.top-nav-collapse ul.nav li a {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-  color: #fff;
-}
-
-.navbar-fixed-top ul.nav ul.dropdown-menu {
-  border-radius: 0;
-  margin-top: 21px;
-  border-top: none;
-}
-
-.navbar-fixed-top ul.nav li a:hover ul.dropdown-menu {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-.navbar-fixed-top ul.nav ul.dropdown-menu li:last-child {
-  border-bottom: none;
-}
-
-.navbar-fixed-top ul.nav ul.dropdown-menu li a {
-  padding: 10px 20px;
-}
-
-.navbar-fixed-top.top-nav-collapse ul.nav ul.dropdown-menu li a {
-  color: #666;
-}
-
-.navbar-fixed-top .nav li a {
-  -webkit-transition: background .3s ease-in-out;
-  transition: background .3s ease-in-out;
-}
-
-.navbar-fixed-top .nav li a:hover,
-.navbar-fixed-top .nav li a:focus,
-.navbar-fixed-top .nav li.active {
-  outline: 0;
-  background-color: #59be42;
-  color: #fff;
 }
 
 .btn-cadastro {

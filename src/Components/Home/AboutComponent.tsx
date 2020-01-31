@@ -18,7 +18,7 @@ export default class About extends React.Component {
                                 </div>
                                 <div className="box-text">
                                     <h2>Promoter 01 vagas</h2>
-                                    <p>Elbina has had several years of experience in teaching English language</p> 
+                                    <p>Elbina has had several years of experience </p> 
                                 </div>
                             </div>
                         </Col>
@@ -30,7 +30,7 @@ export default class About extends React.Component {
                                 </div>
                                 <div className="box-text">
                                     <h2>Promoter 01 vagas</h2>
-                                    <p>Elbina has had several years of experience in teaching English language</p> 
+                                    <p>Elbina has had several years of experience </p> 
                                 </div>
                             </div>
                         </Col>
@@ -42,7 +42,7 @@ export default class About extends React.Component {
                                 </div>
                                 <div className="box-text">
                                     <h2>Promoter 01 vagas</h2>
-                                    <p>Elbina has had several years of experience in teaching English language</p> 
+                                    <p>Elbina has had several years of experience </p> 
                                 </div>
                             </div>
                         </Col>

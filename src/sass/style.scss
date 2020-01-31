@@ -100,6 +100,12 @@ a {
   display: inline-block;
   width: 260px;
   height: 120px;
+  transition: height 0.9s ease-out;
+    -webkit-transition: height 0.9s ease-out;
+    -moz-transition: height 0.9s ease-out;
+    -ms-transition: height 0.9s ease-out;
+    -o-transition: height 0.9s ease-out;
+  
 }
 
 .site-logo:hover {
@@ -194,6 +200,22 @@ a {
     }
   }
 }
+ /* scroll topo */
+
+ .small {
+  position: fixed;
+  box-shadow: 0px 1px 10px #000;
+  z-index: 9999;
+  height: 134px;
+
+  #navigation {
+  }  
+  .site-logo {
+    height: 100px; 
+      //background-image: url(../img/logo-winn-white.png);
+
+  }
+ }
 
 /* ------- Contato ---------------- */ 
 .ContatoHeader{
@@ -249,83 +271,6 @@ a {
 }
 
 
-/* ------- Navigation ------------ */
-
-.navigation{
-  background:  #c18ff0;
-  
-}
-
-.navbar {
-    margin-bottom: 0;
-}
-
-.navbar-brand {
-    font-weight: 700;
-}
-
-
-.navbar-brand:focus {
-    outline: 0;
-}
-
-.nav.navbar-nav {
-    margin-top:20px;
-	padding:30px;
-}
-
-.navbar-fixed-top ul.nav li a {
-	font-size: 14px;
-	letter-spacing: 3px;
-    color: #fff;
-	text-transform: uppercase;
-	font-weight: 700;
-}
-
-.navbar-fixed-top.top-nav-collapse ul.nav li a {
-	    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-	color: #fff;
-}
-
-.navbar-fixed-top ul.nav ul.dropdown-menu {
-	  border-radius: 0;	
-	margin-top: 21px;
-	border-top: none;
-}
-
-.navbar-fixed-top ul.nav li a:hover ul.dropdown-menu {
-	    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-}
-
-.navbar-fixed-top ul.nav ul.dropdown-menu li:last-child{
-	border-bottom: none;
-}
-
-.navbar-fixed-top ul.nav ul.dropdown-menu li a {
-	padding: 10px 20px;
-}
-
-.navbar-fixed-top.top-nav-collapse ul.nav ul.dropdown-menu li a {
-	color: #666;
-}
-
-.navbar-fixed-top .nav li a {
-    -webkit-transition: background .3s ease-in-out;
-    -moz-transition: background .3s ease-in-out;
-    transition: background .3s ease-in-out;
-}
-
-.navbar-fixed-top .nav li a:hover,
-.navbar-fixed-top .nav li a:focus,
-.navbar-fixed-top .nav li.active {
-    outline: 0;
-    background-color:#59be42;    
-    color:#fff;
-}
 
 .btn-cadastro {
     outline: 0;

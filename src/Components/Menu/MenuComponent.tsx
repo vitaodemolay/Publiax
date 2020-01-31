@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavItem, NavLink, Container, Row } from 'reactstrap';
 import { appModels } from '../../AppModels';
 import { AuthModel } from '../../Models/AuthModel';
 import { Inject, Connection } from 'exredux';
@@ -18,36 +18,40 @@ class Menu extends React.Component<Props> {
     render() {
         const { auth } = this.props;
         return (
-            <div className="navigation">
-                <Navbar className="navbar navbar-fixed-top topnav">
-                    <NavbarBrand href="/" className="site-logo" />
-                    {/*<a href="javascript:void(0);" className="icon" onClick={myFunction}></a>*/}
+            <div id="navigation">
+                <Navbar className="navbar navbar-fixed-top topnav navbar ">
+                    <Container>
+                        <Row>
+                        <NavbarBrand href="/" className="site-logo" />
+                            {/*<a href="javascript:void(0);" className="icon" onClick={myFunction}></a>*/}
 
-                    <Nav id="myLinks">
-                        <NavItem>
-                            <NavLink href="#/home">Home</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="#/vagas">Vagas</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="#/quemsomos">Quem Somos</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="#/contato">Contato</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="#/curriculum" className="btn-cadastro">Cadastrar Currículo</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            {auth.isAuthenticated()
-                                ? <NavLink className="btn-entrar" href="#/logout">Sair</NavLink>
-                                : <NavLink className="btn-entrar" href="#/login">Entrar</NavLink>
-                            }
-                        </NavItem>
-                    </Nav>
+                            <Nav id="myLinks">
+                                <NavItem>
+                                    <NavLink href="#/home">Home</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="#/vagas">Vagas</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="#/quemsomos">Quem Somos</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="#/contato">Contato</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="#/curriculum" className="btn-cadastro">Cadastrar Currículo</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    {auth.isAuthenticated()
+                                        ? <NavLink className="btn-entrar" href="#/logout">Sair</NavLink>
+                                        : <NavLink className="btn-entrar" href="#/login">Entrar</NavLink>
+                                    }
+                                </NavItem>
+                            </Nav>
 
-                </Navbar>
+                        </Row>
+                    </Container>
+             </Navbar>
                 <input className="menu-btn" type="checkbox" id="menu-btn" />
                 <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
                 <ul className="menu">
