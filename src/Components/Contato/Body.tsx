@@ -31,7 +31,7 @@ export default class BodyComponent extends React.Component {
                                     <Label for="menssagem">Menssagem:</Label>
                                     <Input type="textarea" name="menssagem" id="TbxMenssagem" placeholder="Digite a sua menssagem" />
                                 </FormGroup>
-                                <Button color="success" size="lg">Enviar</Button>
+                                <Button>Enviar</Button>
                             </Form>
                         </div>
                     </Col>

@@ -7,6 +7,35 @@
 @import "detalhes_vagas";
 @import "home";
 
+// BUTTONS // 
+
+
+input:focus,
+button:focus,
+select:focus {
+  outline: 0;
+}
+.btn {
+    font-size: 16px;
+    color: #fff;
+    background-color: #59be42;
+    padding: 10px 20px;
+    margin: 0 auto;
+    text-transform: uppercase;
+  }
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn.focus:active,
+.btn:active:focus,
+.btn:focus {
+  outline: 0 !important;
+  outline-offset: 0 !important;
+  background-image: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 .box-logar {
     background-color: rgb(218, 218, 218);
     text-align: center;
@@ -99,7 +128,7 @@ a {
 
 /* ------- Vagas ---------------- */ 
 .searchBarArea{
-  background: #003c80;
+  background: #3f2358;
   margin-bottom: 40px;
 }
 
