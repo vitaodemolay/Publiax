@@ -105,57 +105,6 @@
   color: #0067f4;
 }
 
-#top-logado .site-logo a.brand {
-  background-image: url(../img/logo-winn.png);
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 260px;
-  height: 120px;
-  transition: height 0.9s ease-out;
-  -webkit-transition: height 0.9s ease-out;
-  -moz-transition: height 0.9s ease-out;
-  -ms-transition: height 0.9s ease-out;
-  -o-transition: height 0.9s ease-out;
-}
-
-.box-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.content-top {
-  -ms-flex-item-align: center;
-      align-self: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 65%;
-}
-
-.content-top .box-search {
-  background-color: red;
-}
-
-.content-top .box-search input {
-  min-width: 300px;
-  height: 50px;
-}
-
-@media (max-width: 991px) {
-  .navigation ul.nav {
-    display: none;
-  }
-}
-
 @media (max-width: 991PX) {
   .navbar {
     width: 65%;
@@ -661,27 +610,6 @@ a {
   background-color: transparent;
 }
 
-/* --- logo --- */
-.site-logo {
-  margin-top: 5px;
-  background-image: url(../img/logo-winn.png);
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 260px;
-  height: 120px;
-  transition: height 0.9s ease-out;
-  -webkit-transition: height 0.9s ease-out;
-  -moz-transition: height 0.9s ease-out;
-  -ms-transition: height 0.9s ease-out;
-  -o-transition: height 0.9s ease-out;
-}
-
-.site-logo:hover {
-  text-decoration: none;
-}
-
 /* ------- Private Access ------- */
 .PrivateAccessHeader {
   background-color: #3f2358;
@@ -774,6 +702,27 @@ a {
   background-color: #929292;
 }
 
+/* --- logo --- */
+.site-logo {
+  margin-top: 5px;
+  background-image: url(../img/logo-winn.png);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 260px;
+  height: 120px;
+  transition: height 0.9s ease-out;
+  -webkit-transition: height 0.9s ease-out;
+  -moz-transition: height 0.9s ease-out;
+  -ms-transition: height 0.9s ease-out;
+  -o-transition: height 0.9s ease-out;
+}
+
+.site-logo:hover {
+  text-decoration: none;
+}
+
 /* scroll topo */
 .small {
   position: fixed;
@@ -783,7 +732,7 @@ a {
   height: 134px;
 }
 
-.small .site-logo {
+.small #navigation .site-logo {
   height: 100px;
 }
 

@@ -1,6 +1,5 @@
 @import "fonts";
 @import "footer";
-@import "topo_logado";
 @import "menu_mobile";
 @import "sidebar";
 @import "register_curriculo";
@@ -90,27 +89,7 @@ a {
     text-decoration: none;
     background-color: transparent;
 }
-/* --- logo --- */
-.site-logo {	
-	margin-top:5px;
-  background-image: url(../img/logo-winn.png);
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 260px;
-  height: 120px;
-  transition: height 0.9s ease-out;
-    -webkit-transition: height 0.9s ease-out;
-    -moz-transition: height 0.9s ease-out;
-    -ms-transition: height 0.9s ease-out;
-    -o-transition: height 0.9s ease-out;
-  
-}
 
-.site-logo:hover {
-	text-decoration:none;
-}
 
 /* ------- Private Access ------- */ 
 .PrivateAccessHeader{
@@ -200,6 +179,28 @@ a {
     }
   }
 }
+
+/* --- logo --- */
+.site-logo {	
+	margin-top:5px;
+  background-image: url(../img/logo-winn.png);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 260px;
+  height: 120px;
+  transition: height 0.9s ease-out;
+    -webkit-transition: height 0.9s ease-out;
+    -moz-transition: height 0.9s ease-out;
+    -ms-transition: height 0.9s ease-out;
+    -o-transition: height 0.9s ease-out;
+    &:hover {
+      text-decoration:none;
+    }
+  
+}
+
  /* scroll topo */
 
  .small {
@@ -209,13 +210,14 @@ a {
   height: 134px;
 
   #navigation {
-  }  
+  
   .site-logo {
     height: 100px; 
-      //background-image: url(../img/logo-winn-white.png);
+    //background-image: url(../img/logo-winn-white.png);
 
   }
  }
+}
 
 /* ------- Contato ---------------- */ 
 .ContatoHeader{
