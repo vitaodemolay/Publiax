@@ -1,6 +1,6 @@
 import React from 'react';
 import { Inject, Connection } from 'exredux';
-import { Container, Form, FormGroup, Label, Input, Button, Row, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Alert, Spinner } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Row, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Alert, Spinner, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { DadosProfissionaisModel } from '../../../Models/DadosProfissionaisModel';
 import { appModels } from '../../../AppModels';
 import { IPositionHeld } from '../../../Service/Interfaces/IPositionHeld';
@@ -12,11 +12,15 @@ class Props {
 
 class ProfessionalDataTools {
     dadosProfissionais: any = null;
+    showModal = false;
+    positionToDelete = "";
     /**
      *
      */
     constructor(professionalData: any) {
         this.dadosProfissionais = professionalData;
+        this.showModal = false;
+        this.positionToDelete = "";
     }
 
     public handleFieldUpdate = (fieldName: string) => evt => {
@@ -32,9 +36,29 @@ class ProfessionalDataTools {
         return moment(_date).format("YYYY-MM-DD");
     }
 
-    public editPosition(positionId: string){
-        if(positionId != ""){
+    public handleEditButtonsOnClick = () => evt => {
+        const positionId = (evt.target as HTMLButtonElement).getAttribute('data-pid');
+        if (positionId != "") {
             this.dadosProfissionais.editExistsPosition(positionId);
+        }
+    }
+
+    public handleDeletePosition = () => evt => {
+        const positionId = (evt.target as HTMLButtonElement).getAttribute('data-pid');
+        if (positionId != "") {
+            this.positionToDelete = positionId;
+            this.showModal = true;
+        }
+    }
+
+    public getShowModal(): boolean {
+        return this.showModal;
+    }
+
+    public handleConfirmDelete = () => evt => {
+        const positionId = (evt.target as HTMLButtonElement).getAttribute('data-pid');
+        if (positionId != "") {
+            this.showModal = false;
         }
     }
 }
@@ -141,7 +165,7 @@ function HistoryPosition(props) {
                                 </Row>
                                 <Row>
                                     <Col md={2}>
-                                        <Button onClick={null} className="btn primary">Editar</Button>
+                                        <Button onClick={toolBox.handleEditButtonsOnClick()} data-pid={position.positionHeldId} className="btn primary">Editar</Button>
                                     </Col>
                                     <Col md={4}>
                                         <Button onClick={null} className="btn danger">Remover</Button>
@@ -221,5 +245,21 @@ function FormProfissionalData(props) {
                 }
             </Container>
         </Form>
+    );
+}
+
+function ModalConfirmRemotion(props) {
+    let { showModal, toolBox } = props;
+    return (
+        <Modal isOpen={showModal}>
+            <ModalHeader>Modal title</ModalHeader>
+            <ModalBody>
+                Você Confirma a Remoção da Posição "X"?
+        </ModalBody>
+            <ModalFooter>
+                <Button color="primary" onClick={toggle}>Sim</Button>{' '}
+                <Button color="danger" onClick={toggle}>Cancela</Button>
+            </ModalFooter>
+        </Modal>
     );
 }

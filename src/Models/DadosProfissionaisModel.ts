@@ -2,6 +2,7 @@ import { Model, Action, Inject, BaseHttpModel } from 'exredux';
 import { AuthModel } from './AuthModel';
 import { IPositionHeld } from '../Service/Interfaces/IPositionHeld';
 import { PositionHeldRepository } from '../Service/Repository/PositionHeldRepository';
+import { Fade } from 'reactstrap';
 
 @Model
 export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
@@ -67,6 +68,9 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
             startIn: null,
             endIn: null,
         };
+
+        this._error = false;
+        this._errorMessage = "";
     }
 
     private prepareInputToEdit(position: IPositionHeld){
