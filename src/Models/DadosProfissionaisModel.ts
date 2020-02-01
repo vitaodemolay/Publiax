@@ -2,7 +2,6 @@ import { Model, Action, Inject, BaseHttpModel } from 'exredux';
 import { AuthModel } from './AuthModel';
 import { IPositionHeld } from '../Service/Interfaces/IPositionHeld';
 import { PositionHeldRepository } from '../Service/Repository/PositionHeldRepository';
-import { Fade } from 'reactstrap';
 
 @Model
 export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
@@ -16,22 +15,29 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
     }
 
     private positions: IPositionHeld[] = null;
-    private _editing: boolean = false; 
+    private _editing: boolean = false;
 
     private _saving: boolean = false;
     private _error: boolean = false;
     private _errorMessage: string = "";
 
+    private _positionToDelete: IPositionHeld = null;
+    private _deleting: boolean = false;
 
-    public getHistoryPosition = () : IPositionHeld[] => {
+
+    public getHistoryPosition = (): IPositionHeld[] => {
         return this.positions;
     }
 
-    public isSaving = () : boolean => {
+    public getPositionToDelete = (): IPositionHeld => {
+        return this._positionToDelete;
+    }
+
+    public isSaving = (): boolean => {
         return this._saving;
     }
 
-    public isError = () : boolean => {
+    public isError = (): boolean => {
         return this._error;
     }
 
@@ -39,27 +45,31 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
         return this._editing;
     }
 
-    private setEditing(value: boolean){
+    public isDeleting = (): boolean => {
+        return this._deleting;
+    }
+
+    private setEditing(value: boolean) {
         this._editing = value;
     }
 
-    private setSaving(value: boolean){
+    private setSaving(value: boolean) {
         this._saving = value;
     }
 
-    public getErrorMessage = () : string => { 
+    public getErrorMessage = (): string => {
         return this._errorMessage;
     }
 
-    private setError(error: boolean, message?: string){
+    private setError(error: boolean, message?: string) {
         this._error = error;
         this._errorMessage = "";
-        if(error){
+        if (error) {
             this._errorMessage = message;
         }
     }
 
-    private clearInput(){
+    private clearInput() {
         this.input = {
             positionHeldId: "",
             title: "",
@@ -73,7 +83,7 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
         this._errorMessage = "";
     }
 
-    private prepareInputToEdit(position: IPositionHeld){
+    private prepareInputToEdit(position: IPositionHeld) {
         this.input = position;
     }
 
@@ -87,26 +97,26 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
     @Action
     getPositionsDataOnSource() {
         PositionHeldRepository.getPositionsData(this.auth.getSavedToken())
-        .then(f => {
-            this.positions = f.data;
-        }).catch(e => {
-            
-        }).finally(() => {
-            this.completed(null);
-        });
+            .then(f => {
+                this.positions = f.data;
+            }).catch(e => {
+
+            }).finally(() => {
+                this.completed(null);
+            });
     }
 
     @Action
-    updateDataSource() { 
+    updateDataSource() {
         this.setSaving(!this.isSaving());
         this.setError(false);
 
         let _promise = null;
 
-        if(this.input.positionHeldId !== ""){
-           _promise = PositionHeldRepository.updatePositionData(this.auth.getSavedToken(), this.input) 
+        if (this.input.positionHeldId !== "") {
+            _promise = PositionHeldRepository.updatePositionData(this.auth.getSavedToken(), this.input)
         }
-        else{
+        else {
             _promise = PositionHeldRepository.addNewPositionData(this.auth.getSavedToken(), this.input)
         }
 
@@ -116,9 +126,23 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
         }).catch(e => {
             this.setError(true, e.message)
             this.completed(null);
-        }).finally(() =>{
+        }).finally(() => {
             this.setSaving(false);
         });
+    }
+
+    @Action
+    deleteSetedPosition() {
+        if (this._positionToDelete != null) {
+            PositionHeldRepository.deletePositionData(this.auth.getSavedToken(), this._positionToDelete.positionHeldId)
+                .then(f => {
+                    this.getPositionsDataOnSource();
+                }).catch(e => {
+                    this.completed(null);
+                }).finally(() => {
+                    this.setPositionToDelete("");
+                })
+        }
     }
 
     @Action
@@ -128,15 +152,25 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
     }
 
     @Action
-    editExistsPosition(positionId: string){
+    editExistsPosition(positionId: string) {
         this.clearInput();
-        this.prepareInputToEdit(this.positions.find(f=> f.positionHeldId == positionId));
+        this.prepareInputToEdit(this.positions.find(f => f.positionHeldId == positionId));
         this.setEditing(true);
     }
 
     @Action
-    cancelEdition(){
+    cancelEdition() {
         this.clearInput();
         this.setEditing(false);
+    }
+
+    @Action
+    setPositionToDelete(positionId: string) {
+        let position = null;
+        if (positionId != "") {
+            position = this.positions.find(f => f.positionHeldId == positionId);
+        }
+        this._positionToDelete = position;
+        this._deleting = this._positionToDelete != null;
     }
 }

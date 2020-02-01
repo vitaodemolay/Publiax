@@ -6,7 +6,7 @@ const baseUrl = process.env.BASE_API_URL;
 const routeGetPositionsData = 'api/UserResume/getPositionHelds/';
 const routeAddPositionData = 'api/UserResume/registerPositionHeld/';
 const routeUpdatePositionData = 'api/UserResume/updatePositionHeld/';
-const routeDeletePositionData = 'api/UserResume/deletePositionHeld/{positionHeldId}';
+const routeDeletePositionData = 'api/UserResume/deletePositionHeld/';
 
 
 export class PositionHeldRepository {
@@ -35,6 +35,6 @@ export class PositionHeldRepository {
         const config = {
             headers: {'Authorization': "bearer " + token}
         };
-        return http.delete(`${baseUrl}${routeUpdatePositionData}${positionHeldId}`, config);
+        return http.delete(`${baseUrl}${routeDeletePositionData}${positionHeldId}`, config);
     }
 }
