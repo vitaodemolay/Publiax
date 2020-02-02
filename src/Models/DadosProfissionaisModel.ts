@@ -134,9 +134,14 @@ export class DadosProfissionaisModel extends BaseHttpModel<IPositionHeld> {
     @Action
     deleteSetedPosition() {
         if (this._positionToDelete != null) {
-            PositionHeldRepository.deletePositionData(this.auth.getSavedToken(), this._positionToDelete.positionHeldId)
+            const positionHeldId = this._positionToDelete.positionHeldId;
+            PositionHeldRepository.deletePositionData(this.auth.getSavedToken(), positionHeldId)
                 .then(f => {
                     this.getPositionsDataOnSource();
+                    if(this.positions.some(f => f.positionHeldId === positionHeldId)) {
+                        const idx = this.positions.findIndex(f => f.positionHeldId === positionHeldId);
+                        delete this.positions[idx];
+                    }
                 }).catch(e => {
                     this.completed(null);
                 }).finally(() => {

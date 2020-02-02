@@ -7,6 +7,7 @@ import { VagaDetalheModel } from './Models/VagaDetalheModel';
 import { DadosPessoaisModel } from './Models/DadosPessoaisModel';
 import { DadosEnderecoModel } from './Models/DadosEnderecoModel';
 import { DadosProfissionaisModel } from './Models/DadosProfissionaisModel';
+import { EscolaridadeModel } from './Models/EscolaridadeModel';
 
 
 export const appModels = new ModelStore({
@@ -18,5 +19,7 @@ export const appModels = new ModelStore({
            RouterModel, 
            DadosPessoaisModel, 
            DadosEnderecoModel,
-           DadosProfissionaisModel]
+           DadosProfissionaisModel,
+           EscolaridadeModel
+          ]
 });

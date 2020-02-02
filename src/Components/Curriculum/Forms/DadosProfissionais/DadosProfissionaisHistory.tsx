@@ -41,7 +41,7 @@ export default class HistoryPosition extends React.Component<Props> {
                             <ListGroupItemHeading>
                                 <Row>
                                     <Col md={2}>
-                                        <Label>Empresa:</Label>
+                                        <Label>Empresa: </Label>
                                     </Col>
                                     <Col md={10}>
                                         <strong>{position.title}</strong>

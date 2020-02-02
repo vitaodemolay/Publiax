@@ -3,7 +3,7 @@ import { Container } from 'reactstrap';
 import DadosPessoaisComponent from './Forms/DadosPessoais';
 import DadosEnderecoComponent from './Forms/DadosEndereco';
 import DadosProfissionaisComponent from './Forms/DadosProfissionais/DadosProfissionaisRoot';
-import EscolaridadeComponent from './Forms/Escolaridade';
+import EscolaridadeComponent from './Forms/Escolaridade/EscolaridadeRoot';
 import InformaticaComponent from './Forms/Informatica';
 import LinguasEstrangeirasComponent from './Forms/LinguasEstrangeiras';
 import OutrasInformacoesComponent from './Forms/OutrasInformacoes';
