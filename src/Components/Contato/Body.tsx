@@ -5,7 +5,7 @@ import { Container, Row, Col, Form, FormGroup, Label, Input, Button } from 'reac
 export default class BodyComponent extends React.Component {
     render() {
         return (
-            <Container>
+            <Container className="box-container box-contato">
                 <Row>
                     <div className="contatoDescription">
                         <p>Deixe sua mensagem através do formulário abaixo, ligue para a Winn Promoções e Eventos ou escreva para nosso e-mail. Esperamos que este seja o início de mais um case de sucesso.</p>
