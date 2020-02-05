@@ -650,6 +650,67 @@ select:focus {
   border-radius: 40px;
 }
 
+.searchBarArea {
+  background: #3f2358;
+  margin-bottom: 40px;
+}
+
+.searchBarArea input {
+  height: 44px;
+  border-top-left-radius: 40px !important;
+  border-bottom-left-radius: 40px !important;
+}
+
+.searchBarArea .container-search {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+@media (max-width: 991px) {
+  .searchBarArea .container-search {
+    width: 80%;
+  }
+}
+
+.searchBarArea .container-search .form-content {
+  display: table;
+  width: 100%;
+}
+
+.searchBarArea .container-search small {
+  color: #fff;
+  width: 100%;
+  display: block;
+}
+
+.searchBarArea .container-search .input-search {
+  float: left;
+  width: 87%;
+}
+
+@media (max-width: 767px) {
+  .searchBarArea .container-search .input-search {
+    width: 55%;
+  }
+}
+
+.searchBarArea .container-search .btn-buscar {
+  outline: 0;
+  background-color: #59be42;
+  color: #fff;
+  float: right;
+  border: none;
+  outline: none;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.searchBarArea .container-search .btn-buscar:hover {
+  background-color: #929292;
+}
+
 .box-logar {
   background-color: #dadada;
   text-align: center;
@@ -727,62 +788,8 @@ a {
 }
 
 /* ------- Vagas ---------------- */
-.searchBarArea {
-  background: #3f2358;
-  margin-bottom: 40px;
-}
-
 .TitleVagasSearch {
   color: white;
-}
-
-.container-search {
-  width: 50%;
-  display: block;
-  margin: 0 auto;
-  padding: 40px 0;
-}
-
-@media (max-width: 991px) {
-  .container-search {
-    width: 80%;
-  }
-}
-
-.container-search .form-content {
-  display: table;
-  width: 100%;
-}
-
-.container-search small {
-  color: #fff;
-  width: 100%;
-  display: block;
-}
-
-.container-search .input-search {
-  float: left;
-  width: 87%;
-}
-
-@media (max-width: 767px) {
-  .container-search .input-search {
-    width: 55%;
-  }
-}
-
-.container-search .btn-buscar {
-  outline: 0;
-  background-color: #59be42;
-  color: #fff;
-  float: right;
-  border: none;
-  outline: none;
-  border-radius: initial;
-}
-
-.container-search .btn-buscar:hover {
-  background-color: #929292;
 }
 
 .container-vagas .btn_default {

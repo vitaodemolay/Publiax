@@ -95,7 +95,60 @@ select:focus {
   border-radius: 40px;
 
 }
+.searchBarArea {
+  background: #3f2358;
+  margin-bottom: 40px;
+  input {
+    height: 44px;
+    border-top-left-radius: 40px!important;
+    border-bottom-left-radius: 40px!important;
+  } 
 
+  .container-search {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding: 40px 0;
+  
+      @media (max-width: 991px) {
+  
+        width: 80%;
+  
+    }
+    .form-content {
+      display: table;
+      width: 100%;
+    }
+    small {
+      color:#fff;
+      width: 100%;
+      display: block;
+    }
+    .input-search {
+      float: left;
+      width: 87%;
+  
+        @media (max-width: 767px) {
+  
+          width: 55%;
+  
+      }
+    }
+    .btn-buscar {
+      outline: 0;
+      background-color:#59be42;    
+      color:#fff;
+      float:right;
+      border:none;
+      outline: none;
+      border-top-right-radius: 40px;
+      border-bottom-right-radius: 40px;
+      &:hover {
+        background-color:rgb(146, 146, 146);
+      }
+    }
+  }
+}
 // END STRUCTURE //
 
 
@@ -177,58 +230,12 @@ a {
 
 
 /* ------- Vagas ---------------- */ 
-.searchBarArea{
-  background: #3f2358;
-  margin-bottom: 40px;
-}
 
 .TitleVagasSearch{
   color: white;
 }
 
-.container-search {
-  width: 50%;
-  display: block;
-  margin: 0 auto;
-  padding: 40px 0;
 
-    @media (max-width: 991px) {
-
-      width: 80%;
-
-  }
-  .form-content {
-    display: table;
-    width: 100%;
-  }
-  small {
-    color:#fff;
-    width: 100%;
-    display: block;
-  }
-  .input-search {
-    float: left;
-    width: 87%;
-
-      @media (max-width: 767px) {
-
-        width: 55%;
-
-    }
-  }
-  .btn-buscar {
-    outline: 0;
-    background-color:#59be42;    
-    color:#fff;
-    float:right;
-    border:none;
-    outline: none;
-    border-radius: initial;
-    &:hover {
-      background-color:rgb(146, 146, 146);
-    }
-  }
-}
 .container-vagas {
 
   .btn_default {
