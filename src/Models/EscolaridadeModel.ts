@@ -136,7 +136,7 @@ export class EscolaridadeModel extends BaseHttpModel<IEducational> {
             const educationalId = this._educationalToDelete.educationalId;
             EducationalDataRepository.deleteEducationalData(this.auth.getSavedToken(), educationalId)
                 .then(f => {
-                    this.getEducationalToDelete();
+                    this.getEducationalsDataOnSource();
                     if(this.educationals.some(f => f.educationalId === educationalId)){
                         const idx = this.educationals.findIndex(f => f.educationalId === educationalId);
                         delete this.educationals[idx];
