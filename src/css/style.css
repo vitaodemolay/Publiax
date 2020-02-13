@@ -233,6 +233,10 @@
   }
 }
 
+#navigation #myLinks .btn-entrar {
+  padding: 6px 20px;
+}
+
 #navigation .navbar {
   margin-bottom: 0;
 }
