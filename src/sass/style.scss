@@ -148,6 +148,15 @@ select:focus {
       }
     }
   }
+
+  .input-group-append {
+
+    @media (max-width: 767px) {
+  
+      display: inherit;
+
+    }
+  }
 }
 // END STRUCTURE //
 

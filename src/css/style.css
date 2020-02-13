@@ -715,6 +715,12 @@ select:focus {
   background-color: #929292;
 }
 
+@media (max-width: 767px) {
+  .searchBarArea .input-group-append {
+    display: inherit;
+  }
+}
+
 .box-logar {
   background-color: #dadada;
   text-align: center;
