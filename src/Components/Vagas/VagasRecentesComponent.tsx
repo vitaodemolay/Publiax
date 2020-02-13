@@ -18,24 +18,21 @@ export default class VagasRecentes extends React.Component<Props> {
         const { vagas } = this.props;
         return (
             <Container>
-                <Card>
-                    <CardHeader className="text-center">
-                        <h2>Vagas Recentes</h2>
-                    </CardHeader>
-                    <CardBody>
-                        <table className="table container-vagas">
-                            <tbody>
-                                {vagas.map((item, index) => (
-                                    <tr key={index}>
-                                        <td>{item.titulo}</td>
-                                        <td>{VagaTools.getPublicacaoToString(item.publicacao)}</td>
-                                        <td><a className="btn_default" href={this.defineUrlAddress(item.id)}>Detalhe</a></td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </CardBody>
-                </Card>
+                <div className="box-container">
+                    <h3>Vagas Recentes</h3>
+                    <table className="table container-vagas">
+                        <tbody>
+                            {vagas.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.titulo}</td>
+                                    <td>{VagaTools.getPublicacaoToString(item.publicacao)}</td>
+                                    <td><a className="btn_default" href={this.defineUrlAddress(item.id)}>Detalhe</a></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+
+                </div>
             </Container>
         );
     }
