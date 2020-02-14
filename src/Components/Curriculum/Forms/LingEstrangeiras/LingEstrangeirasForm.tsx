@@ -1,53 +1,53 @@
 import React from "react";
-import { OutrasQualificacoesModel } from "../../../../Models/OutrasQualificacoesModel";
+import { LingEstrangeirasModel } from "../../../../Models/LingEstrangeirasModel";
 import { Container, Form, FormGroup, Row, Col, Button, Label, Input, Alert, Spinner } from "reactstrap";
 
 interface Props {
-    outrasQualificacoesModel: OutrasQualificacoesModel
+    lingEstrangeirasModel: LingEstrangeirasModel
 }
 
-export default class FormOutrasQualificacoes extends React.Component<Props> {
+export default class FormLingEstrangeiras extends React.Component<Props> {
     
     handleFieldUpdate = (fieldName: string) => evt => {
-        this.props.outrasQualificacoesModel.doFieldUpdate(fieldName, evt.target.value);
+        this.props.lingEstrangeirasModel.doFieldUpdate(fieldName, evt.target.value);
     }
 
     render() {
-        const { outrasQualificacoesModel } = this.props;
+        const { lingEstrangeirasModel } = this.props;
         return (
             <Form id="register-details" className="">
                 <Container className="signup-content">
                     <div>
-                        {outrasQualificacoesModel.isError() &&
+                        {lingEstrangeirasModel.isError() &&
                             <Alert color="danger">
-                                <span>{outrasQualificacoesModel.getErrorMessage()}</span>
+                                <span>{lingEstrangeirasModel.getErrorMessage()}</span>
                             </Alert>
                         }
                     </div>
                     <FormGroup>
-                        <Label>Qualificação</Label>
-                        <Input type="text" className="form-control" placeholder="Qualificação" onChange={this.handleFieldUpdate('description')} value={outrasQualificacoesModel.input['description']} />
+                        <Label>Idioma</Label>
+                        <Input type="text" className="form-control" placeholder="Idioma" onChange={this.handleFieldUpdate('description')} value={lingEstrangeirasModel.input['description']} />
                     </FormGroup>
                     <FormGroup>
                         <Label>Nível de Conhecimento</Label>
-                        <Input type="select" className="form-control" placeholder="Nível" onChange={this.handleFieldUpdate('level')} value={outrasQualificacoesModel.input['level']}>
+                        <Input type="select" className="form-control" placeholder="Nível" onChange={this.handleFieldUpdate('level')} value={lingEstrangeirasModel.input['level']}>
                             <option value={1}>Básico</option>
                             <option value={2}>Intermediário</option>
                             <option value={3}>Avançado</option>
                         </Input>
                     </FormGroup>
 
-                    {outrasQualificacoesModel.isSaving() &&
+                    {lingEstrangeirasModel.isSaving() &&
                         <Spinner animation="border" variant="secondary" />
                     }
     
-                    {!(outrasQualificacoesModel.isSaving()) &&
+                    {!(lingEstrangeirasModel.isSaving()) &&
                         <Row>
                             <Col md={2}>
-                                <Button className="btn btn-primary" onClick={outrasQualificacoesModel.updateDataSource}>SALVAR</Button>
+                                <Button className="btn btn-primary" onClick={lingEstrangeirasModel.updateDataSource}>SALVAR</Button>
                             </Col>
                             <Col md={2}>
-                                <Button className="danger" onClick={outrasQualificacoesModel.cancelEdition}>CANCELAR</Button>
+                                <Button className="danger" onClick={lingEstrangeirasModel.cancelEdition}>CANCELAR</Button>
                             </Col>
                         </Row>
                     }

@@ -5,7 +5,7 @@ import DadosEnderecoComponent from './Forms/DadosEndereco';
 import DadosProfissionaisComponent from './Forms/DadosProfissionais/DadosProfissionaisRoot';
 import EscolaridadeComponent from './Forms/Escolaridade/EscolaridadeRoot';
 import OutrasQualificacoesComponent from './Forms/OutrasQualificacoes/OutrasQualificacoesRoot';
-import LinguasEstrangeirasComponent from './Forms/LinguasEstrangeiras';
+import LingEstrageirasComponent from './Forms/LingEstrangeiras/LingEstrangeirasRoot';
 import OutrasInformacoesComponent from './Forms/OutrasInformacoes';
 import CartaApresentacaoComponent from './Forms/CartaApresentacao';
 
@@ -31,8 +31,7 @@ export default class BoxFormsComponent extends React.Component {
                     <Route path="/curriculum/DadosProfissionais" component={DadosProfissionaisComponent}/>
                     <Route path="/curriculum/Escolaridade" component={EscolaridadeComponent}/>
                     <Route path="/curriculum/OutrasQualificacoes" component={OutrasQualificacoesComponent}/>
-                    <Route path="/curriculum/LinguasEstrangeiras" component={LinguasEstrangeirasComponent}/>
-                    <Route path="/curriculum/OutrasInformacoes" component={OutrasInformacoesComponent}/>
+                    <Route path="/curriculum/LinguasEstrangeiras" component={LingEstrageirasComponent}/>
                     <Route path="/curriculum/CartaApresentacao" component={CartaApresentacaoComponent}/>
 
                     <Route path="/curriculum/Visualizar" component={VisualizarComponent}/>

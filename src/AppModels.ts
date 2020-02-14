@@ -9,6 +9,7 @@ import { DadosEnderecoModel } from './Models/DadosEnderecoModel';
 import { DadosProfissionaisModel } from './Models/DadosProfissionaisModel';
 import { EscolaridadeModel } from './Models/EscolaridadeModel';
 import { OutrasQualificacoesModel } from './Models/OutrasQualificacoesModel';
+import { LingEstrangeirasModel } from './Models/LingEstrangeirasModel';
 
 
 export const appModels = new ModelStore({
@@ -22,6 +23,7 @@ export const appModels = new ModelStore({
            DadosEnderecoModel,
            DadosProfissionaisModel,
            EscolaridadeModel,
-           OutrasQualificacoesModel
+           OutrasQualificacoesModel,
+           LingEstrangeirasModel,
           ]
 });
