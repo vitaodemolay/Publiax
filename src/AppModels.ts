@@ -10,6 +10,7 @@ import { DadosProfissionaisModel } from './Models/DadosProfissionaisModel';
 import { EscolaridadeModel } from './Models/EscolaridadeModel';
 import { OutrasQualificacoesModel } from './Models/OutrasQualificacoesModel';
 import { LingEstrangeirasModel } from './Models/LingEstrangeirasModel';
+import { CartaApresentacaoModel } from './Models/CartaApresentacaoModel';
 
 
 export const appModels = new ModelStore({
@@ -25,5 +26,6 @@ export const appModels = new ModelStore({
            EscolaridadeModel,
            OutrasQualificacoesModel,
            LingEstrangeirasModel,
+           CartaApresentacaoModel,
           ]
 });

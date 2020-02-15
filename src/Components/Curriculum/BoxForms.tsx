@@ -6,16 +6,10 @@ import DadosProfissionaisComponent from './Forms/DadosProfissionais/DadosProfiss
 import EscolaridadeComponent from './Forms/Escolaridade/EscolaridadeRoot';
 import OutrasQualificacoesComponent from './Forms/OutrasQualificacoes/OutrasQualificacoesRoot';
 import LingEstrageirasComponent from './Forms/LingEstrangeiras/LingEstrangeirasRoot';
-import OutrasInformacoesComponent from './Forms/OutrasInformacoes';
 import CartaApresentacaoComponent from './Forms/CartaApresentacao';
 
 import VisualizarComponent from './Forms/Visualizar';
-import ImprimirComponent from './Forms/Imprimir';
 
-import CurriculoComponent from './Forms/Curriculo';
-import AvisosComponent from './Forms/Avisos';
-import ParticipacoesComponent from './Forms/Participacoes';
-import ConfiguracoesComponent from './Forms/Configuracoes';
 
 
 import { Switch, Route, Redirect } from 'react-router';
@@ -35,12 +29,7 @@ export default class BoxFormsComponent extends React.Component {
                     <Route path="/curriculum/CartaApresentacao" component={CartaApresentacaoComponent}/>
 
                     <Route path="/curriculum/Visualizar" component={VisualizarComponent}/>
-                    <Route path="/curriculum/Imprimir" component={ImprimirComponent}/>
-
-                    <Route path="/curriculum/Curriculo" component={CurriculoComponent}/>
-                    <Route path="/curriculum/Avisos" component={AvisosComponent}/>
-                    <Route path="/curriculum/Participacoes" component={ParticipacoesComponent}/>
-                    <Route path="/curriculum/Configuracoes" component={ConfiguracoesComponent}/>
+                    <Route path="/curriculum/Imprimir" component={VisualizarComponent}/>
 
                     <Redirect to="/curriculum/DadosPessoais" />
                 </Switch>

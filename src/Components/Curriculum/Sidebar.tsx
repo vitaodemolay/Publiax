@@ -22,13 +22,6 @@ export default class SidebarComponent extends React.Component {
                     <ListGroupItem tag="a" href="#/curriculum/Imprimir" ><span className="lnr lnr-printer"></span>Imprimir</ListGroupItem>
                 </ListGroup>
 
-                <ListGroup>
-                    <h1 className="">Minha Conta</h1>
-                    <ListGroupItem tag="a" href="#/curriculum/Curriculo" ><span className="lnr lnr-users"></span>Currículo</ListGroupItem>
-                    <ListGroupItem tag="a" href="#/curriculum/Avisos" ><span className="lnr lnr-alarm"></span>Avisos</ListGroupItem>
-                    <ListGroupItem tag="a" href="#/curriculum/Participacoes" ><span className="lnr lnr-exit-up"></span>Participações</ListGroupItem>
-                    <ListGroupItem tag="a" href="#/curriculum/Configuracoes" ><span className="lnr lnr-cog"></span>Configurações</ListGroupItem>
-                </ListGroup>
             </div>
 
         )
