@@ -48,6 +48,15 @@ export class CartaApresentacaoModel extends BaseHttpModel<IResume> {
         };
     }
 
+    public getPresentationLetterOnString(): string{
+        const result = this.input.presentationLetter.toString('html');
+        if(result == "<p><br></p>"){
+            return "";
+        }
+
+        return result;
+    }
+
     @Inject auth?: AuthModel;
 
     @Action

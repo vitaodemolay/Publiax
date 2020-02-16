@@ -6,6 +6,8 @@ const routeGetPresentationLetter = 'api/UserResume/getPresentationLetter/';
 const routeUpdatePresentationLetter = 'api/UserResume/registerPresentationLetter/';
 const routeDeletePresentationLetter = 'api/UserResume/deletePresentationLetter/';
 
+const routeGetResumeFull = 'api/UserResume/getResumeFull/';
+
 export class ResumeDataRepository {
 
     static getPresentationLetter(token: string) {
@@ -29,5 +31,12 @@ export class ResumeDataRepository {
         };
 
         return http.delete(`${baseUrl}${routeDeletePresentationLetter}`, config)
+    }
+
+    static getResumeFull(token: string) {
+        const config = {
+            headers: {'Authorization': "bearer " + token}
+        };
+        return http.get<IResume>(`${baseUrl}${routeGetResumeFull}`, config);
     }
 }
