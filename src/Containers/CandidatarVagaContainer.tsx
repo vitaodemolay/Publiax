@@ -33,10 +33,12 @@ export default class CandidatarVagaContainer extends React.Component<Props> {
                 {vagaDetalhe.isCompleted && 
                     <div>
                         <VagaDetalheBody vaga={vagaDetalhe.response.data}/>
-                        <CandidatarFooterComponent />
+                        <CandidatarFooterComponent vagaDetalhe={vagaDetalhe} jobId={vagaDetalhe.response.data.id} />
                     </div>
                 }
             </div>
         );
     }
+
+
 }
