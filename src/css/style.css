@@ -9,6 +9,15 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
 @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.hrResumeFull {
+      color: rgb(75, 74, 74);
+      background-color: rgb(75, 74, 74);
+      height: 1px;
+      width: 100%;
+}
+
+
 .footer-area {
   background-color: #fff;
 }
