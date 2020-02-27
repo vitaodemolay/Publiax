@@ -1,10 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Button, Spinner, Label } from 'reactstrap';
 import { VagaDetalheModel } from '../../Models/VagaDetalheModel';
+import { InscricaoVagaModel } from '../../Models/InscricaoVagaModel';
 
 interface Props {
-    vagaDetalhe: VagaDetalheModel
-    jobId: string
+    vagaDetalhe: VagaDetalheModel,
+    inscricaoVaga: InscricaoVagaModel
 }
 
 export default class CandidatarFooterComponent extends React.Component<Props> {
@@ -14,13 +15,13 @@ export default class CandidatarFooterComponent extends React.Component<Props> {
     }
 
     confirmaClick = () => {
-        const { vagaDetalhe, jobId } = this.props;
-        vagaDetalhe.registerSubscription(jobId);
+        const { inscricaoVaga } = this.props;
+        inscricaoVaga.registerSubscription();
     }
 
     render() {
-        const { vagaDetalhe, jobId } = this.props;
-        const subscript = vagaDetalhe.isSubscript(jobId);
+        const { vagaDetalhe, inscricaoVaga } = this.props;
+        const subscript = inscricaoVaga.getJobSubscription();
         return (
             <Container>
                 <Row className="VagaDetalhesFooter">
@@ -28,21 +29,13 @@ export default class CandidatarFooterComponent extends React.Component<Props> {
                         <Button onClick={this.voltarClick}>Voltar</Button>
                     </Col>
 
-                    {vagaDetalhe.isSaving() &&
+                    {inscricaoVaga.isSaving() &&
                         <Spinner animation="border" variant="secondary" />
                     }
-                    {!vagaDetalhe.isSaving() && (
-                        <div>
-                            {subscript.isSubscribe ? (
-                                <Col>
-                                    <Label>Inscrito na vaga em {subscript.subscriptionDate}</Label>
-                                </Col>
-                            ) : (
-                                    <Col>
-                                        <Button onClick={this.confirmaClick}>Confirma Candidatura</Button>
-                                    </Col>
-                                )}
-                        </div>
+                    {!inscricaoVaga.isSaving() && !subscript.isSubscribe && (
+                        <Col>
+                            <Button onClick={this.confirmaClick}>Confirma Candidatura</Button>
+                        </Col>
                     )}
                 </Row>
             </Container>

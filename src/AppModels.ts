@@ -12,13 +12,15 @@ import { OutrasQualificacoesModel } from './Models/OutrasQualificacoesModel';
 import { LingEstrangeirasModel } from './Models/LingEstrangeirasModel';
 import { CartaApresentacaoModel } from './Models/CartaApresentacaoModel';
 import { VisualizaCvModel } from './Models/VisualizaCvModel';
+import { InscricaoVagaModel } from './Models/InscricaoVagaModel';
 
 
 export const appModels = new ModelStore({
   devExtension: process.env.NODE_ENV === 'development',
   models: [VagasRecentesModel, 
            VagasEncontradasBuscaModel, 
-           VagaDetalheModel, 
+           VagaDetalheModel,
+           InscricaoVagaModel, 
            AuthModel, 
            RouterModel, 
            DadosPessoaisModel, 
