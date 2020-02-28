@@ -7,16 +7,29 @@ import { VagaDetalheModel } from './Models/VagaDetalheModel';
 import { DadosPessoaisModel } from './Models/DadosPessoaisModel';
 import { DadosEnderecoModel } from './Models/DadosEnderecoModel';
 import { DadosProfissionaisModel } from './Models/DadosProfissionaisModel';
+import { EscolaridadeModel } from './Models/EscolaridadeModel';
+import { OutrasQualificacoesModel } from './Models/OutrasQualificacoesModel';
+import { LingEstrangeirasModel } from './Models/LingEstrangeirasModel';
+import { CartaApresentacaoModel } from './Models/CartaApresentacaoModel';
+import { VisualizaCvModel } from './Models/VisualizaCvModel';
+import { InscricaoVagaModel } from './Models/InscricaoVagaModel';
 
 
 export const appModels = new ModelStore({
   devExtension: process.env.NODE_ENV === 'development',
   models: [VagasRecentesModel, 
            VagasEncontradasBuscaModel, 
-           VagaDetalheModel, 
+           VagaDetalheModel,
+           InscricaoVagaModel, 
            AuthModel, 
            RouterModel, 
            DadosPessoaisModel, 
            DadosEnderecoModel,
-           DadosProfissionaisModel]
+           DadosProfissionaisModel,
+           EscolaridadeModel,
+           OutrasQualificacoesModel,
+           LingEstrangeirasModel,
+           CartaApresentacaoModel,
+           VisualizaCvModel
+          ]
 });

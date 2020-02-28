@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 export default class SidebarComponent extends React.Component {
     render() {
@@ -12,10 +12,9 @@ export default class SidebarComponent extends React.Component {
                     <ListGroupItem tag="a" href="#/curriculum/DadosEndereco"><span className="lnr lnr-user"></span>Dados de Endereço</ListGroupItem>
                     <ListGroupItem tag="a" href="#/curriculum/DadosProfissionais" ><span className="lnr lnr-briefcase"></span>Dados Profissionais</ListGroupItem>
                     <ListGroupItem tag="a" href="#/curriculum/Escolaridade" ><span className="lnr lnr-graduation-hat"></span>Escolaridade</ListGroupItem>
-                    <ListGroupItem tag="a" href="#/curriculum/Informatica" ><span className="lnr lnr-screen"></span>Informática</ListGroupItem>
-                    <ListGroupItem tag="a" href="#/curriculum/Linguas" ><span className="lnr lnr-bubble"></span>Línguas Estrangeiras</ListGroupItem>
-                    <ListGroupItem tag="a" href="#/curriculum/Informacoes" ><span className="lnr lnr-question-circle"></span>Outras Informações</ListGroupItem>
-                    <ListGroupItem tag="a" href="#/curriculum/Apresentacao" ><span className="lnr lnr-license"></span>Carta de Apresentação</ListGroupItem>
+                    <ListGroupItem tag="a" href="#/curriculum/OutrasQualificacoes" ><span className="lnr lnr-screen"></span>Outras Qualificações</ListGroupItem>
+                    <ListGroupItem tag="a" href="#/curriculum/LinguasEstrangeiras" ><span className="lnr lnr-bubble"></span>Línguas Estrangeiras</ListGroupItem>
+                    <ListGroupItem tag="a" href="#/curriculum/CartaApresentacao" ><span className="lnr lnr-license"></span>Carta de Apresentação</ListGroupItem>
                 </ListGroup>
 
                 <ListGroup>
@@ -23,13 +22,6 @@ export default class SidebarComponent extends React.Component {
                     <ListGroupItem tag="a" href="#/curriculum/Imprimir" ><span className="lnr lnr-printer"></span>Imprimir</ListGroupItem>
                 </ListGroup>
 
-                <ListGroup>
-                    <h1 className="">Minha Conta</h1>
-                    <ListGroupItem tag="a" href="#/curriculum/Curriculo" ><span className="lnr lnr-users"></span>Currículo</ListGroupItem>
-                    <ListGroupItem tag="a" href="#/curriculum/Avisos" ><span className="lnr lnr-alarm"></span>Avisos</ListGroupItem>
-                    <ListGroupItem tag="a" href="#/curriculum/Participacoes" ><span className="lnr lnr-exit-up"></span>Participações</ListGroupItem>
-                    <ListGroupItem tag="a" href="#/curriculum/Configuracoes" ><span className="lnr lnr-cog"></span>Configurações</ListGroupItem>
-                </ListGroup>
             </div>
 
         )

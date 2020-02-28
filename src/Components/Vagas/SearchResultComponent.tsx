@@ -18,34 +18,32 @@ export default class SearchResult extends React.Component<Props> {
         const isNotFound = (vagas === undefined || vagas.length === 0);
         return (
             <Container>
-                <Card>
-                    <CardHeader className="text-center">
-                        <h2>Resultado da Pesquisa de Vagas</h2>
-                    </CardHeader>
-                    <CardBody>
-                        {isNotFound && 
-                            <div>
-                                <strong>
-                                    Nenhum resultado encontrado para o filtro informado.
-                                </strong>
-                            </div>
-                        }
+                <CardHeader className="text-center">
+                    <h2>Resultado da Pesquisa de Vagas</h2>
+                </CardHeader>
+                <CardBody>
+                    {isNotFound && 
+                        <div>
+                            <strong>
+                                Nenhum resultado encontrado para o filtro informado.
+                            </strong>
+                        </div>
+                    }
 
-                        {!isNotFound && 
-                            <table className="table">
-                            <tbody>
-                                {vagas.map((item, index) => (
-                                    <tr key={index}>
-                                       <td>{item.titulo}</td>
-                                        <td>{VagaTools.getPublicacaoToString(item.publicacao)}</td>
-                                        <td><a className="btn_default" href={this.defineUrlAddress(item.id)}>Detalhe</a></td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                        }
-                    </CardBody>
-                </Card>
+                    {!isNotFound && 
+                        <table className="table">
+                        <tbody>
+                            {vagas.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.titulo}</td>
+                                    <td>{VagaTools.getPublicacaoToString(item.publicacao)}</td>
+                                    <td><a className="btn_default" href={this.defineUrlAddress(item.id)}>Detalhe</a></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    }
+                </CardBody>
             </Container>
         );
     }

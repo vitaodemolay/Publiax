@@ -41,9 +41,12 @@ export default class Footer extends React.Component {
                                 <div className="footer-link">
                                     <h6 className="footer-title">Endereço</h6>
                                     <ul>
-                                        <li><a href="#">Support Center</a></li>
-                                        <li><a href="#">FAQ</a></li>
-                                        <li><a href="#">Terms & Conditions</a></li>
+                                        <li>Av.Gastão Vidigal, 1132-V. Leopoldina<br/>
+                                        São Paulo-SP - 05314-010</li>
+                                        <li><strong>Telefone</strong> 11 3641-9239/9095</li>
+                                        <li><strong>Celular</strong> 11 986557890</li>
+                                        <li><strong>E-mail</strong> contato@winnpromocoes.com.br</li>
+
                                     </ul>
                                 </div>
                             </Col>

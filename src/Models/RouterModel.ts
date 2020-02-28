@@ -2,6 +2,7 @@ import { Model, Action, Inject, Trigger } from 'exredux';
 import { AuthModel } from './AuthModel';
 import { VagaDetalheModel } from './VagaDetalheModel';
 import { DadosPessoaisModel } from './DadosPessoaisModel';
+import { InscricaoVagaModel } from './InscricaoVagaModel';
 
 
 @Model
@@ -11,6 +12,7 @@ export class RouterModel {
   @Inject auth?: AuthModel;
   @Inject vagaDetalhe?: VagaDetalheModel;
   @Inject dadosPessoais?: DadosPessoaisModel;
+  @Inject inscricaoVaga?: InscricaoVagaModel;
 
   @Action
   routeChange(pathname: string) {
@@ -31,6 +33,7 @@ export class RouterModel {
     if (page === 'candidatarvaga' && this.auth.isAuthenticated()) {
       const id = path[2];
       this.vagaDetalhe.setJobId(id);
+
     }
   }
 
@@ -52,6 +55,13 @@ export class RouterModel {
   protected getVagaDetalheCompleted() {
     // tslint:disable-next-line:no-console
     console.log('Job get details is loaded!');
+    if(this.auth.isAuthenticated()){
+      try {
+        this.inscricaoVaga.requestJobSubscription();
+      } catch (error) {
+        console.log('Error on Get Subscription');
+      }
+    }
   }
 
   @Trigger(DadosPessoaisModel, 'getUserDataOnSource')

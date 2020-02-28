@@ -5,10 +5,12 @@ import { VagaDetalheModel } from '../Models/VagaDetalheModel';
 import HeaderComponent from '../Components/VagaDetalhe/Header';
 import VagaDetalheBody from '../Components/VagaDetalhe/Body';
 import CandidatarFooterComponent from '../Components/VagaDetalhe/CandidatarFooter';
+import { InscricaoVagaModel } from '../Models/InscricaoVagaModel';
 
 
 class Props{
     @Inject vagaDetalhe : VagaDetalheModel;
+    @Inject inscricaoVaga : InscricaoVagaModel; 
 }
 
 @Connection({
@@ -22,7 +24,7 @@ export default class CandidatarVagaContainer extends React.Component<Props> {
     }
 
     render() {
-        const { vagaDetalhe } = this.props;
+        const { vagaDetalhe, inscricaoVaga } = this.props;
 
         return (
             <div>
@@ -32,11 +34,13 @@ export default class CandidatarVagaContainer extends React.Component<Props> {
                 {vagaDetalhe.isFailed && <div>Falhou!</div>}
                 {vagaDetalhe.isCompleted && 
                     <div>
-                        <VagaDetalheBody vaga={vagaDetalhe.response.data}/>
-                        <CandidatarFooterComponent />
+                        <VagaDetalheBody vaga={vagaDetalhe.response.data} inscricao={inscricaoVaga.getJobSubscription()}/> 
+                        <CandidatarFooterComponent vagaDetalhe={vagaDetalhe} inscricaoVaga={inscricaoVaga} />
                     </div>
                 }
             </div>
         );
     }
+
+
 }
