@@ -16,27 +16,24 @@ export default class VagaDetalheBody extends React.Component<Props>{
 
         const { vaga, inscricao } = this.props;
         return (
-            <Container className="content-vagas">
-                <Card>
-                    <CardHeader className="text-center" >
-                        <h3>{vaga.titulo}</h3>
-                    </CardHeader>
-                    <CardBody>
+            <Container className="box-container">
+                    <h3>{vaga.titulo}</h3>
+                    <div className="text-description">
                         <Dynamic html={vaga.descricao} />
-                    </CardBody>
-                    <CardFooter>
+                    </div>
+                    <div className="publicad-data">
                         <p>
                             <strong>Publicado Em: </strong>
                             <span>{VagaTools.getPublicacaoFormat(vaga.publicacao)}</span>
                         </p>
+
                         {(inscricao != null && inscricao != undefined && inscricao.isSubscribe) && (
                             <p>
                                 <strong>Inscrito na vaga em: </strong>
                                 <span>{VagaTools.getPublicacaoFormat(inscricao.subscriptionDate)}</span>
                             </p>
                         )}
-                    </CardFooter>
-                </Card>
+                    </div>
             </Container>
         );
     }

@@ -5,7 +5,7 @@
     Author URL: https://bootstrapmade.com
 */
 /* ==== Google font ==== */
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,700,900");
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
 @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
@@ -22,53 +22,57 @@
   background-color: #fff;
 }
 
-.footer-widget {
+.footer-area .footer-widget {
   padding-top: 90px;
   padding-bottom: 120px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .footer-widget {
+  .footer-area .footer-widget {
     padding-top: 70px;
     padding-bottom: 100px;
   }
 }
 
 @media (max-width: 767px) {
-  .footer-widget {
+  .footer-area .footer-widget {
     padding-top: 50px;
     padding-bottom: 80px;
   }
 }
 
-.footer-logo-support .footer-logo .social {
+.footer-area .footer-widget .container {
+  border-top: 1px solid #a8a8a8;
+}
+
+.footer-area .footer-logo-support .footer-logo .social {
   margin-left: 35px;
 }
 
-.footer-logo-support .footer-logo .social li {
+.footer-area .footer-logo-support .footer-logo .social li {
   display: inline-block;
   margin-right: 10px;
 }
 
-.footer-logo-support .footer-logo .social li a {
+.footer-area .footer-logo-support .footer-logo .social li a {
   font-size: 24px;
   color: #6c6c6c;
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
 
-.footer-logo-support .footer-logo .social li a:hover {
+.footer-area .footer-logo-support .footer-logo .social li a:hover {
   color: #0067f4;
 }
 
-.footer-logo-support .footer-support span {
+.footer-area .footer-logo-support .footer-support span {
   font-size: 20px;
   line-height: 25px;
   color: #6c6c6c;
   font-weight: 600;
 }
 
-.footer-logo-support .footer-support span.mail {
+.footer-area .footer-logo-support .footer-support span.mail {
   margin-left: 32px;
 }
 
@@ -114,57 +118,6 @@
   color: #0067f4;
 }
 
-#top-logado .site-logo a.brand {
-  background-image: url(../img/logo-winn.png);
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 260px;
-  height: 120px;
-  transition: height 0.9s ease-out;
-  -webkit-transition: height 0.9s ease-out;
-  -moz-transition: height 0.9s ease-out;
-  -ms-transition: height 0.9s ease-out;
-  -o-transition: height 0.9s ease-out;
-}
-
-.box-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.content-top {
-  -ms-flex-item-align: center;
-      align-self: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 65%;
-}
-
-.content-top .box-search {
-  background-color: red;
-}
-
-.content-top .box-search input {
-  min-width: 300px;
-  height: 50px;
-}
-
-@media (max-width: 991px) {
-  .navigation ul.nav {
-    display: none;
-  }
-}
-
 @media (max-width: 991PX) {
   .navbar {
     width: 65%;
@@ -172,15 +125,26 @@
   }
 }
 
-.navigation .menu-btn {
+#navigation {
+  width: 100%;
+  display: block;
+  background-color: #602086;
+  transition: height 0.9s ease-out;
+  -webkit-transition: height 0.9s ease-out;
+  -moz-transition: height 0.9s ease-out;
+  -ms-transition: height 0.9s ease-out;
+  -o-transition: height 0.9s ease-out;
+}
+
+#navigation .menu-btn {
   display: none;
 }
 
-.navigation .menu-btn:hover {
+#navigation .menu-btn:hover {
   background-color: #f4f4f4;
 }
 
-.navigation .menu-icon {
+#navigation .menu-icon {
   cursor: pointer;
   display: inline-block;
   float: right;
@@ -194,13 +158,13 @@
 }
 
 @media (max-width: 991PX) {
-  .navigation .menu-icon {
+  #navigation .menu-icon {
     display: block;
   }
 }
 
-.navigation .menu-icon .navicon {
-  background: #333;
+#navigation .menu-icon .navicon {
+  background: #fff;
   display: block;
   height: 2px;
   position: relative;
@@ -209,16 +173,16 @@
   width: 18px;
 }
 
-.navigation .menu-icon .navicon:before {
+#navigation .menu-icon .navicon:before {
   top: 5px;
 }
 
-.navigation .menu-icon .navicon:after {
+#navigation .menu-icon .navicon:after {
   top: -5px;
 }
 
-.navigation .menu-icon .navicon:before, .navigation .menu-icon .navicon:after {
-  background: #333;
+#navigation .menu-icon .navicon:before, #navigation .menu-icon .navicon:after {
+  background: #fff;
   content: '';
   display: block;
   height: 100%;
@@ -228,7 +192,7 @@
   width: 100%;
 }
 
-.navigation .menu {
+#navigation .menu {
   clear: both;
   max-height: 0;
   -webkit-transition: max-height .2s ease-out;
@@ -239,33 +203,114 @@
 }
 
 @media (max-width: 991PX) {
-  .navigation .menu {
+  #navigation .menu {
     display: block;
   }
 }
 
-.navigation .menu li {
+#navigation .menu li {
   border-bottom: solid 1px #fff;
 }
 
-.navigation .menu li a {
+#navigation .menu li a {
   color: #fff;
   display: block;
   padding: 20px 20px;
   text-decoration: none;
 }
 
-.navigation .menu li:hover {
+#navigation .menu li:hover {
   background-color: #c18ff0;
 }
 
-.navigation .menu .btn-cadastro {
+#navigation .menu .btn-cadastro {
   text-transform: uppercase;
 }
 
-.navigation .menu .btn-entrar {
+#navigation .menu .btn-entrar {
   text-transform: uppercase;
   border: none;
+}
+
+#navigation #myLinks {
+  margin-top: 30px;
+}
+
+@media (max-width: 991PX) {
+  #navigation #myLinks {
+    display: none;
+  }
+}
+
+#navigation #myLinks .btn-entrar {
+  padding: 6px 20px;
+}
+
+#navigation .navbar {
+  margin-bottom: 0;
+}
+
+#navigation .navbar-brand {
+  font-weight: 700;
+}
+
+#navigation .navbar-brand:focus {
+  outline: 0;
+}
+
+#navigation .nav.navbar-nav {
+  margin-top: 20px;
+  padding: 30px;
+}
+
+#navigation .navbar-fixed-top ul.nav li a {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#navigation .navbar-fixed-top.top-nav-collapse ul.nav li a {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  color: #fff;
+}
+
+#navigation .navbar-fixed-top ul.nav ul.dropdown-menu {
+  border-radius: 0;
+  margin-top: 21px;
+  border-top: none;
+}
+
+#navigation .navbar-fixed-top ul.nav li a:hover ul.dropdown-menu {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+#navigation .navbar-fixed-top ul.nav ul.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+#navigation .navbar-fixed-top ul.nav ul.dropdown-menu li a {
+  padding: 10px 20px;
+}
+
+#navigation .navbar-fixed-top.top-nav-collapse ul.nav ul.dropdown-menu li a {
+  color: #666;
+}
+
+#navigation .navbar-fixed-top .nav li a {
+  -webkit-transition: background .3s ease-in-out;
+  transition: background .3s ease-in-out;
+}
+
+#navigation .navbar-fixed-top .nav li a:hover,
+#navigation .navbar-fixed-top .nav li a:focus,
+#navigation .navbar-fixed-top .nav li.active {
+  outline: 0;
+  background-color: #59be42;
+  color: #fff;
 }
 
 .navigation .menu-btn:checked ~ .menu {
@@ -372,16 +417,49 @@
   float: left;
 }
 
-#navigation {
-  width: 100%;
-  display: block;
-  background-color: #602086;
-  height: 200px;
+.box-contato .form-group input,
+.box-contato .form-group textarea,
+.box-contato .form-control input,
+.box-contato .form-control textarea {
+  border: 1px solid #59be42;
+  border-radius: 40px;
 }
 
-.content-vagas {
+.box-contato .form-group input,
+.box-contato .form-control input {
+  height: 50px;
+}
+
+.box-contato .form-group textarea,
+.box-contato .form-control textarea {
+  height: 150px;
+  padding-top: 15px;
+}
+
+.box-contato .contatoDescription {
+  padding: 20px 60px 40px 60px;
+  text-align: center;
+  font-size: 20px;
+  border-bottom: 1px solid #a8a8a8;
+  margin-bottom: 40px;
+}
+
+.box-contato .box_endereco {
+  background-color: #59be42;
+  color: #fff;
+  padding: 40px;
   display: block;
-  margin: 20px auto;
+  border-radius: 40px;
+}
+
+.box-contato .box_endereco a {
+  color: #3f2358;
+  text-decoration: none;
+}
+
+.box_endereco p {
+  text-align: center;
+  font-size: 18px;
 }
 
 #home {
@@ -468,7 +546,21 @@
 
 #about {
   margin-top: 20px;
-  text-align: center;
+}
+
+#about .box-content-01 {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 8px #ababab;
+          box-shadow: 0px 2px 8px #ababab;
+}
+
+#about .box-text {
+  padding: 10px 40px;
+}
+
+#about .box-text h2 {
+  font-size: 18px;
+  color: #000;
 }
 
 @media (max-width: 767px) {
@@ -487,6 +579,154 @@
   #works {
     background-color: #541a77;
     background-image: none !important;
+  }
+}
+
+input:focus,
+button:focus,
+select:focus {
+  outline: 0;
+}
+
+.btn {
+  font-size: 16px;
+  color: #fff;
+  background-color: #59be42;
+  padding: 10px 20px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  border: none;
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn.focus:active,
+.btn:active:focus,
+.btn:focus {
+  outline: 0 !important;
+  outline-offset: 0 !important;
+  background-image: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.QuemSomosHeader,
+.VagaDetalhesHeader,
+.CurriculumHeader,
+.ContatoHeader {
+  background-color: #3f2358;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.QuemSomosHeader h1,
+.VagaDetalhesHeader h1,
+.CurriculumHeader h1,
+.ContatoHeader h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: -20px;
+}
+
+.box-container {
+  display: block;
+  margin: 0 auto 20px auto;
+  background: #ececec;
+  border-radius: 40px;
+  padding: 40px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+.box-container p {
+  padding: 0;
+  margin: 0;
+}
+
+.box-container h3 {
+  text-align: center;
+  border-bottom: 1px solid #a8a8a8;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.box-container .text-description {
+  padding: 20px 0;
+  min-height: 200px;
+}
+
+.img-config {
+  border-radius: 40px;
+}
+
+.searchBarArea {
+  background: #3f2358;
+  margin-bottom: 40px;
+}
+
+.searchBarArea input {
+  height: 44px;
+  border-top-left-radius: 40px !important;
+  border-bottom-left-radius: 40px !important;
+}
+
+.searchBarArea .container-search {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+@media (max-width: 991px) {
+  .searchBarArea .container-search {
+    width: 80%;
+  }
+}
+
+.searchBarArea .container-search .form-content {
+  display: table;
+  width: 100%;
+}
+
+.searchBarArea .container-search small {
+  color: #fff;
+  width: 100%;
+  display: block;
+}
+
+.searchBarArea .container-search .input-search {
+  float: left;
+  width: 87%;
+}
+
+@media (max-width: 767px) {
+  .searchBarArea .container-search .input-search {
+    width: 55%;
+  }
+}
+
+.searchBarArea .container-search .btn-buscar {
+  outline: 0;
+  background-color: #59be42;
+  color: #fff;
+  float: right;
+  border: none;
+  outline: none;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.searchBarArea .container-search .btn-buscar:hover {
+  background-color: #929292;
+}
+
+@media (max-width: 767px) {
+  .searchBarArea .input-group-append {
+    display: inherit;
   }
 }
 
@@ -547,22 +787,6 @@ a {
   background-color: transparent;
 }
 
-/* --- logo --- */
-.site-logo {
-  margin-top: 5px;
-  background-image: url(../img/logo-winn.png);
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 260px;
-  height: 120px;
-}
-
-.site-logo:hover {
-  text-decoration: none;
-}
-
 /* ------- Private Access ------- */
 .PrivateAccessHeader {
   background-color: #3f2358;
@@ -583,62 +807,8 @@ a {
 }
 
 /* ------- Vagas ---------------- */
-.searchBarArea {
-  background: #003c80;
-  margin-bottom: 40px;
-}
-
 .TitleVagasSearch {
   color: white;
-}
-
-.container-search {
-  width: 50%;
-  display: block;
-  margin: 0 auto;
-  padding: 40px 0;
-}
-
-@media (max-width: 991px) {
-  .container-search {
-    width: 80%;
-  }
-}
-
-.container-search .form-content {
-  display: table;
-  width: 100%;
-}
-
-.container-search small {
-  color: #fff;
-  width: 100%;
-  display: block;
-}
-
-.container-search .input-search {
-  float: left;
-  width: 87%;
-}
-
-@media (max-width: 767px) {
-  .container-search .input-search {
-    width: 55%;
-  }
-}
-
-.container-search .btn-buscar {
-  outline: 0;
-  background-color: #59be42;
-  color: #fff;
-  float: right;
-  border: none;
-  outline: none;
-  border-radius: initial;
-}
-
-.container-search .btn-buscar:hover {
-  background-color: #929292;
 }
 
 .container-vagas .btn_default {
@@ -655,127 +825,38 @@ a {
   background-color: #929292;
 }
 
-/* ------- Contato ---------------- */
-.ContatoHeader {
-  background-color: #3f2358;
-  padding-top: 81px;
-  padding-bottom: 81px;
-  text-align: center;
+/* --- logo --- */
+.site-logo {
+  margin-top: 5px;
+  background-image: url(../img/logo-winn.png);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 260px;
+  height: 120px;
+  transition: height 0.9s ease-out;
+  -webkit-transition: height 0.9s ease-out;
+  -moz-transition: height 0.9s ease-out;
+  -ms-transition: height 0.9s ease-out;
+  -o-transition: height 0.9s ease-out;
 }
 
-.ContatoHeader h1 {
-  font-size: 40px;
-  text-transform: uppercase;
-  color: #fff;
-  margin-bottom: -20px;
+.site-logo:hover {
+  text-decoration: none;
 }
 
-.contatoDescription {
-  padding-top: 20px;
-  padding-bottom: 40px;
-  text-align: center;
-  font-size: 20px;
+/* scroll topo */
+.small {
+  position: fixed;
+  -webkit-box-shadow: 0px 1px 10px #000;
+          box-shadow: 0px 1px 10px #000;
+  z-index: 9999;
+  height: 134px;
 }
 
-.box_endereco {
-  padding-top: 160px;
-}
-
-.box_endereco p {
-  text-align: center;
-  font-size: 18px;
-}
-
-/* ------- Quem Somos ---------------- */
-.QuemSomosHeader, .VagaDetalhesHeader, .CurriculumHeader {
-  background-color: #3f2358;
-  padding-top: 81px;
-  padding-bottom: 81px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.QuemSomosHeader h1, .VagaDetalhesHeader h1, .CurriculumHeader h1 {
-  font-size: 40px;
-  text-transform: uppercase;
-  color: #fff;
-  margin-bottom: -20px;
-}
-
-.winnDescription {
-  text-align: justify;
-}
-
-/* ------- Navigation ------------ */
-.navigation {
-  background: #c18ff0;
-}
-
-.navbar {
-  margin-bottom: 0;
-}
-
-.navbar-brand {
-  font-weight: 700;
-}
-
-.navbar-brand:focus {
-  outline: 0;
-}
-
-.nav.navbar-nav {
-  margin-top: 20px;
-  padding: 30px;
-}
-
-.navbar-fixed-top ul.nav li a {
-  font-size: 14px;
-  letter-spacing: 3px;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.navbar-fixed-top.top-nav-collapse ul.nav li a {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-  color: #fff;
-}
-
-.navbar-fixed-top ul.nav ul.dropdown-menu {
-  border-radius: 0;
-  margin-top: 21px;
-  border-top: none;
-}
-
-.navbar-fixed-top ul.nav li a:hover ul.dropdown-menu {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-.navbar-fixed-top ul.nav ul.dropdown-menu li:last-child {
-  border-bottom: none;
-}
-
-.navbar-fixed-top ul.nav ul.dropdown-menu li a {
-  padding: 10px 20px;
-}
-
-.navbar-fixed-top.top-nav-collapse ul.nav ul.dropdown-menu li a {
-  color: #666;
-}
-
-.navbar-fixed-top .nav li a {
-  -webkit-transition: background .3s ease-in-out;
-  transition: background .3s ease-in-out;
-}
-
-.navbar-fixed-top .nav li a:hover,
-.navbar-fixed-top .nav li a:focus,
-.navbar-fixed-top .nav li.active {
-  outline: 0;
-  background-color: #59be42;
-  color: #fff;
+.small #navigation .site-logo {
+  height: 100px;
 }
 
 .btn-cadastro {
