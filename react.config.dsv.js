@@ -6,7 +6,8 @@ module.exports = {
   host: 'localhost',
   nodeEnv: {
     //BASE_API_URL: 'http://www.portalwinn.com.br:8083/backend/'
-    BASE_API_URL: 'https://publiax-web.conveyor.cloud/'
+    BASE_API_URL: 'https://publiax-web.conveyor.cloud/',
+    REACT_APP_VERSION: '0.0.13'
   },
   htmlEnv: {
   },

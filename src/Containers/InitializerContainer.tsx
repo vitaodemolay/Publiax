@@ -4,7 +4,7 @@ import { appModels } from '../AppModels';
 import { AuthModel } from '../Models/AuthModel';
 
 class Props {
-    @Inject auth : AuthModel;
+    @Inject auth?: AuthModel;
 }
 
 @Connection({

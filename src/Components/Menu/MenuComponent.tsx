@@ -1,12 +1,11 @@
 import React from 'react';
-import { Nav, Navbar, NavbarBrand, NavItem, NavLink, Container, Row } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavItem, NavLink, Container, Row, Label } from 'reactstrap';
 import { appModels } from '../../AppModels';
 import { AuthModel } from '../../Models/AuthModel';
 import { Inject, Connection } from 'exredux';
-import myFunction from '../../js/script';
 
 class Props {
-    @Inject auth: AuthModel;
+    @Inject auth?: AuthModel;
 }
 
 @Connection({
@@ -23,8 +22,6 @@ class Menu extends React.Component<Props> {
                     <Container>
                         <Row>
                         <NavbarBrand href="/" className="site-logo" />
-                            {/*<a href="javascript:void(0);" className="icon" onClick={myFunction}></a>*/}
-
                             <Nav id="myLinks">
                                 <NavItem>
                                     <NavLink href="#/home">Home</NavLink>
@@ -53,7 +50,7 @@ class Menu extends React.Component<Props> {
                     </Container>
              </Navbar>
                 <input className="menu-btn" type="checkbox" id="menu-btn" />
-                <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
+                <Label className="menu-icon"><span className="navicon"></span></Label>
                 <ul className="menu">
                     <li><a href="#/home">Home</a></li>
                     <li><a href="#/vagas">Vagas</a></li>

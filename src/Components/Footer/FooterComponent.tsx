@@ -1,7 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
+const version = process.env.REACT_APP_VERSION;
 export default class Footer extends React.Component {
+
     render() {
         return (
             <footer id="footer" className="footer-area">
@@ -41,8 +43,8 @@ export default class Footer extends React.Component {
                                 <div className="footer-link">
                                     <h6 className="footer-title">Endereço</h6>
                                     <ul>
-                                        <li>Av.Gastão Vidigal, 1132-V. Leopoldina<br/>
-                                        São Paulo-SP - 05314-010</li>
+                                        <li>Av.Gastão Vidigal, 1132-V. Leopoldina<br />
+                                            São Paulo-SP - 05314-010</li>
                                         <li><strong>Telefone</strong> 11 3641-9239/9095</li>
                                         <li><strong>Celular</strong> 11 986557890</li>
                                         <li><strong>E-mail</strong> contato@winnpromocoes.com.br</li>
@@ -50,6 +52,9 @@ export default class Footer extends React.Component {
                                     </ul>
                                 </div>
                             </Col>
+                        </Row>
+                        <Row>
+                            <span>by <a href="http://www.solucoesgerenciais.com.br/" target="_blank">Soluções Gerenciais</a> - V{version}</span>
                         </Row>
                     </Container>
                 </div>

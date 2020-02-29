@@ -18,7 +18,7 @@ import VagaDetalheContainer from '../Containers/VagaDetalheContainer';
 import CandidatarVagaContainer from '../Containers/CandidatarVagaContainer';
 
 class Props {
-    @Inject auth: AuthModel;
+    @Inject auth?: AuthModel;
 }
 
 

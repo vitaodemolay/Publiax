@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import { Provider, Inject, Connection } from 'exredux';
+import { Provider} from 'exredux';
 import { appModels } from './AppModels';
 import Menu from './Components/Menu/MenuComponent';
 import Footer from './Components/Footer/FooterComponent';
