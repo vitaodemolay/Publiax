@@ -5,6 +5,7 @@ import { IVaga } from '../../Service/Interfaces/IVaga';
 
 class Props {
     vaga: IVaga;
+    estaInscrito: boolean;
 }
 
 export default class FooterComponent extends React.Component<Props> {
@@ -19,16 +20,19 @@ export default class FooterComponent extends React.Component<Props> {
     }
 
     render() {
+        const { estaInscrito } = this.props;
+
         return (
             <Container>
                 <Row className="VagaDetalhesFooter">
                     <Col>
                         <Button onClick={this.voltarClick}>Voltar</Button>
                     </Col>
-
-                    <Col>
-                        <Button onClick={this.candidatarClick}>Candidatar</Button>
-                    </Col>
+                    {!estaInscrito && (
+                        <Col>
+                            <Button onClick={this.candidatarClick}>Candidatar</Button>
+                        </Col>
+                    )}
                 </Row>
             </Container>
         );

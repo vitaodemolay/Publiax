@@ -38,12 +38,12 @@ export class VagasRepository {
         return http.get<IJobSubscription>(`${baseUrl}${routeConsultaInscricao}${VagaId}`, config);
     }
 
-    static postRegistraInscricao(token: string, VagaId: string){
+    static getRegistraInscricao(token: string, VagaId: string){
         const config = {
             headers: {'Authorization': "bearer " + token}
         };
 
-        return http.post(`${baseUrl}${routeRegistraInscricao}${VagaId}`, config);
+        return http.get<IJobSubscription>(`${baseUrl}${routeRegistraInscricao}${VagaId}`, config);
     }
 }
 

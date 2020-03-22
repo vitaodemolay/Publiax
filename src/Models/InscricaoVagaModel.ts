@@ -18,8 +18,8 @@ export class InscricaoVagaModel extends BaseHttpModel<IJobSubscription>{
     private JobId = (): string => {
         const _jobId = this.vagaDetalhe.getJobId();
         return _jobId;
-    } 
-    
+    }
+
     public getJobSubscription = (): IJobSubscription => {
         return this.jobSubscription;
     }
@@ -50,12 +50,23 @@ export class InscricaoVagaModel extends BaseHttpModel<IJobSubscription>{
 
     @Action
     public registerSubscription() {
+        let result: IJobSubscription = {
+            isSubscribe: false,
+        }
         this.setSaving(true);
         this.setError(false);
-        VagasRepository.postRegistraInscricao(this.auth.getSavedToken(), this.JobId())
+
+        VagasRepository.getRegistraInscricao(this.auth.getSavedToken(), this.JobId())
+            .then(f => {
+                if (f.data !== null && f.data !== undefined) {
+                    result = f.data;
+                    result.isSubscribe = true;
+                }
+            })
             .catch(e => {
                 this.setError(true, e.message)
             }).finally(() => {
+                this.jobSubscription = result;
                 this.setSaving(false);
                 this.completed(null);
             });
@@ -77,7 +88,7 @@ export class InscricaoVagaModel extends BaseHttpModel<IJobSubscription>{
                 }
             })
             .catch(e => {
-                if(e.response.status != 404){
+                if (e.response.status != 404) {
                     this.setError(true, e.message)
                 }
             }).finally(() => {
