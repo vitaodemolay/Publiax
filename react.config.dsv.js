@@ -8,7 +8,7 @@ module.exports = {
     // BASE_API_URL: 'http://publiax-backend-hml.gearhostpreview.com/',
     // BASE_API_URL: 'http://www.portalwinn.com.br:8083/backend/',
     BASE_API_URL: 'https://publiax-web.conveyor.cloud/',
-    REACT_APP_VERSION: '0.0.13'
+    REACT_APP_VERSION: '0.0.14'
   },
   htmlEnv: {
   },
