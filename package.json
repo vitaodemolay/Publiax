@@ -1,6 +1,6 @@
 {
     "name": "portal-winn",
-    "version": "0.0.14",
+    "version": "0.1.1",
     "description": "Portal Winn",
     "main": "index.js",
     "scripts": {
