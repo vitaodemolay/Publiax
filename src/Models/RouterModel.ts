@@ -3,6 +3,7 @@ import { AuthModel } from './AuthModel';
 import { VagaDetalheModel } from './VagaDetalheModel';
 import { DadosPessoaisModel } from './DadosPessoaisModel';
 import { InscricaoVagaModel } from './InscricaoVagaModel';
+import { NotificationModel } from './NotificationModel';
 
 
 @Model
@@ -13,6 +14,7 @@ export class RouterModel {
   @Inject vagaDetalhe?: VagaDetalheModel;
   @Inject dadosPessoais?: DadosPessoaisModel;
   @Inject inscricaoVaga?: InscricaoVagaModel;
+  @Inject notifcation?: NotificationModel
 
   @Action
   routeChange(pathname: string) {
@@ -41,6 +43,13 @@ export class RouterModel {
   protected authCompleted() {
     // tslint:disable-next-line: no-console
     console.log('Is Authenticated!');
+    if(this.auth.isAuthenticated()){
+      try {
+        this.notifcation.getNotificationOnSource();
+      } catch (error) {
+        console.log('Error on Get Notifications');
+      }
+    }
   }
 
   @Trigger(VagaDetalheModel, 'setJobId')
@@ -68,5 +77,11 @@ export class RouterModel {
   protected getDadosPessoaisCompleted() {
     // tslint:disable-next-line:no-console
     console.log('User Data get is loaded!');
+  }
+
+  @Trigger(NotificationModel, 'getNotificationOnSource')
+  protected getNotificationCompleted() {
+    // tslint:disable-next-line:no-console
+    console.log('User Notification is loaded!');
   }
 }
