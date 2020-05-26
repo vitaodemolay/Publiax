@@ -7,7 +7,7 @@ import { NotificationRespository } from '../Service/Repository/NotificationRepos
 @Model
 export class NotificationModel extends BaseHttpModel<INotification> {
 
-    notifications = null;
+    notifications: INotification[] = null;
 
     @Inject auth?: AuthModel;
 
@@ -21,5 +21,20 @@ export class NotificationModel extends BaseHttpModel<INotification> {
             }).finally(() => {
                 this.completed(null);
             });
+    }
+
+    public getCountUnreadedNotification = (): number => {
+        
+        if(this.notifications != null){
+            return this.notifications.filter(x => x.status == 0).length;
+        }
+
+        return 0;
+    }
+
+    public hasUnreadedNotification = (): boolean => {
+
+        return this.getCountUnreadedNotification() > 0;
+    
     }
 }
