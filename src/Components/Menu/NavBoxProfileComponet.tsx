@@ -1,11 +1,13 @@
 import React from "react";
 import { Inject, Connection } from 'exredux';
 import { appModels } from "../../AppModels";
-import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavItem, Spinner } from "reactstrap";
+import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavItem, Spinner, Badge } from "reactstrap";
 import { DadosPessoaisModel } from "../../Models/DadosPessoaisModel";
+import { NotificationModel } from "../../Models/NotificationModel";
 
 class Props {
     @Inject dadosPessoais?: DadosPessoaisModel;
+    @Inject notifications?: NotificationModel;
 }
 
 @Connection({
@@ -24,17 +26,26 @@ class NavBoxProfile extends React.Component<Props> {
     }
 
     render() {
-        const { dadosPessoais } = this.props;
+        const { dadosPessoais, notifications } = this.props;
+
         if (dadosPessoais.isCompleted)
             return (
                 <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
                         <span className="lnr lnr-user"></span>
                         <span>{dadosPessoais.input.login}</span>
+                        {notifications.hasUnreadedNotification()
+                            ? <Badge color="danger"><span className="lnr lnr-envelope"></span></Badge>
+                            : <React.Fragment />
+                        }
                     </DropdownToggle>
                     <DropdownMenu right>
                         <DropdownItem>
                             Notificações
+                            {notifications.hasUnreadedNotification()
+                                ? <Badge color="danger">{notifications.getCountUnreadedNotification()}</Badge>
+                                : <React.Fragment />
+                            }
                         </DropdownItem>
                         <DropdownItem divider />
                         <DropdownItem href="#/logout">
