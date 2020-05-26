@@ -40,7 +40,7 @@ class NavBoxProfile extends React.Component<Props> {
                         }
                     </DropdownToggle>
                     <DropdownMenu right>
-                        <DropdownItem>
+                        <DropdownItem href="#/notificacoes">
                             Notificações
                             {notifications.hasUnreadedNotification()
                                 ? <Badge color="danger">{notifications.getCountUnreadedNotification()}</Badge>

@@ -614,6 +614,7 @@ select:focus {
 .QuemSomosHeader,
 .VagaDetalhesHeader,
 .CurriculumHeader,
+.NotificationHeader,
 .ContatoHeader {
   background-color: #3f2358;
   padding-top: 40px;
@@ -625,6 +626,7 @@ select:focus {
 .QuemSomosHeader h1,
 .VagaDetalhesHeader h1,
 .CurriculumHeader h1,
+.NotificationHeader h1,
 .ContatoHeader h1 {
   font-size: 40px;
   text-transform: uppercase;
