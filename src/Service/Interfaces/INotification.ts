@@ -4,5 +4,5 @@ export interface INotification {
    body: string;
    subject: string;
    status: number;
-   registerDate: Date;
+   registerdate: Date;
 }

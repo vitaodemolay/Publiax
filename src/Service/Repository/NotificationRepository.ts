@@ -1,6 +1,7 @@
 import { http } from 'exredux';
 import { INotification } from '../Interfaces/INotification';
 import { ISendNotification } from '../Interfaces/ISendNotification';
+import {httpPatch, httpDelete} from '../../Helpers/request'
 
 const baseUrl = process.env.BASE_API_URL;
 const baseRoute = 'api/notification/'
@@ -37,27 +38,36 @@ export class NotificationRespository {
         const config = {
             headers: { 'Authorization': "bearer " + token }
         };
-        return http.post(urlPostNotification(), request);
+        return http.post(urlPostNotification(), request, config);
     }
 
     static notificationReadedSet(token: string, notificationId: string){
         const config = {
-            headers: { 'Authorization': "bearer " + token }
+            headers: {
+                'Content-Type': 'application/json', 
+                'Authorization': "bearer " + token 
+            }
         };
-        return http.patch(urlPatchReadedSetNotification(notificationId));
+        return httpPatch(urlPatchReadedSetNotification(notificationId), config);
     }
 
     static notificationUnreadedSet(token: string, notificationId: string){
         const config = {
-            headers: { 'Authorization': "bearer " + token }
+            headers: {
+                'Content-Type': 'application/json', 
+                'Authorization': "bearer " + token 
+            }
         };
-        return http.patch(urlPatchUnreadedSetNotification(notificationId));
+        return httpPatch(urlPatchUnreadedSetNotification(notificationId), config);
     }
 
     static notificationDelete(token: string, notificationId: string){
         const config = {
-            headers: { 'Authorization': "bearer " + token }
+            headers: {
+                'Content-Type': 'application/json', 
+                'Authorization': "bearer " + token 
+            }
         };
-        return http.delete(urlDeleteNotification(notificationId));
+        return httpDelete(urlDeleteNotification(notificationId), config);
     }
 }

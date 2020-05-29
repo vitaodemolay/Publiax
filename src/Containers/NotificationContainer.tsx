@@ -26,10 +26,11 @@ export default class NotificationContainer extends React.Component<Props> {
     }
 
     render() {
+        const { notifications } = this.props;
         return (
             <div>
-                <HeaderComponent>Notificações</HeaderComponent>
-                <VitrineComponent/>
+                <HeaderComponent>Notificações Recebidas</HeaderComponent>
+                <VitrineComponent notificationModel={notifications}/>
             </div>
         );
     }
