@@ -23,6 +23,28 @@ export class NotificationModel extends BaseHttpModel<INotification> {
             });
     }
 
+    @Action 
+    changeStatusNotification(notificationId: string, status: number){
+        let _promise = null;
+        if(status == 0){
+            _promise = NotificationRespository.notificationUnreadedSet(this.auth.getSavedToken(), notificationId);
+        }
+        if(status == 1){
+            _promise = NotificationRespository.notificationReadedSet(this.auth.getSavedToken(), notificationId);
+        }
+        if(status == 3){
+            _promise = NotificationRespository.notificationDelete(this.auth.getSavedToken(), notificationId);
+        }
+
+        _promise.then(f => {
+            this.getNotificationOnSource();
+        }).catch(e => {
+                
+        }).finally(() => {
+            this.completed(null);
+        });
+    }
+
     public getCountUnreadedNotification = (): number => {
         
         if(this.notifications != null){
