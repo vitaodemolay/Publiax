@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import AboutCarousel from './About/AboutCarouselComponent';
 
 const imgWinn1 = require('../../img/img01.jpg');
 const imgWinn2 = require('../../img/img02.jpg');
@@ -10,6 +11,7 @@ export default class About extends React.Component {
         return (
             <section id="about">
                 <Container>
+                    <AboutCarousel />
                     <Row>
                         <Col md="4">
                         <div className="box-content-01 wow flipInY" data-wow-offset="0" data-wow-delay="0.8s">
