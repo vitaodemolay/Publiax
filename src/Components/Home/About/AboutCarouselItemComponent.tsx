@@ -12,7 +12,7 @@ export default class AboutCarouselItem extends React.Component<Props>{
         const { aboutBoxItens } = this.props;
         return (
             <Row>
-                {aboutBoxItens.map((item, index) => (
+                {aboutBoxItens.map((item) => (
                     <Col md="4">
                         <AboutBox {...item} />
                     </Col>
