@@ -1,7 +1,6 @@
 import { Switch, Route, Redirect } from 'react-router';
 import React from 'react';
 import { HashRouter } from 'react-router-dom';
-import Home from '../Components/Home/HomeComponent';
 import VagasContainer from '../Containers/VagasContainer';
 import CadastroCurriculoContainer from '../Containers/CurriculumContainer';
 import QuemSomosContainer from '../Containers/QuemSomosContainer';
@@ -17,6 +16,7 @@ import PrivateAccessContainer from '../Containers/PrivateAccessContainer';
 import VagaDetalheContainer from '../Containers/VagaDetalheContainer';
 import CandidatarVagaContainer from '../Containers/CandidatarVagaContainer';
 import NotificationContainer from '../Containers/NotificationContainer';
+import HomeContainer from '../Containers/HomeContainer';
 
 class Props {
     @Inject auth?: AuthModel;
@@ -62,8 +62,8 @@ export class Routes extends React.Component<Props>{
                     <Route path="/quemsomos" component={QuemSomosContainer} />
                     <Route path="/vagas" component={VagasContainer} />
                     <Route path="/vagadetalhe/:id" component={VagaDetalheContainer} />
-                    <Route path="/home" component={Home} />
-                    <Route path="/" component={Home} />
+                    <Route path="/home" component={HomeContainer} />
+                    <Route path="/" component={HomeContainer} />
                     <Redirect to="/" />
                 </Switch>
             </HashRouter>
