@@ -13,6 +13,7 @@ import { LingEstrangeirasModel } from './Models/LingEstrangeirasModel';
 import { CartaApresentacaoModel } from './Models/CartaApresentacaoModel';
 import { VisualizaCvModel } from './Models/VisualizaCvModel';
 import { InscricaoVagaModel } from './Models/InscricaoVagaModel';
+import { NotificationModel } from './Models/NotificationModel';
 
 
 export const appModels = new ModelStore({
@@ -30,6 +31,7 @@ export const appModels = new ModelStore({
            OutrasQualificacoesModel,
            LingEstrangeirasModel,
            CartaApresentacaoModel,
-           VisualizaCvModel
+           VisualizaCvModel,
+           NotificationModel
           ]
 });

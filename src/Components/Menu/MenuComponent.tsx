@@ -3,6 +3,7 @@ import { Nav, Navbar, NavbarBrand, NavItem, NavLink, Container, Row, Label } fro
 import { appModels } from '../../AppModels';
 import { AuthModel } from '../../Models/AuthModel';
 import { Inject, Connection } from 'exredux';
+import NavBoxProfile from './NavBoxProfileComponet';
 
 class Props {
     @Inject auth?: AuthModel;
@@ -21,7 +22,7 @@ class Menu extends React.Component<Props> {
                 <Navbar className="navbar navbar-fixed-top topnav navbar ">
                     <Container>
                         <Row>
-                        <NavbarBrand href="/" className="site-logo" />
+                            <NavbarBrand href="/" className="site-logo" />
                             <Nav id="myLinks">
                                 <NavItem>
                                     <NavLink href="#/home">Home</NavLink>
@@ -38,17 +39,18 @@ class Menu extends React.Component<Props> {
                                 <NavItem>
                                     <NavLink href="#/curriculum" className="btn-cadastro">Cadastrar Currículo</NavLink>
                                 </NavItem>
-                                <NavItem>
-                                    {auth.isAuthenticated()
-                                        ? <NavLink className="btn-entrar" href="#/logout">Sair</NavLink>
-                                        : <NavLink className="btn-entrar" href="#/login">Entrar</NavLink>
-                                    }
-                                </NavItem>
+                                {/* <NavLink className="btn-entrar" href="#/logout">Sair</NavLink> */}
+                                {auth.isAuthenticated()
+                                    ? <NavBoxProfile></NavBoxProfile>
+                                    : <NavItem>
+                                        <NavLink className="btn-entrar" href="#/login">Entrar</NavLink>
+                                      </NavItem>
+                                }
                             </Nav>
 
                         </Row>
                     </Container>
-             </Navbar>
+                </Navbar>
                 <input className="menu-btn" type="checkbox" id="menu-btn" />
                 <Label className="menu-icon"><span className="navicon"></span></Label>
                 <ul className="menu">
@@ -70,7 +72,7 @@ class Menu extends React.Component<Props> {
 
                 </ul>
 
-        </div>
+            </div>
 
         );
     }

@@ -9,7 +9,7 @@ export default class Jumbo extends React.Component {
                 <div className="content-home">
                     <h1>Nunca foi tão fácil </h1>
                     <h2>Conseguir um trabalho</h2>
-                    <a href="#" className="btn-vervagas">Ver vagas</a>
+                    <a href="#/vagas" className="btn-vervagas">Ver vagas</a>
                 </div>
                 <div className="slider">
                     <img src={imgBackground} className="img-responsive" />
