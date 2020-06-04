@@ -22,11 +22,12 @@ export default class About extends React.Component<Props> {
         let aboutBoxPros: IAboutBoxProps[] = [];
         let index = 0;
         for (const vaga of vagas) {
-            if (index >= 3) break;
+            if (index > 2) index = 0;
             const item: IAboutBoxProps = {
                 image: images[index],
                 title: vaga.titulo,
-                urlLink: this.defineUrlAddress(vaga.id)
+                urlLink: this.defineUrlAddress(vaga.id),
+                key: vaga.id
             }
             aboutBoxPros.push(item);
             index++;
